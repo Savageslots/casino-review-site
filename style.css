@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: #0f1115;
+  color: #fff;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  border-bottom: 1px solid #222;
+}
+
+.logo {
+  height: 40px;
+}
+
+.nav a {
+  color: #ccc;
+  text-decoration: none;
+  margin-right: 15px;
+}
+
+.nav a:hover {
+  color: #fff;
+}
+
+.content {
+  padding: 40px;
+  max-width: 1000px;
+}
