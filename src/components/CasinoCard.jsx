@@ -1,22 +1,27 @@
 function CasinoCard({ rank, name, bonus, rating }) {
   return (
     <div style={cardStyle}>
+      {/* RANK */}
       <div style={rankStyle}>#{rank}</div>
 
-      <div style={logoPlaceholder}>
-        {name}
+      {/* CASINO INFO */}
+      <div style={casinoStyle}>
+        <div style={casinoName}>{name}</div>
+        <div style={casinoSub}>Trusted Online Casino</div>
       </div>
 
+      {/* BONUS */}
       <div>
-        <strong>Bonus</strong>
-        <div>{bonus}</div>
+        <div style={label}>Bonus</div>
+        <div style={value}>{bonus}</div>
       </div>
 
-      <div>
-        <strong>Rating</strong>
-        <div>⭐ {rating}</div>
+      {/* RATING */}
+      <div style={ratingStyle}>
+        ⭐ {rating}
       </div>
 
+      {/* CTA */}
       <button style={ctaStyle}>
         Play Now
       </button>
@@ -30,26 +35,52 @@ export default CasinoCard;
 
 const cardStyle = {
   display: "grid",
-  gridTemplateColumns: "60px 1fr 1fr 120px 140px",
+  gridTemplateColumns: "60px 2fr 2fr 1fr 160px",
   alignItems: "center",
-  gap: 16,
-  padding: 20,
+  gap: 20,
+  padding: "20px 24px",
   border: "1px solid #e5e5e5",
   borderRadius: 12,
   background: "#fff",
 };
 
 const rankStyle = {
-  fontSize: 20,
+  fontSize: 22,
   fontWeight: 700,
 };
 
-const logoPlaceholder = {
+const casinoStyle = {
+  display: "flex",
+  flexDirection: "column",
+};
+
+const casinoName = {
+  fontWeight: 600,
+  fontSize: 16,
+};
+
+const casinoSub = {
+  fontSize: 13,
+  color: "#777",
+};
+
+const label = {
+  fontSize: 12,
+  color: "#777",
+  marginBottom: 4,
+};
+
+const value = {
   fontWeight: 600,
 };
 
+const ratingStyle = {
+  fontWeight: 700,
+  color: "#f39c12",
+};
+
 const ctaStyle = {
-  padding: "12px 16px",
+  padding: "12px 18px",
   background: "#e53935",
   color: "#fff",
   border: "none",
