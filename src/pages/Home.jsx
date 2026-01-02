@@ -1,86 +1,100 @@
-import logo from "../assets/logo.png";
-import CasinoCard from "../components/CasinoCard";
+import { Link } from "react-router-dom";
 
-export default function Home() {
+const cardStyle = {
+  background: "#ffffff",
+  borderRadius: "16px",
+  padding: "24px",
+  marginBottom: "24px",
+  boxShadow: "0 8px 24px rgba(0,0,0,0.05)",
+  display: "grid",
+  gridTemplateColumns: "60px 1fr auto",
+  gap: "24px",
+  alignItems: "center",
+};
+
+const rankStyle = {
+  fontSize: "28px",
+  fontWeight: "800",
+};
+
+const buttonStyle = {
+  background: "#d6453d",
+  color: "#fff",
+  padding: "12px 20px",
+  borderRadius: "10px",
+  textDecoration: "none",
+  fontWeight: "600",
+};
+
+function Home() {
   return (
-    <main style={pageStyle}>
-      {/* HERO */}
-      <section style={heroStyle}>
-        <img
-          src={logo}
-          alt="SavageSlots"
-          style={logoStyle}
-        />
+    <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "40px 20px" }}>
+      <h1 style={{ fontSize: "42px", marginBottom: "12px" }}>
+        Best Online Casinos 2025
+      </h1>
+      <p style={{ color: "#666", marginBottom: "40px", maxWidth: "800px" }}>
+        We review and rank the best online casinos based on real gameplay,
+        bonuses, payouts, and usability. We show both sides — no hype, real pros
+        and cons.
+      </p>
 
-        <h1 style={titleStyle}>
-          Best Online Casinos 2025
-        </h1>
+      {/* #1 Wildz */}
+      <div style={cardStyle}>
+        <div style={rankStyle}>#1</div>
 
-        <p style={subtitleStyle}>
-          Compare the best online casinos, bonuses and payment methods.
-        </p>
-      </section>
+        <div>
+          <h2 style={{ marginBottom: "6px" }}>Wildz Casino</h2>
+          <p style={{ color: "#666", marginBottom: "8px" }}>
+            Modern slot-focused online casino with fast payouts and a strong
+            welcome bonus.
+          </p>
+          <p style={{ fontSize: "14px" }}>
+            🎁 Bonus: 100% up to €500 + Free Spins <br />
+            💰 Min deposit: €10 · Wagering: 35x
+          </p>
 
-      {/* CASINO LIST */}
-      <section style={listStyle}>
-        <CasinoCard
-          rank={1}
-          name="Savage Casino"
-          bonus="100% bonus up to $500"
-          rating="9.8"
-        />
+          <Link
+            to="/casinos/wildz"
+            style={{ display: "inline-block", marginTop: "10px" }}
+          >
+            Read full review →
+          </Link>
+        </div>
 
-        <CasinoCard
-          rank={2}
-          name="Golden Lion Casino"
-          bonus="200% bonus up to $300"
-          rating="9.5"
-        />
+        <Link to="/casinos/wildz" style={buttonStyle}>
+          View Casino
+        </Link>
+      </div>
 
-        <CasinoCard
-          rank={3}
-          name="Lucky Spin Casino"
-          bonus="50 Free Spins"
-          rating="9.2"
-        />
-      </section>
-    </main>
+      {/* #2 Betmatch */}
+      <div style={cardStyle}>
+        <div style={rankStyle}>#2</div>
+
+        <div>
+          <h2 style={{ marginBottom: "6px" }}>Betmatch Casino</h2>
+          <p style={{ color: "#666", marginBottom: "8px" }}>
+            Hybrid platform combining online casino games with sportsbook
+            features.
+          </p>
+          <p style={{ fontSize: "14px" }}>
+            🎁 Bonus: Up to €300 (casino & sports) <br />
+            💰 Min deposit: €10 · Wagering: 35x
+          </p>
+
+          <Link
+            to="/casinos/betmatch"
+            style={{ display: "inline-block", marginTop: "10px" }}
+          >
+            Read full review →
+          </Link>
+        </div>
+
+        <Link to="/casinos/betmatch" style={buttonStyle}>
+          View Casino
+        </Link>
+      </div>
+    </div>
   );
 }
 
-/* ===== styles ===== */
-
-const pageStyle = {
-  maxWidth: "1200px",
-  margin: "0 auto",
-  padding: "32px 24px 40px",
-};
-
-const heroStyle = {
-  textAlign: "center",
-  marginBottom: 56,
-};
-
-const logoStyle = {
-  height: 176, // x2 size, як ти просив
-  marginBottom: 24,
-};
-
-const titleStyle = {
-  fontSize: 44,
-  fontWeight: 700,
-  marginBottom: 14,
-};
-
-const subtitleStyle = {
-  fontSize: 18,
-  color: "#555",
-  maxWidth: 680,
-  margin: "0 auto",
-  lineHeight: 1.5,
-};
-
-const listStyle = {
-  display: "grid",
-  gap: 20,
-};
+export default Home;

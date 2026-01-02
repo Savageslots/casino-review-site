@@ -1,5 +1,5 @@
 import { useState } from "react";
-import CasinoExpandableCard from "../components/CasinoExpandableCard";
+import CasinoAccordion from "../components/CasinoAccordion";
 
 export default function Casinos() {
   const [openIndex, setOpenIndex] = useState(1);
@@ -7,45 +7,59 @@ export default function Casinos() {
   const casinos = [
     {
       name: "Wildz Casino",
-      bonus: "100% bonus up to €500",
+      bonus: "100% bonus up to €500 + Free Spins",
       rating: 9.8,
       description:
-        "Wildz Casino is known for its modern design, fast payouts and a strong selection of slots.",
+        "Wildz Casino is a modern, slot-focused online casino known for its clean interface, fast payouts after verification, and strong game selection.",
+      reviewLink: "/casinos/wildz",
       details: [
         { icon: "⬇️", label: "Min Deposit", value: "€10" },
         { icon: "🎁", label: "Bonus Type", value: "Welcome Bonus" },
         { icon: "💼", label: "Wagering", value: "35x" },
-        { icon: "🎲", label: "Min Bet", value: "PLACEHOLDER" },
+        { icon: "🎰", label: "Casino Type", value: "Slots-focused" },
         { icon: "💳", label: "Min Withdrawal", value: "PLACEHOLDER" },
-        { icon: "⏱️", label: "Payout Speed", value: "PLACEHOLDER" },
+        { icon: "⏱️", label: "Payout Speed", value: "Fast after KYC" },
       ],
     },
     {
-      name: "Casino 2",
-      bonus: "PLACEHOLDER",
-      rating: "—",
-      description: "Description of Casino 2.",
-      details: [{ icon: "🎁", label: "Bonus", value: "PLACEHOLDER" }],
+      name: "Betmatch Casino",
+      bonus: "Up to €300 (casino & sports)",
+      rating: 9.4,
+      description:
+        "Betmatch Casino combines online casino games with sportsbook features, offering a flexible platform for players who want variety under one account.",
+      reviewLink: "/casinos/betmatch",
+      details: [
+        { icon: "⬇️", label: "Min Deposit", value: "€10" },
+        { icon: "🎁", label: "Bonus Type", value: "Casino & Sports" },
+        { icon: "💼", label: "Wagering", value: "35x" },
+        { icon: "⚽", label: "Platform", value: "Casino + Sportsbook" },
+        { icon: "📱", label: "Mobile Experience", value: "Good" },
+      ],
     },
     {
       name: "Casino 3",
       bonus: "PLACEHOLDER",
       rating: "—",
-      description: "Description of Casino 3.",
-      details: [{ icon: "🎁", label: "Bonus", value: "PLACEHOLDER" }],
+      description:
+        "Short description for Casino 3. This will be replaced with a real casino review later.",
+      reviewLink: "#",
+      details: [
+        { icon: "🎁", label: "Bonus", value: "PLACEHOLDER" },
+      ],
     },
   ];
 
   return (
     <main style={page}>
       <h1>Best Online Casinos</h1>
-      <p style={{ color: "#555", marginBottom: 32 }}>
-        Discover the best online casinos ranked by bonuses, payments and player
-        experience.
+      <p style={{ color: "#555", marginBottom: 32, maxWidth: 900 }}>
+        Discover the best online casinos ranked by bonuses, payouts, usability,
+        and overall player experience. We show both sides — no hype, real pros and
+        cons. Click any casino to expand the card or open the full review.
       </p>
 
       {casinos.map((casino, i) => (
-        <CasinoExpandableCard
+        <CasinoAccordion
           key={i}
           index={i + 1}
           casino={casino}
