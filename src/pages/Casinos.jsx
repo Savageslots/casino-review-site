@@ -37,14 +37,17 @@ export default function Casinos() {
       ],
     },
     {
-      name: "Casino 3",
-      bonus: "PLACEHOLDER",
-      rating: "—",
+      name: "Wildz (NEW)",
+      bonus: "Simple bonuses with clear rules",
+      rating: 7.6,
       description:
-        "Short description for Casino 3. This will be replaced with a real casino review later.",
-      reviewLink: "#",
+        "Wildz (NEW) is a slot-first casino focused on simplicity, clean design, and smooth navigation. It works best for casual players who prefer clarity over aggressive promotions.",
+      reviewLink: "/casinos/wildz-new",
       details: [
-        { icon: "🎁", label: "Bonus", value: "PLACEHOLDER" },
+        { icon: "🎰", label: "Best for", value: "Slot-focused players" },
+        { icon: "🎁", label: "Bonuses", value: "Clear but modest" },
+        { icon: "⏱️", label: "Payouts", value: "Usually smooth" },
+        { icon: "🚫", label: "Not ideal for", value: "High-rollers" },
       ],
     },
   ];
@@ -54,7 +57,7 @@ export default function Casinos() {
       <h1>Best Online Casinos</h1>
       <p style={{ color: "#555", marginBottom: 32, maxWidth: 900 }}>
         Discover the best online casinos ranked by bonuses, payouts, usability,
-        and overall player experience. We show both sides — no hype, real pros and
+        and overall player experience. We show both sides - no hype, real pros and
         cons. Click any casino to expand the card or open the full review.
       </p>
 

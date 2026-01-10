@@ -34,7 +34,7 @@ function Home() {
       </h1>
       <p style={{ color: "#666", marginBottom: "40px", maxWidth: "800px" }}>
         We review and rank the best online casinos based on real gameplay,
-        bonuses, payouts, and usability. We show both sides — no hype, real pros
+        bonuses, payouts, and usability. We show both sides - no hype, real pros
         and cons.
       </p>
 
@@ -90,6 +90,34 @@ function Home() {
         </div>
 
         <Link to="/casinos/betmatch" style={buttonStyle}>
+          View Casino
+        </Link>
+      </div>
+
+      {/* #3 Wildz NEW */}
+      <div style={cardStyle}>
+        <div style={rankStyle}>#3</div>
+
+        <div>
+          <h2 style={{ marginBottom: "6px" }}>Wildz (NEW)</h2>
+          <p style={{ color: "#666", marginBottom: "8px" }}>
+            Slot-first casino focused on simplicity, clean design, and smooth
+            navigation rather than aggressive promotions.
+          </p>
+          <p style={{ fontSize: "14px" }}>
+            🎁 Bonuses: Clear but modest <br />
+            🎰 Best for: Casual slot players
+          </p>
+
+          <Link
+            to="/casinos/wildz-new"
+            style={{ display: "inline-block", marginTop: "10px" }}
+          >
+            Read full review →
+          </Link>
+        </div>
+
+        <Link to="/casinos/wildz-new" style={buttonStyle}>
           View Casino
         </Link>
       </div>

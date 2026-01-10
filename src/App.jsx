@@ -9,6 +9,7 @@ import Bonuses from "./pages/Bonuses";
 // Casino reviews
 import WildzReview from "./pages/Reviews/WildzReview";
 import BetmatchReview from "./pages/Reviews/BetmatchReview";
+import WildzNewReview from "./pages/Reviews/WildzNewReview";
 
 function App() {
   return (
@@ -22,6 +23,9 @@ function App() {
         {/* Casino review pages */}
         <Route path="/casinos/wildz" element={<WildzReview />} />
         <Route path="/casinos/betmatch" element={<BetmatchReview />} />
+
+        {/* NEW review */}
+        <Route path="/casinos/wildz-new" element={<WildzNewReview />} />
       </Routes>
     </Layout>
   );
