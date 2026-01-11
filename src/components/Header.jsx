@@ -7,8 +7,8 @@ function Header() {
         position: "sticky",
         top: 0,
         zIndex: 100,
-        background: "#fff",
-        borderBottom: "1px solid #e5e5e5",
+        background: "#ffffff",
+        borderBottom: "1px solid #e5e7eb",
       }}
     >
       <div
@@ -28,10 +28,11 @@ function Header() {
             fontSize: 22,
             fontWeight: 700,
             textDecoration: "none",
-            color: "#111",
+            color: "#000000",
+            cursor: "pointer",
           }}
         >
-          SavageSlots
+          CasinoProsCons
         </NavLink>
 
         {/* NAV */}
@@ -50,8 +51,8 @@ function Header() {
 
 const navStyle = ({ isActive }) => ({
   textDecoration: "none",
-  fontWeight: 500,
-  color: isActive ? "#e53935" : "#111",
+  fontWeight: 600,
+  color: isActive ? "#e53935" : "#000000",
   borderBottom: isActive ? "2px solid #e53935" : "none",
   paddingBottom: 4,
 });
