@@ -1,3 +1,5 @@
+import ProsCons from "../../components/ProsCons";
+
 const sectionStyle = {
   background: "#ffffff",
   borderRadius: "16px",
@@ -24,24 +26,19 @@ const h2Style = {
   marginBottom: "16px",
 };
 
-const listGrid = {
-  display: "grid",
-  gridTemplateColumns: "1fr 1fr",
-  gap: "12px 24px",
-};
-
-const prosItem = {
-  background: "#f1fdf6",
-  border: "1px solid #cceede",
-  padding: "14px 16px",
-  borderRadius: "10px",
-};
-
-const consItem = {
-  background: "#fff5f5",
-  border: "1px solid #f3cccc",
-  padding: "14px 16px",
-  borderRadius: "10px",
+export const prosCons = {
+  pros: [
+    "Casino and sportsbook in one account",
+    "Solid welcome bonus structure",
+    "Good range of slot providers",
+    "Decent mobile performance",
+  ],
+  cons: [
+    "High wagering requirements",
+    "Interface feels busy for new users",
+    "Casino bonuses not ideal for quick wins",
+    "Support response times can vary",
+  ],
 };
 
 function BetmatchReview() {
@@ -98,34 +95,7 @@ function BetmatchReview() {
         </div>
       </section>
 
-      {/* PROS & CONS */}
-      <section style={sectionStyle}>
-        <h2 style={h2Style}>Pros & Cons</h2>
-
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "32px" }}>
-          {/* PROS */}
-          <div>
-            <h3 style={{ marginBottom: "12px", color: "#1f8f5f" }}>Pros</h3>
-            <div style={listGrid}>
-              <div style={prosItem}>Casino and sportsbook in one account</div>
-              <div style={prosItem}>Solid welcome bonus structure</div>
-              <div style={prosItem}>Good range of slot providers</div>
-              <div style={prosItem}>Decent mobile performance</div>
-            </div>
-          </div>
-
-          {/* CONS */}
-          <div>
-            <h3 style={{ marginBottom: "12px", color: "#c0392b" }}>Cons</h3>
-            <div style={listGrid}>
-              <div style={consItem}>High wagering requirements</div>
-              <div style={consItem}>Interface feels busy for new users</div>
-              <div style={consItem}>Casino bonuses not ideal for quick wins</div>
-              <div style={consItem}>Support response times can vary</div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ProsCons pros={prosCons.pros} cons={prosCons.cons} />
 
       {/* GAME & PLATFORM REVIEW */}
       <section style={sectionStyle}>
@@ -159,6 +129,88 @@ function BetmatchReview() {
           This makes Betmatch more suitable for experienced players who understand
           bonus mechanics and are comfortable meeting wagering targets.
         </p>
+      </section>
+
+      {/* STREET VOICE */}
+      <section style={sectionStyle}>
+        <h2 style={h2Style}>Street voice — what players actually say</h2>
+
+        <p style={{ lineHeight: "1.7", maxWidth: "900px" }}>
+          To balance official marketing claims, we reviewed recurring user feedback from
+          major casino forums, review platforms, and community discussions. The goal here
+          is not isolated complaints or praise, but consistent patterns reported by real players.
+        </p>
+
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1.1fr 1fr 1fr",
+            gap: "16px",
+            marginTop: "16px",
+          }}
+        >
+          <div
+            style={{
+              borderRadius: "16px",
+              border: "1px solid rgba(0,0,0,0.08)",
+              padding: "16px",
+              background: "#fff",
+            }}
+          >
+            <div style={{ fontWeight: 900, marginBottom: "10px", fontSize: "16px" }}>
+              Average user sentiment
+            </div>
+            <div style={{ fontSize: "28px", fontWeight: 900, marginBottom: "6px" }}>
+              7.1 / 10
+            </div>
+            <div style={{ color: "#666", lineHeight: "1.6", fontSize: "14px" }}>
+              Based on recurring feedback patterns across casino & sportsbook review platforms.
+            </div>
+          </div>
+
+          <div
+            style={{
+              borderRadius: "16px",
+              border: "1px solid rgba(0,0,0,0.08)",
+              padding: "16px",
+              background: "#fff",
+            }}
+          >
+            <div style={{ fontWeight: 900, marginBottom: "10px", fontSize: "16px" }}>
+              Most commonly praised
+            </div>
+            <ul style={{ margin: 0, paddingLeft: "18px", lineHeight: "1.7", color: "#222" }}>
+              <li>Casino & sportsbook in one account</li>
+              <li>Wide game and betting variety</li>
+              <li>Decent mobile performance</li>
+              <li>Competitive promotions for long sessions</li>
+            </ul>
+          </div>
+
+          <div
+            style={{
+              borderRadius: "16px",
+              border: "1px solid rgba(0,0,0,0.08)",
+              padding: "16px",
+              background: "#fff",
+            }}
+          >
+            <div style={{ fontWeight: 900, marginBottom: "10px", fontSize: "16px" }}>
+              Most common complaints
+            </div>
+            <ul style={{ margin: 0, paddingLeft: "18px", lineHeight: "1.7", color: "#222" }}>
+              <li>High wagering requirements</li>
+              <li>Interface feels busy for casino-only players</li>
+              <li>Slower withdrawals during peak periods</li>
+              <li>Bonus conditions require careful reading</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style={{ marginTop: "12px", fontSize: "13px", color: "#666", lineHeight: "1.6" }}>
+          Note: This section summarizes recurring themes across multiple sources and does not
+          represent individual cases.
+        </div>
       </section>
 
       {/* VERDICT */}

@@ -1,3 +1,7 @@
+import { Link } from "react-router-dom";
+import CasinoCard from "../components/CasinoCard";
+import { casinos } from "../data/casinosData";
+
 const heroTitleWrap = {
   display: "flex",
   alignItems: "center",
@@ -16,7 +20,6 @@ const heroIconMobile = {
   height: "64px",
   width: "auto",
 };
-import { Link } from "react-router-dom";
 
 const pageStyle = {
   background: "#ffffff",
@@ -125,120 +128,24 @@ function Home() {
           bonuses, payouts, and usability. Honest pros & cons — no hype.
         </p>
 
-        {/* #1 Wildz */}
-        <div style={cardStyle}>
-          <div style={rankStyle}>#1</div>
+        {casinos.slice(0, 5).map((casino, i) => (
+          <CasinoCard key={casino.name} rank={i + 1} casino={casino} />
+        ))}
 
-          <img
-            src="/logos/wildz.png"
-            alt="Wildz Casino logo"
-            style={casinoLogoStyle}
-            className="casino-logo"
-          />
-
-          <div style={{ paddingLeft: "38px" }}>
-            <h2 style={{ margin: 0, fontSize: "24px", color: "#ffffff" }}>
-              Wildz Casino
-            </h2>
-            <p style={{ color: "#ffffff", marginBottom: "10px", lineHeight: "1.6" }}>
-              Modern slot-focused online casino with fast payouts and a strong
-              welcome bonus.
-            </p>
-            <p style={{ fontSize: "15px", color: "#e6e9ff" }}>
-              🎁 Bonus: 100% up to €500 + Free Spins <br />
-              💰 Min deposit: €10 · Wagering: 35x
-            </p>
-
-            <Link to="/casinos/wildz" style={linkStyle}>
-              Read full review →
-            </Link>
-          </div>
-
-          <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-            <div style={ratingStyle}>
-              ⭐ <span>9.8</span>
-            </div>
-            <Link to="/casinos/wildz" style={buttonStyle}>
-              View Casino
-            </Link>
-          </div>
+        <div style={{ textAlign: "center", margin: "48px 0" }}>
+          <Link to="/casinos" style={buttonStyle}>
+            View full casino ranking
+          </Link>
         </div>
 
-        {/* #2 Betmatch */}
-        <div style={cardStyle}>
-          <div style={rankStyle}>#2</div>
-
-          <img
-            src="/logos/betmatch.png"
-            alt="Betmatch Casino logo"
-            style={casinoLogoStyle}
-            className="casino-logo"
-          />
-
-          <div style={{ paddingLeft: "38px" }}>
-            <h2 style={{ margin: 0, fontSize: "24px", color: "#ffffff" }}>
-              Betmatch Casino
-            </h2>
-            <p style={{ color: "#ffffff", marginBottom: "10px", lineHeight: "1.6" }}>
-              Hybrid platform combining casino games with sportsbook features.
-            </p>
-            <p style={{ fontSize: "15px", color: "#e6e9ff" }}>
-              🎁 Bonus: Up to €300 (casino & sports) <br />
-              💰 Min deposit: €10 · Wagering: 35x
-            </p>
-
-            <Link to="/casinos/betmatch" style={linkStyle}>
-              Read full review →
-            </Link>
-          </div>
-
-          <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-            <div style={ratingStyle}>
-              ⭐ <span>9.4</span>
-            </div>
-            <Link to="/casinos/betmatch" style={buttonStyle}>
-              View Casino
-            </Link>
-          </div>
+        <div style={{ marginTop: "80px", marginBottom: "80px" }}>
+          <h2 style={{ fontSize: "32px", marginBottom: "16px" }}>Best Casino Bonuses</h2>
+          <p style={{ color: "#555", maxWidth: "720px" }}>
+            Bonus rankings are coming soon. We are currently reviewing wagering terms,
+            max cashouts, and real bonus value.
+          </p>
         </div>
 
-        {/* #3 Wildz NEW */}
-        <div style={cardStyle}>
-          <div style={rankStyle}>#3</div>
-
-          <img
-            src="/logos/wildz.png"
-            alt="Wildz Casino logo"
-            style={casinoLogoStyle}
-            className="casino-logo"
-          />
-
-          <div style={{ paddingLeft: "38px" }}>
-            <h2 style={{ margin: 0, fontSize: "24px", color: "#ffffff" }}>
-              Wildz (NEW)
-            </h2>
-            <p style={{ color: "#ffffff", marginBottom: "10px", lineHeight: "1.6" }}>
-              Slot-first casino focused on clean design and smooth navigation.
-            </p>
-            <p style={{ fontSize: "15px", color: "#e6e9ff" }}>
-              🎁 Bonuses: Clear but modest <br />
-              🎰 Best for: Casual slot players
-            </p>
-
-            <Link to="/casinos/wildz-new" style={linkStyle}>
-              Read full review →
-            </Link>
-          </div>
-
-          <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-            <div style={ratingStyle}>
-              ⭐ <span>7.6</span>
-            </div>
-            <Link to="/casinos/wildz-new" style={buttonStyle}>
-              View Casino
-            </Link>
-          </div>
-        </div>
         <div
           style={{
             marginTop: "80px",

@@ -1,3 +1,18 @@
+import ProsCons from "../../components/ProsCons";
+
+export const prosCons = {
+  pros: [
+    "Slot-first experience",
+    "Modern interface",
+    "Generally smooth withdrawals",
+  ],
+  cons: [
+    "Limited depth beyond slots",
+    "Bonuses are simple, not aggressive ",
+    "Not ideal for high-rollers",
+  ],
+};
+
 export default function WildzNewReview() {
   return (
     <main style={page}>
@@ -55,61 +70,9 @@ export default function WildzNewReview() {
         </div>
       </section>
 
-      {/* Pros & Cons */}
       <section style={section}>
         <h2 style={h2}>Pros & Cons</h2>
-
-        <div style={prosConsGrid}>
-          <div>
-            <h3 style={{ ...h3, color: "#2E7D32" }}>Pros</h3>
-
-            <div style={{ ...miniCard, borderColor: "rgba(46,125,50,0.25)", background: "rgba(46,125,50,0.06)" }}>
-              <div style={miniTitle}>Slot-first experience</div>
-              <div style={miniText}>
-                Clean lobby, simple navigation, and a focused setup that works best for slots.
-              </div>
-            </div>
-
-            <div style={{ ...miniCard, borderColor: "rgba(46,125,50,0.25)", background: "rgba(46,125,50,0.06)" }}>
-              <div style={miniTitle}>Modern interface</div>
-              <div style={miniText}>
-                Polished layout, subtle animations, and short loading times that feel smooth in longer sessions.
-              </div>
-            </div>
-
-            <div style={{ ...miniCard, borderColor: "rgba(46,125,50,0.25)", background: "rgba(46,125,50,0.06)" }}>
-              <div style={miniTitle}>Generally smooth withdrawals</div>
-              <div style={miniText}>
-                Aggregated user feedback suggests payouts are typically processed without major friction.
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <h3 style={{ ...h3, color: "#C62828" }}>Cons</h3>
-
-            <div style={{ ...miniCard, borderColor: "rgba(198,40,40,0.25)", background: "rgba(198,40,40,0.05)" }}>
-              <div style={miniTitle}>Limited depth beyond slots</div>
-              <div style={miniText}>
-                Players looking for strong live casino or advanced table game depth may feel it is underpowered.
-              </div>
-            </div>
-
-            <div style={{ ...miniCard, borderColor: "rgba(198,40,40,0.25)", background: "rgba(198,40,40,0.05)" }}>
-              <div style={miniTitle}>Bonuses are simple, not aggressive</div>
-              <div style={miniText}>
-                Easy to understand, but experienced bonus-chasers may find the offers modest.
-              </div>
-            </div>
-
-            <div style={{ ...miniCard, borderColor: "rgba(198,40,40,0.25)", background: "rgba(198,40,40,0.05)" }}>
-              <div style={miniTitle}>Not ideal for high-rollers</div>
-              <div style={miniText}>
-                High-stakes players may miss deeper VIP-level incentives and flexibility.
-              </div>
-            </div>
-          </div>
-        </div>
+        <ProsCons pros={prosCons.pros} cons={prosCons.cons} />
       </section>
 
       {/* What Wildz does well */}
