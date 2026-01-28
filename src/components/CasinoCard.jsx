@@ -8,7 +8,7 @@ function CasinoCard({ casino, rank }) {
     <div style={{ marginBottom: "32px" }}>
       <div style={{ borderRadius: 20, overflow: "hidden" }}>
         {/* CARD */}
-        <div style={cardStyle}>
+        <div style={cardStyle} className="casino-card">
         <div
           style={{
             display: "flex",
@@ -17,6 +17,7 @@ function CasinoCard({ casino, rank }) {
             cursor: "pointer",
           }}
           onClick={() => setIsOpen(!isOpen)}
+          className="casino-rank"
         >
           <span style={rankStyle}>#{rank}</span>
           <span style={{ fontSize: "14px", color: "#fff" }}>
@@ -28,11 +29,12 @@ function CasinoCard({ casino, rank }) {
           src={casino.logo}
           alt={`${casino.name} logo`}
           style={casinoLogoStyle}
+          className="casino-logo"
         />
 
-        <div style={{ paddingLeft: "38px", color: "#ffffff" }}>
+        <div style={{ paddingLeft: "38px", color: "#ffffff" }} className="casino-content">
           <h2 style={{ margin: 0, fontSize: "24px" }}>{casino.name}</h2>
-          <p style={{ marginBottom: "10px", lineHeight: "1.6" }}>
+          <p style={{ marginBottom: "10px", lineHeight: "1.6" }} className="casino-desc">
             {casino.description}
           </p>
           <p style={{ fontSize: "15px", color: "#e6e9ff" }}>
@@ -58,6 +60,7 @@ function CasinoCard({ casino, rank }) {
             flexDirection: "column",
             alignItems: "center",
           }}
+          className="casino-actions"
         >
           <div style={ratingStyle}>⭐ {casino.rating}</div>
           <a
@@ -94,6 +97,44 @@ function CasinoCard({ casino, rank }) {
         </div>
       )}
       </div>
+      <style>{`
+        @media (max-width: 768px) {
+          .casino-card {
+            display: grid !important;
+            grid-template-columns: 1fr !important;
+            gap: 16px !important;
+            padding: 20px !important;
+          }
+
+          .casino-rank {
+            width: 100%;
+            justify-content: space-between;
+          }
+
+          .casino-logo {
+            width: 72px !important;
+            height: 72px !important;
+            margin: 0 auto !important;
+          }
+
+          .casino-content {
+            padding-left: 0 !important;
+            text-align: center;
+          }
+
+          .casino-desc {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+          }
+
+          .casino-actions {
+            flex-direction: column !important;
+            gap: 12px;
+          }
+        }
+      `}</style>
     </div>
   );
 }
