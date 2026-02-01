@@ -63,7 +63,10 @@ export const prosCons = {
 
 function SGCasinoReview() {
   return (
-    <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "48px 20px" }}>
+    <div
+      className="sg-review-page"
+      style={{ maxWidth: "1100px", margin: "0 auto", padding: "48px 20px" }}
+    >
       {/* HEADER */}
       <section style={{ marginBottom: "48px" }}>
         <h1 style={titleStyle}>SG Casino Review</h1>
@@ -109,7 +112,7 @@ function SGCasinoReview() {
         </div>
       </section>
 
-      <ProsCons data={prosCons} />
+      <ProsCons pros={prosCons.pros} cons={prosCons.cons} />
 
       {/* What SG Casino does well */}
       <section style={sectionStyle}>
@@ -222,6 +225,64 @@ function SGCasinoReview() {
           👉 A good pick for slot players. Less ideal for fast-withdrawal hunters.
         </p>
       </section>
+      <style>{`
+  /* MOBILE ONLY */
+  @media (max-width: 768px) {
+    .sg-review-page {
+      padding: 24px 16px !important;
+      overflow-x: hidden;
+    }
+
+    /* Prevent horizontal scroll everywhere */
+    .sg-review-page * {
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+
+    /* Headings scale */
+    .sg-review-page h1 {
+      font-size: 28px !important;
+    }
+
+    .sg-review-page h2 {
+      font-size: 20px !important;
+    }
+
+    /* QUICK FACTS → vertical cards */
+    .sg-review-page section:nth-of-type(2) > div {
+      display: grid !important;
+      grid-template-columns: 1fr !important;
+      gap: 12px !important;
+    }
+
+    .sg-review-page section:nth-of-type(2) > div > div {
+      background: #f9f9f9;
+      border-radius: 12px;
+      padding: 14px;
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05);
+    }
+
+    /* Pros & Cons stack vertically */
+    .sg-review-page .pros-cons {
+      display: grid !important;
+      grid-template-columns: 1fr !important;
+      gap: 16px !important;
+    }
+
+    .sg-review-page section h2 + div {
+      display: grid !important;
+      grid-template-columns: 1fr !important;
+      gap: 12px !important;
+    }
+
+    .sg-review-page section h2 + div > div {
+      background: #f9f9f9;
+      border-radius: 12px;
+      padding: 14px;
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,0.06);
+    }
+  }
+`}</style>
     </div>
   );
 }

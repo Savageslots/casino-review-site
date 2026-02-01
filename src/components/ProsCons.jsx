@@ -1,10 +1,12 @@
 export default function ProsCons({ pros = [], cons = [] }) {
   return (
     <div
+      className="pros-cons-root"
       style={{
         display: "grid",
         gridTemplateColumns: "1fr 1fr",
         gap: "32px",
+        marginBottom: "48px",
       }}
     >
       {/* PROS */}
@@ -46,6 +48,14 @@ export default function ProsCons({ pros = [], cons = [] }) {
           ))}
         </div>
       </div>
+      <style>{`
+        @media (max-width: 768px) {
+          .pros-cons-root {
+            grid-template-columns: 1fr !important;
+            gap: 24px !important;
+          }
+        }
+      `}</style>
     </div>
   );
 }
