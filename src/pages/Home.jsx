@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import CasinoCard from "../components/CasinoCard";
 import { casinos } from "../data/casinosData";
+import { Helmet } from "react-helmet-async";
 
 const heroTitleWrap = {
   display: "flex",
@@ -95,6 +96,13 @@ const ratingStyle = {
 function Home() {
   return (
     <div style={pageStyle}>
+      <Helmet>
+        <title>Best Online Casinos 2025 – Honest Reviews & Rankings | CasinoProsCons</title>
+        <meta
+          name="description"
+          content="Independent reviews of the best online casinos in 2025. Compare bonuses, payouts, usability, and real pros & cons to choose the right casino."
+        />
+      </Helmet>
       <div style={containerStyle}>
         <div style={heroTitleWrap}>
           <img
@@ -139,11 +147,21 @@ function Home() {
         </div>
 
         <div style={{ marginTop: "80px", marginBottom: "80px" }}>
-          <h2 style={{ fontSize: "32px", marginBottom: "16px" }}>Best Casino Bonuses</h2>
-          <p style={{ color: "#555", maxWidth: "720px" }}>
-            Bonus rankings are coming soon. We are currently reviewing wagering terms,
-            max cashouts, and real bonus value.
+          <h2 style={{ fontSize: "32px", marginBottom: "16px" }}>
+            Best Casino Bonuses – Ranked by Real Value
+          </h2>
+          <p style={{ color: "#555", maxWidth: "760px", lineHeight: "1.7" }}>
+            On our bonus ranking page, we compare welcome offers based on real value —
+            including bonus size, wagering requirements, hidden terms, max cashout limits,
+            and withdrawal restrictions. We focus on how realistic it is to actually
+            convert a bonus into withdrawable funds, not just headline numbers.
           </p>
+
+          <div style={{ marginTop: "24px" }}>
+            <Link to="/bonuses" style={buttonStyle}>
+              View bonus ranking
+            </Link>
+          </div>
         </div>
 
         <div
@@ -191,25 +209,24 @@ function Home() {
           </p>
         </div>
       </div>
+      <style>{`
+        @media (max-width: 768px) {
+          .hero-icon {
+            height: 64px !important;
+            max-width: 96px !important;
+          }
+          h1 {
+            font-size: 32px !important;
+          }
+          .casino-logo {
+            width: 64px !important;
+            height: 64px !important;
+            margin-right: 6px !important;
+          }
+        }
+      `}</style>
     </div>
   );
 }
-
-<style>{`
-  @media (max-width: 768px) {
-    .hero-icon {
-      height: 64px !important;
-      max-width: 96px !important;
-    }
-    h1 {
-      font-size: 32px !important;
-    }
-    .casino-logo {
-      width: 64px !important;
-      height: 64px !important;
-      margin-right: 6px !important;
-    }
-  }
-`}</style>
 
 export default Home;

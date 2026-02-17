@@ -1,7 +1,8 @@
+import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 
-function Layout({ children }) {
+function Layout() {
   return (
     <>
       <Header />
@@ -12,7 +13,7 @@ function Layout({ children }) {
           background: "#fafafa",
         }}
       >
-        {children}
+        <Outlet />
       </div>
 
       <Footer />

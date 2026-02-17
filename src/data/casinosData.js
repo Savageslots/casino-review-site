@@ -56,6 +56,24 @@ export const casinos = [
   },
 
   {
+    name: "RoyalSea Casino",
+    bonus: "100% up to €500 + Free Spins",
+    rating: 8.9,
+    description:
+      "RoyalSea Casino is a modern multi-product platform combining slots, live casino and sportsbook features, focused on structured bonuses and clear promotional terms.",
+    reviewLink: "/casinos/royalsea",
+    logo: "/logos/royalsea.png",
+    details: [
+      { icon: "⬇️", label: "Min deposit", value: "€20" },
+      { icon: "💳", label: "Min withdrawal", value: "€20 (verify)" },
+      { icon: "💼", label: "Wagering", value: "35x bonus" },
+      { icon: "🎰", label: "Platform type", value: "Casino + Sportsbook" },
+    ],
+    hook:
+      "RoyalSea Casino targets players looking for balanced bonuses, structured wagering and a hybrid casino-sportsbook experience under one account.",
+  },
+
+  {
     name: "Kingmaker Casino",
     bonus: "100% up to €500 + 25 Free Spins",
     rating: 7.2,
@@ -78,7 +96,7 @@ export const casinos = [
     bonus: "100% up to €100 + Free Spins",
     rating: 7.4,
     description:
-      "Boomerang-Bet is a hybrid casino and sportsbook offering a wide game selection, regular reload bonuses, cashback deals, and sports betting under one account.",
+      "Boomerang-Bet is a hybrid sportsbook and casino platform offering thousands of games, regular reload bonuses, cashback, and an active sports betting section.",
     reviewLink: "/casinos/boomerangbet",
     logo: "/logos/boomerangbet.png",
     details: [
@@ -88,6 +106,6 @@ export const casinos = [
       { icon: "🎰", label: "Platform type", value: "Casino + Sportsbook" },
     ],
     hook:
-      "Boomerang-Bet works best as an all-in-one casino and sportsbook hub with frequent reloads and cashback, but players should watch withdrawal conditions closely.",
-  }
+      "Boomerang-Bet works best as an all-in-one casino and sportsbook hub with frequent reloads and cashback. Players should carefully review withdrawal rules and bonus conditions.",
+  },
 ];
