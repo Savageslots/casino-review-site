@@ -4,11 +4,12 @@ import { writeFile } from 'node:fs/promises';
 const browser = await chromium.launch({ channel: 'chrome' });
 const results = [];
 try {
-  for (const path of ['/', '/casinos', '/bonuses', '/casinos/sg-casino', '/casinos/royalsea']) {
+  for (const path of ['/', '/casinos', '/bonuses', '/casinos/sg-casino']) {
     const styles = [];
     for (const port of [5175, 4173]) {
       const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
-      await page.goto(`http://127.0.0.1:${port}${path}`);
+      const target = port === 4173 && path === '/casinos/sg-casino' ? '/casinos/slota' : path;
+      await page.goto(`http://127.0.0.1:${port}${target}`);
       await page.locator('h1').waitFor();
       styles.push(await page.evaluate(() => {
         const elements = [document.querySelector('body header'), document.querySelector('body header > div'), document.querySelector('h1'), document.querySelector('.casino-card') || document.querySelector('section')];

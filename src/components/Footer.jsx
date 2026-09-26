@@ -15,7 +15,8 @@ function Footer() {
           color: "#666",
         }}
       >
-        © {new Date().getFullYear()} CasinoProsCons. All rights reserved.
+        © {new Date().getFullYear()} CasinoProsCons. Todos os direitos reservados.
+        <p>18+. O jogo envolve risco. <a href="https://www.srij.turismodeportugal.pt/pt/jogo-seguro" target="_blank" rel="noopener noreferrer">Informação sobre jogo responsável — SRIJ</a>.</p>
       </div>
     </footer>
   );

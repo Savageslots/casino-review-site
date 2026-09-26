@@ -20,16 +20,16 @@ Default builds are **noindex** and generate an empty sitemap with `Disallow: /`.
 
 ## Cloudflare Pages
 
-Existing project name and account must be verified before deployment. Build command: `npm run build`; output directory: `dist`; root directory: repository root. The root `functions/` directory must also be deployed. A static-assets-only upload omits the preview authentication middleware.
+Existing project: `casino-review-site`, GitHub `Savageslots/casino-review-site`, production branch `main`. DNS, custom domain and TLS are configured. Build command: `npm run build`; output directory: `dist`; root directory: repository root. The root `functions/` directory must also be deployed. A static-assets-only upload omits the preview authentication middleware.
 
-Production settings after content approval:
+Current settings for both production and preview (keep private until explicitly authorized):
 
 | Variable | Value | Purpose |
 | --- | --- | --- |
 | `NODE_VERSION` | `22.16.0` or supported newer version | Build runtime |
 | `VITE_SITE_URL` | `https://casinoproscons.com` | Canonical origin, also available to middleware |
-| `VITE_SITE_INDEXABLE` | `true` | Public robots metadata and sitemap; requires rebuild |
-| `SITE_PUBLIC` | `true` | Runtime public access, only on the exact canonical origin |
+| `VITE_SITE_INDEXABLE` | `false` | Noindex and empty sitemap |
+| `SITE_PUBLIC` | `false` | Password required on every route |
 
 For preview environments set `VITE_SITE_INDEXABLE=false` and `SITE_PUBLIC=false`. Configure `STAGING_USER` and `STAGING_PASSWORD` as Cloudflare secrets. Do not prefix secrets with `VITE_`; those values are bundled into browser JavaScript. Missing preview credentials return 503, incorrect credentials return 401. Preview responses are `noindex` and `private, no-store`. Never reuse the credentials previously committed to this public repository.
 
@@ -40,10 +40,12 @@ After deployment verify anonymous HTTP responses for all routes, a nonexistent r
 ## Data and links
 
 - `src/data/casinosData.js`: single shared record per casino. `casinoLink` is intentionally empty until affiliate agreements are signed; this does not block launching the site. Later enter the approved HTTPS affiliate URL for the intended market.
-- `src/data/rankings.js`: independent Home, Casinos and Bonuses ordering. Order is editorial, not a numeric rating sort.
+- `src/data/rankings.js`: shared six-brand order from the approved Znaki upper table. This is not a numeric rating sort.
 - `src/data/site.js`: shared route metadata and canonical origin.
-- When no affiliate URL exists, CTA says “Read Review” and links internally. Outbound affiliate links use `sponsored nofollow noopener noreferrer`.
-- SG, RoyalSea, Kingmaker and Boomerang use explicit text fallback artwork pending approved official logos.
+- When no affiliate URL exists, CTA says “Ler análise” and links internally. Outbound affiliate links use `sponsored nofollow noopener noreferrer`.
+- Slota, Leon, Ginja, Fairpari, DBbet and Spinzen use neutral text wordmarks pending approved official logos.
+
+Content is pt-PT. Research, source snapshots, score methodology and limitations: [Portugal research](docs/portugal-research.md). Editing `sources` updates the score in cards and reviews together.
 
 ## Verification
 

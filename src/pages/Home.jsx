@@ -102,7 +102,7 @@ function Home() {
             width="180"
             height="120"
             fetchpriority="high"
-            alt="CasinoProsCons icon"
+            alt="Ícone CasinoProsCons"
             style={heroIconStyle}
             className="hero-icon"
           />
@@ -114,7 +114,7 @@ function Home() {
               margin: 0,
             }}
           >
-            Best Online Casinos
+            Casinos online: Portugal
           </h1>
         </div>
 
@@ -127,8 +127,9 @@ function Home() {
             fontSize: "17px",
           }}
         >
-          We review and rank the best online casinos based on real gameplay,
-          bonuses, payouts, and usability. Honest pros & cons — no hype.
+          Compare Slota, Leon, Ginja, Fairpari, DBbet e Spinzen: jogos, bónus anunciados,
+          prós, contras e opiniões com fontes. A seleção segue a tabela de referência da Znaki;
+          a ordem não corresponde às notas. Estas marcas não foram encontradas no registo SRIJ consultado.
         </p>
 
         {rankedCasinos(homeRanking).map((casino, i) => (
@@ -137,24 +138,24 @@ function Home() {
 
         <div style={{ textAlign: "center", margin: "48px 0" }}>
           <Link to="/casinos" className="cta-link" style={buttonStyle}>
-            View full casino ranking
+            Ver todos os casinos
           </Link>
         </div>
 
         <div style={{ marginTop: "80px", marginBottom: "80px" }}>
           <h2 style={{ fontSize: "32px", marginBottom: "16px" }}>
-            Best Casino Bonuses – Ranked by Real Value
+            Bónus de casino: o que comparar
           </h2>
           <p style={{ color: "#555", maxWidth: "760px", lineHeight: "1.7" }}>
-            On our bonus ranking page, we compare welcome offers based on real value —
-            including bonus size, wagering requirements, hidden terms, max cashout limits,
-            and withdrawal restrictions. We focus on how realistic it is to actually
-            convert a bonus into withdrawable funds, not just headline numbers.
+            Compare os valores anunciados e as limitações conhecidas de cada promoção.
+            O montante máximo não revela, por si só, o valor de um bónus: também contam os
+            requisitos de aposta, o prazo, os jogos elegíveis e os limites de levantamento.
+            Indicamos quando faltam termos oficiais ou existem diferenças entre fontes.
           </p>
 
           <div style={{ marginTop: "24px" }}>
             <Link to="/bonuses" className="cta-link" style={buttonStyle}>
-              View bonus ranking
+              Comparar bónus
             </Link>
           </div>
         </div>
@@ -175,33 +176,35 @@ function Home() {
               color: "#111111",
             }}
           >
-            Our Independent Casino Review Methodology
+            Como fazemos as nossas análises
           </h2>
 
           <p style={{ color: "#444444", lineHeight: "1.75", marginBottom: "14px" }}>
-            At CasinoProsCons, we follow a transparent and independent review process to
-            evaluate online casinos fairly and consistently. Our goal is to help
-            players make informed decisions based on real data — not marketing hype.
+            Esta edição resulta de pesquisa documental, consultada em 26 de setembro de 2026.
+            A seleção de seis marcas segue o topo da tabela da Znaki. Não realizámos
+            depósitos, levantamentos ou testes de jogo; distinguimos a informação
+            anunciada das condições confirmadas.
           </p>
 
           <p style={{ color: "#444444", lineHeight: "1.75", marginBottom: "14px" }}>
-            Each casino is reviewed across key criteria including bonus terms,
-            withdrawal speed, game quality, usability, payment options, and overall
-            player experience. We also analyze terms and conditions carefully to spot
-            unfair wagering rules or hidden limitations.
+            Cada análise mantém os mesmos blocos: informações essenciais, prós e contras,
+            jogos e plataforma, bónus, limitações, opiniões e veredicto. As ofertas
+            atribuídas a terceiros podem variar por país, método de pagamento e conta.
           </p>
 
           <p style={{ color: "#444444", lineHeight: "1.75", marginBottom: "14px" }}>
-            In addition to hands-on testing, we research verified player feedback,
-            industry reputation, and regulatory background. This allows us to combine
-            expert analysis with real-world player sentiment.
+            Nas opiniões, mostramos fonte, escala original e número de comentários. Quando
+            combinamos plataformas, calculamos a média simples das notas normalizadas para
+            10, sem ponderar pelo número de opiniões. O TrustScore tem metodologia própria;
+            não somamos as amostras nem incluímos notas editoriais.
           </p>
 
           <p style={{ color: "#444444", lineHeight: "1.75" }}>
-            Our rankings are updated regularly to reflect changes in bonuses, software
-            providers, payouts, and user experience — ensuring our recommendations stay
-            accurate and trustworthy over time.
+            As seis marcas não foram encontradas no registo de entidades licenciadas do SRIJ
+            consultado nesta data. Esta seleção não comprova autorização para operar em Portugal.
+            Não existem ligações de adesão ativas: os botões abrem as nossas análises.
           </p>
+          <p style={{ lineHeight: 1.7 }}><a href="https://znaki.fm/pt/jogos-de-azar/casinos/" target="_blank" rel="noopener noreferrer">Seleção de referência</a> · <a href="https://www.srij.turismodeportugal.pt/pt/jogos-e-apostas-online/entidades-licenciadas" target="_blank" rel="noopener noreferrer">Registo oficial SRIJ</a></p>
         </div>
       </div>
       <style dangerouslySetInnerHTML={{ __html: `

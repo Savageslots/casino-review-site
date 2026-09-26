@@ -6,13 +6,8 @@ export default function Casinos() {
 
   return (
     <main style={page}>
-      <h1>Best Online Casinos</h1>
-      <p style={{ color: "#555", marginBottom: 32, maxWidth: 900 }}>
-        Discover the best online casinos ranked by bonuses, payouts, usability,
-        and overall player experience. We focus on real player experience, bonus
-        conditions, and platform structure. Expand any casino to see key facts or
-        open the full review.
-      </p>
+      <h1>Casinos online: análises para Portugal</h1>
+      <p style={{ color: "#555", marginBottom: 32, maxWidth: 900 }}>Slota, Leon, Ginja, Fairpari, DBbet e Spinzen, na ordem da seleção de referência. As posições não são uma classificação por qualidade ou autorização legal. Expanda cada cartão para ver os dados ou consulte a análise completa, incluindo o estatuto no SRIJ.</p>
 
       {casinos.map((casino, i) => (
         <CasinoCard key={casino.name} rank={i + 1} casino={casino} />

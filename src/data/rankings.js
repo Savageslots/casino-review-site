@@ -1,8 +1,9 @@
 import { casinos } from './casinosData';
 
-export const homeRanking = ['sg-casino', 'betmatch', 'wildz-new', 'royalsea', 'kingmaker'];
-export const casinoRanking = ['sg-casino', 'betmatch', 'wildz-new', 'kingmaker', 'boomerangbet', 'royalsea'];
-export const bonusRanking = ['sg-casino', 'royalsea', 'betmatch', 'wildz-new', 'kingmaker'];
+// Selection order follows the first six entries in the reference table, not the scores.
+export const casinoRanking = ['slota', 'leon', 'ginja', 'fairpari', 'dbbet', 'spinzen'];
+export const homeRanking = casinoRanking;
+export const bonusRanking = casinoRanking;
 
 export function rankedCasinos(ranking) {
   return ranking.map(slug => {

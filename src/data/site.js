@@ -4,12 +4,12 @@ export const siteName = 'CasinoProsCons';
 export const siteUrl = (import.meta.env.VITE_SITE_URL || 'https://casinoproscons.com').replace(/\/$/, '');
 export const indexable = import.meta.env.VITE_SITE_INDEXABLE === 'true';
 export const pages = {
-  '/': { title: 'Online Casino Reviews & Rankings', description: 'Compare online casino reviews, bonus terms, payment considerations and platform pros and cons with CasinoProsCons.' },
-  '/casinos': { title: 'Online Casino Rankings', description: 'Explore casino reviews and compare game selection, bonus requirements, payment considerations and platform usability.' },
-  '/bonuses': { title: 'Casino Bonuses & Wagering Compared', description: 'Compare casino welcome offers and understand wagering requirements, payment exclusions and withdrawal restrictions before choosing a bonus.' },
+  '/': { title: 'Casinos online em Portugal: análises e opiniões', description: 'Compare Slota, Leon, Ginja, Fairpari, DBbet e Spinzen: bónus anunciados, prós, contras, opiniões com fontes e estatuto no SRIJ.' },
+  '/casinos': { title: 'Casinos online: análises para Portugal', description: 'Consulte seis análises de casinos com jogos, condições promocionais, opiniões públicas, fontes e limitações para Portugal.' },
+  '/bonuses': { title: 'Bónus de casino: comparação e condições', description: 'Compare bónus anunciados, requisitos de aposta e limitações. Identificamos ofertas divergentes e termos ainda por confirmar para Portugal.' },
   ...Object.fromEntries(casinos.map(casino => [casino.reviewLink, {
-    title: `${casino.name} Review – Pros, Cons & Bonus Terms`,
-    description: `Read our ${casino.name} overview covering games, bonus conditions, payment considerations, strengths and limitations.`,
+    title: `${casino.name}: análise, opiniões e bónus`,
+    description: `${casino.name} em análise: jogos, bónus anunciados, prós, contras, avaliações públicas com fontes e estatuto no registo português SRIJ.`,
     casino,
   }])),
 };

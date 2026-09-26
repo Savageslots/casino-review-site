@@ -8,11 +8,9 @@ export default function Bonuses() {
     <>
 
       <main style={page}>
-      <h1>Best Casino Bonuses Ranked</h1>
+      <h1>Bónus de casino: comparação e condições</h1>
 
-      <p style={{ color: "#555", marginBottom: 32, maxWidth: 900 }}>
-        On this page we rank casino welcome bonuses based on real practical value — not just headline percentages. Our ranking focuses on bonus size, wagering requirements, maximum win limits, excluded payment methods, hidden clauses, and withdrawal conditions.
-      </p>
+      <p style={{ color: "#555", marginBottom: 32, maxWidth: 900 }}>Compare as ofertas anunciadas para os seis casinos. A ordem segue a seleção de referência, não o valor dos bónus. Os montantes atribuídos a terceiros não garantem disponibilidade em Portugal; as análises assinalam termos por confirmar, diferenças entre fontes e limitações de licenciamento.</p>
 
       {casinos.map((casino, i) => (
         <CasinoCard key={casino.name} rank={i + 1} casino={casino} />

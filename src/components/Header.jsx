@@ -36,12 +36,12 @@ function Header() {
         </NavLink>
 
         {/* NAV */}
-        <nav aria-label="Main navigation" style={{ display: "flex", gap: "24px" }}>
+        <nav aria-label="Navegação principal" style={{ display: "flex", gap: "24px" }}>
           <NavLink to="/casinos" style={navStyle}>
             Casinos
           </NavLink>
           <NavLink to="/bonuses" style={navStyle}>
-            Bonuses
+            Bónus
           </NavLink>
         </nav>
       </div>

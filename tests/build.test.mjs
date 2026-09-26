@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile, access } from 'node:fs/promises';
-const paths = ['/', '/casinos', '/bonuses', ...['sg-casino', 'betmatch', 'wildz-new', 'royalsea', 'kingmaker', 'boomerangbet'].map(slug => `/casinos/${slug}`)];
+const paths = ['/', '/casinos', '/bonuses', ...['slota', 'leon', 'ginja', 'fairpari', 'dbbet', 'spinzen'].map(slug => `/casinos/${slug}`)];
 const titles = new Set();
 for (const path of paths) test(`prerendered metadata, content and assets: ${path}`, async () => {
   const html = await readFile(path === '/' ? 'dist/index.html' : `dist${path}.html`, 'utf8');
@@ -20,7 +20,7 @@ for (const path of paths) test(`prerendered metadata, content and assets: ${path
 });
 test('unknown routes have a noindex 404 document', async () => {
   const html = await readFile('dist/404.html', 'utf8');
-  assert.ok(html.includes('Page not found'));
+  assert.ok(html.includes('Página não encontrada'));
   assert.ok(html.includes('content="noindex, nofollow"'));
   assert.ok(!html.includes('rel="canonical"'));
 });

@@ -1,3 +1,4 @@
+import { formatScore } from "../data/casinosData";
 import "../styles/CasinoCard.css";
 import { useId, useState } from "react";
 import { Link } from "react-router-dom";
@@ -11,8 +12,8 @@ function CasinoCard({ casino, rank }) {
       <div style={{ borderRadius: 20, overflow: "hidden" }}>
         {/* CARD */}
         <div style={cardStyle} className="casino-card">
-          <div className="mobile-rating">
-            ⭐ {casino.rating}
+          <div className="mobile-rating" title={casino.ratingLabel}>
+            {casino.rating == null ? "Sem média" : `★ ${formatScore(casino.rating)}/10`}
           </div>
           <div
             style={{
@@ -25,7 +26,7 @@ function CasinoCard({ casino, rank }) {
             tabIndex={0}
             aria-expanded={isOpen}
             aria-controls={panelId}
-            aria-label={`#${rank} Show details for ${casino.name}`}
+            aria-label={`#${rank} Ver detalhes de ${casino.name}`}
             onKeyDown={event => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); setIsOpen(value => !value); } }}
             onClick={() => setIsOpen(value => !value)}
             className="casino-rank"
@@ -42,7 +43,7 @@ function CasinoCard({ casino, rank }) {
             loading={rank > 2 ? "lazy" : "eager"}
             decoding="async"
             src={casino.logo}
-            alt={`${casino.name} logo`}
+            alt={casino.name}
             style={casinoLogoStyle}
             className="casino-logo"
           />
@@ -54,12 +55,13 @@ function CasinoCard({ casino, rank }) {
             </p>
             <div style={{ marginBottom: "8px" }} className="casino-review">
               <Link to={casino.reviewLink} style={{ color: "#ff4d4f", fontWeight: 600, textDecoration: "none" }}>
-                Read full review →
+                Ler análise completa →
               </Link>
             </div>
             <p style={{ fontSize: "15px", color: "#e6e9ff" }} className="casino-bonus">
-              🎁 Bonus: {casino.bonus}
+              🎁 {casino.bonus}
             </p>
+            <p className="casino-source-note" style={{ fontSize: 13, lineHeight: 1.5, color: '#fff' }}>{casino.ratingLabel} · Marca não encontrada no registo SRIJ.</p>
           </div>
 
           <div
@@ -70,7 +72,7 @@ function CasinoCard({ casino, rank }) {
             }}
             className="casino-actions"
           >
-            <div style={ratingStyle} className="desktop-rating">⭐ {casino.rating}</div>
+            <div style={ratingStyle} className="desktop-rating" title={casino.ratingLabel}>{casino.rating == null ? "Sem média" : `★ ${formatScore(casino.rating)}/10`}</div>
             <a
               href={casino.casinoLink || casino.reviewLink}
               target={casino.casinoLink ? "_blank" : undefined}
@@ -78,7 +80,7 @@ function CasinoCard({ casino, rank }) {
               className="cta-link"
               style={buttonStyle}
             >
-              {casino.casinoLink ? "View Casino" : "Read Review"}
+              {casino.casinoLink ? "Visitar casino" : "Ler análise"}
             </a>
           </div>
         </div>
@@ -99,7 +101,7 @@ function CasinoCard({ casino, rank }) {
               <p style={hookStyle}>
                 {casino.hook}{" "}
                 <Link to={casino.reviewLink} style={hookLink}>
-                  read full review
+                  ler análise completa
                 </Link>
               </p>
             )}
