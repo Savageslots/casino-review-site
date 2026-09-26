@@ -1,6 +1,5 @@
 
 
-import { Helmet } from "react-helmet-async";
 import ProsCons from "../../components/ProsCons";
 
 const sectionStyle = {
@@ -46,14 +45,7 @@ const prosConsData = {
 
 function RoyalSeaReview() {
   return (
-    <div className="review-page" style={{ maxWidth: "1100px", margin: "0 auto", padding: "48px 20px" }}>
-      <Helmet>
-        <title>RoyalSea Casino Review 2025 – Pros, Cons & Bonus Analysis</title>
-        <meta
-          name="description"
-          content="RoyalSea Casino review 2025. We analyze bonuses, wagering requirements, withdrawals, platform usability and real player feedback. Honest pros & cons."
-        />
-      </Helmet>
+    <div role="main" className="review-page" style={{ maxWidth: "1100px", margin: "0 auto", padding: "48px 20px" }}>
 
       {/* HEADER */}
       <section style={{ marginBottom: "48px" }}>
@@ -184,7 +176,7 @@ function RoyalSeaReview() {
       </section>
 
       {/* MOBILE ADAPTATION */}
-      <style>{`
+      <style dangerouslySetInnerHTML={{ __html: `
         @media (max-width: 768px) {
           .review-page {
             padding: 32px 16px !important;
@@ -200,7 +192,7 @@ function RoyalSeaReview() {
             gap: 12px !important;
           }
         }
-      `}</style>
+      ` }} />
     </div>
   );
 }

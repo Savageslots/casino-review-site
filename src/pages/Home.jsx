@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import CasinoCard from "../components/CasinoCard";
-import { casinos } from "../data/casinosData";
-import { Helmet } from "react-helmet-async";
+import { rankedCasinos, homeRanking } from "../data/rankings";
 
 const heroTitleWrap = {
   display: "flex",
@@ -95,18 +94,14 @@ const ratingStyle = {
 
 function Home() {
   return (
-    <div style={pageStyle}>
-      <Helmet>
-        <title>Best Online Casinos 2025 – Honest Reviews & Rankings | CasinoProsCons</title>
-        <meta
-          name="description"
-          content="Independent reviews of the best online casinos in 2025. Compare bonuses, payouts, usability, and real pros & cons to choose the right casino."
-        />
-      </Helmet>
+    <div role="main" style={pageStyle}>
       <div style={containerStyle}>
-        <div style={heroTitleWrap}>
+        <div style={heroTitleWrap} className="home-hero-heading">
           <img
-            src="/logo-icon.png"
+            src="/logo-icon.webp"
+            width="180"
+            height="120"
+            fetchpriority="high"
             alt="CasinoProsCons icon"
             style={heroIconStyle}
             className="hero-icon"
@@ -119,7 +114,7 @@ function Home() {
               margin: 0,
             }}
           >
-            Best Online Casinos 2025
+            Best Online Casinos
           </h1>
         </div>
 
@@ -136,12 +131,12 @@ function Home() {
           bonuses, payouts, and usability. Honest pros & cons — no hype.
         </p>
 
-        {casinos.slice(0, 5).map((casino, i) => (
+        {rankedCasinos(homeRanking).map((casino, i) => (
           <CasinoCard key={casino.name} rank={i + 1} casino={casino} />
         ))}
 
         <div style={{ textAlign: "center", margin: "48px 0" }}>
-          <Link to="/casinos" style={buttonStyle}>
+          <Link to="/casinos" className="cta-link" style={buttonStyle}>
             View full casino ranking
           </Link>
         </div>
@@ -158,7 +153,7 @@ function Home() {
           </p>
 
           <div style={{ marginTop: "24px" }}>
-            <Link to="/bonuses" style={buttonStyle}>
+            <Link to="/bonuses" className="cta-link" style={buttonStyle}>
               View bonus ranking
             </Link>
           </div>
@@ -184,7 +179,7 @@ function Home() {
           </h2>
 
           <p style={{ color: "#444444", lineHeight: "1.75", marginBottom: "14px" }}>
-            At SavageSlots, we follow a transparent and independent review process to
+            At CasinoProsCons, we follow a transparent and independent review process to
             evaluate online casinos fairly and consistently. Our goal is to help
             players make informed decisions based on real data — not marketing hype.
           </p>
@@ -209,7 +204,7 @@ function Home() {
           </p>
         </div>
       </div>
-      <style>{`
+      <style dangerouslySetInnerHTML={{ __html: `
         @media (max-width: 768px) {
           .hero-icon {
             height: 64px !important;
@@ -218,13 +213,8 @@ function Home() {
           h1 {
             font-size: 32px !important;
           }
-          .casino-logo {
-            width: 64px !important;
-            height: 64px !important;
-            margin-right: 6px !important;
-          }
         }
-      `}</style>
+      ` }} />
     </div>
   );
 }

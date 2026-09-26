@@ -5,7 +5,7 @@ import { HelmetProvider } from "react-helmet-async";
 import App from "./App";
 import "./index.css";
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+const app = (
   <React.StrictMode>
     <HelmetProvider>
       <BrowserRouter>
@@ -13,4 +13,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       </BrowserRouter>
     </HelmetProvider>
   </React.StrictMode>
-);
+ );
+const root = document.getElementById("root");
+if (root.hasChildNodes() && root.querySelector("header")) {
+  ReactDOM.hydrateRoot(root, app);
+} else {
+  ReactDOM.createRoot(root).render(app);
+}

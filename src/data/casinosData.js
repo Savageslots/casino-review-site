@@ -7,8 +7,9 @@ export const casinos = [
     rating: 8.6,
     description:
       "SG Casino is a modern Rabidi-group casino with a sportsbook add-on, a very large game library and a polished, mobile-friendly interface.",
+    casinoLink: "", // Add the affiliate URL after the agreement is signed.
     reviewLink: "/casinos/sg-casino",
-    logo: "/logos/sg.png",
+    logo: "/logos/sg-casino.svg",
     details: [
       { icon: "⬇️", label: "Min deposit", value: "€20" },
       { icon: "💳", label: "Withdrawal limit", value: "VIP-based (verify)" },
@@ -25,6 +26,7 @@ export const casinos = [
     rating: 9.4,
     description:
       "Betmatch Casino combines online casino games with sportsbook features, offering a flexible platform for players who want variety under one account.",
+    casinoLink: "", // Add the affiliate URL after the agreement is signed.
     reviewLink: "/casinos/betmatch",
     logo: "/logos/betmatch.png",
     details: [
@@ -43,8 +45,9 @@ export const casinos = [
     rating: 7.6,
     description:
       "Wildz (NEW) is a slot-first casino focused on simplicity, clean design, and smooth navigation. It is built for casual players who prefer clarity over aggressive promotions.",
+    casinoLink: "", // Add the affiliate URL after the agreement is signed.
     reviewLink: "/casinos/wildz-new",
-    logo: "/logos/wildz.png",
+    logo: "/logos/wildz.webp",
     details: [
       { icon: "⬇️", label: "Min deposit", value: "€10" },
       { icon: "💳", label: "Min withdrawal", value: "€20 (verify)" },
@@ -61,8 +64,9 @@ export const casinos = [
     rating: 8.9,
     description:
       "RoyalSea Casino is a modern multi-product platform combining slots, live casino and sportsbook features, focused on structured bonuses and clear promotional terms.",
+    casinoLink: "", // Add the affiliate URL after the agreement is signed.
     reviewLink: "/casinos/royalsea",
-    logo: "/logos/royalsea.png",
+    logo: "/logos/royalsea.svg",
     details: [
       { icon: "⬇️", label: "Min deposit", value: "€20" },
       { icon: "💳", label: "Min withdrawal", value: "€20 (verify)" },
@@ -79,8 +83,9 @@ export const casinos = [
     rating: 7.2,
     description:
       "Kingmaker Casino is a high-volume, multi-vertical platform with a strong VIP focus and aggressive promotional strategy, aimed at experienced players.",
+    casinoLink: "", // Add the affiliate URL after the agreement is signed.
     reviewLink: "/casinos/kingmaker",
-    logo: "/logos/kingmaker.png",
+    logo: "/logos/kingmaker.svg",
     details: [
       { icon: "⬇️", label: "Min deposit", value: "€20" },
       { icon: "💳", label: "Min withdrawal", value: "€50 (verify)" },
@@ -97,8 +102,9 @@ export const casinos = [
     rating: 7.4,
     description:
       "Boomerang-Bet is a hybrid sportsbook and casino platform offering thousands of games, regular reload bonuses, cashback, and an active sports betting section.",
+    casinoLink: "", // Add the affiliate URL after the agreement is signed.
     reviewLink: "/casinos/boomerangbet",
-    logo: "/logos/boomerangbet.png",
+    logo: "/logos/boomerangbet.svg",
     details: [
       { icon: "⬇️", label: "Min deposit", value: "€20" },
       { icon: "💳", label: "Min withdrawal", value: "Varies (verify)" },

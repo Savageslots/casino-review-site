@@ -4,3 +4,12 @@ node_modules/
 
 # macOS
 .DS_Store
+
+.env
+.env.*
+!.env.example
+.dev.vars*
+.prerender/
+playwright-report/
+test-results/
+artifacts/

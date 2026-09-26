@@ -64,7 +64,7 @@ export const prosCons = {
 function SGCasinoReview() {
   return (
     <div
-      className="sg-review-page"
+      role="main" className="sg-review-page review-page"
       style={{ maxWidth: "1100px", margin: "0 auto", padding: "48px 20px" }}
     >
       {/* HEADER */}
@@ -225,7 +225,7 @@ function SGCasinoReview() {
           👉 A good pick for slot players. Less ideal for fast-withdrawal hunters.
         </p>
       </section>
-      <style>{`
+      <style dangerouslySetInnerHTML={{ __html: `
   /* MOBILE ONLY */
   @media (max-width: 768px) {
     .sg-review-page {
@@ -282,7 +282,7 @@ function SGCasinoReview() {
       box-shadow: inset 0 0 0 1px rgba(0,0,0,0.06);
     }
   }
-`}</style>
+` }} />
     </div>
   );
 }

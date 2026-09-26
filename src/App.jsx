@@ -1,3 +1,4 @@
+import NotFound from "./pages/NotFound";
 import { Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 
@@ -30,6 +31,7 @@ function App() {
         <Route path="casinos/kingmaker" element={<KingmakerReview />} />
         <Route path="casinos/boomerangbet" element={<BoomerangBetReview />} />
         <Route path="casinos/royalsea" element={<RoyalSeaReview />} />
+        <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
   );

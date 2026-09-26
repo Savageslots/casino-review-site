@@ -43,7 +43,7 @@ export const prosCons = {
 
 function BetmatchReview() {
   return (
-    <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "48px 20px" }}>
+    <div role="main" className="review-page" style={{ maxWidth: "1100px", margin: "0 auto", padding: "48px 20px" }}>
       {/* HEADER */}
       <section style={{ marginBottom: "48px" }}>
         <h1 style={titleStyle}>Betmatch Casino Review</h1>

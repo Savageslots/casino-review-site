@@ -83,3 +83,44 @@ body {
     max-width: 100%;
   }
 }
+
+@media (max-width: 768px) {
+  .site-header-inner {
+    padding: 12px 16px !important;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .home-hero-heading {
+    flex-wrap: wrap;
+    gap: 16px !important;
+  }
+  .home-hero-heading h1 { min-width: 0; }
+  [class$="-review-page"] section {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .review-page [style*="grid-template-columns"] {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+  .review-page section {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+  .review-page h1 { font-size: 30px !important; }
+  .review-page [style*="grid-template-columns"] > * { min-width: 0; }
+}
+
+@media (max-width: 768px) {
+  .cta-link { background: #cd302d !important; }
+  .site-header-inner nav a.active { color: #cd302d !important; }
+}
+
+@media (max-width: 768px) {
+  .casino-review a {
+    color: #fff !important;
+    text-decoration: underline !important;
+  }
+}

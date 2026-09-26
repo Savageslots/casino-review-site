@@ -11,7 +11,7 @@ function Header() {
         borderBottom: "1px solid #e5e7eb",
       }}
     >
-      <div
+      <div className="site-header-inner"
         style={{
           maxWidth: "1200px",
           margin: "0 auto",
@@ -36,7 +36,7 @@ function Header() {
         </NavLink>
 
         {/* NAV */}
-        <nav style={{ display: "flex", gap: "24px" }}>
+        <nav aria-label="Main navigation" style={{ display: "flex", gap: "24px" }}>
           <NavLink to="/casinos" style={navStyle}>
             Casinos
           </NavLink>

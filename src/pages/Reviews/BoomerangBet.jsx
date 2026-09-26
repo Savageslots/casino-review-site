@@ -49,7 +49,7 @@ const h2Style = {
 
 function BoomerangBetReview() {
   return (
-    <div style={{ maxWidth: "1100px", margin: "0 auto", padding: "48px 20px" }}>
+    <div role="main" className="review-page" style={{ maxWidth: "1100px", margin: "0 auto", padding: "48px 20px" }}>
       {/* HEADER */}
       <section style={{ marginBottom: "48px" }}>
         <h1 style={titleStyle}>Boomerang-Bet Casino Review</h1>

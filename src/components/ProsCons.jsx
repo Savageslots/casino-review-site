@@ -48,14 +48,14 @@ export default function ProsCons({ pros = [], cons = [] }) {
           ))}
         </div>
       </div>
-      <style>{`
+      <style dangerouslySetInnerHTML={{ __html: `
         @media (max-width: 768px) {
           .pros-cons-root {
             grid-template-columns: 1fr !important;
             gap: 24px !important;
           }
         }
-      `}</style>
+      ` }} />
     </div>
   );
 }

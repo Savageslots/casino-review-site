@@ -15,7 +15,7 @@ function Footer() {
           color: "#666",
         }}
       >
-        © {new Date().getFullYear()} SavageSlots. All rights reserved.
+        © {new Date().getFullYear()} CasinoProsCons. All rights reserved.
       </div>
     </footer>
   );

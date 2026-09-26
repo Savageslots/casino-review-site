@@ -15,7 +15,7 @@ export const prosCons = {
 
 export default function WildzNewReview() {
   return (
-    <main style={page}>
+    <main className="review-page" style={page}>
       {/* Hero */}
       <header style={{ marginBottom: 28 }}>
         <h1 style={h1}>Wildz Casino Review (NEW) - honest look at the pros and cons</h1>
