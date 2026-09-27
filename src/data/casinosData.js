@@ -1,3 +1,4 @@
+import { ginjaReview } from './ginjaReview.js';
 // Research snapshot; refresh manually from the linked pages, never invent missing scores.
 export const checkedOn = '26/09/2026';
 export const rankingSource = 'https://znaki.fm/pt/jogos-de-azar/casinos/';
@@ -43,22 +44,7 @@ const records = [
     complaints: ['Utilizadores relatam demora em levantamentos e na liquidação de apostas (Trustpilot).', 'Existem queixas sobre a interpretação das regras de apostas (Trustpilot).'],
     verdict: 'A Leon tem mais histórico público de opiniões do que várias marcas desta seleção, mas isso não equivale a uma garantia de qualidade. A nota principal é o TrustScore normalizado; a segunda fonte permanece visível para que o leitor compreenda por que foi excluída.'
   },
-  {
-    slug: 'ginja', name: 'Ginja', bonus: 'Oferta anunciada: até 1 200 € + 555 rodadas grátis', minDeposit: '10 € anunciados', type: 'Casino, crash e desporto',
-    description: 'Marca com comunicação dirigida ao público português. Analisamos os bónus anunciados e as primeiras opiniões públicas.',
-    source: znaki('jogos-de-azar/ginja'),
-    sources: [tp('ginja-casino.com', 2.4, 16, { url: 'https://pt.trustpilot.com/review/ginja-casino.com' })],
-    intro: 'A identidade e a comunicação da Ginja fazem referência a Portugal. Isso não demonstra autorização nacional: a marca não foi encontrada na lista SRIJ consultada. O perfil de opiniões analisado identifica o domínio ginja-casino.com.',
-    games: 'A Znaki descreve slots, jogos ao vivo, jogos de crash e apostas desportivas. O perfil da empresa na Trustpilot também apresenta casino e desporto, além de anunciar métodos locais. Não realizámos depósitos para validar esses meios de pagamento.',
-    bonusNotes: 'O quadro geral da Znaki e a página dedicada à Ginja mostram pacotes diferentes. Esta última apresenta 125% até 500 € e 125 rodadas grátis para casino. A oferta de crash tem condições próprias. Mantemos a divergência explícita até existir confirmação oficial para Portugal.',
-    strengths: 'A comunicação em português e a combinação de categorias são os pontos mais visíveis da proposta descrita. Nos comentários consultados há um elogio à rapidez do apoio, mas a amostra é demasiado pequena para generalizar esse resultado.',
-    limitations: 'Há relatos que questionam levantamentos, taxas e condições de promoções. A diferença entre domínios divulgados pelas fontes também exige confirmar a entidade contratante antes de interpretar qualquer promoção como oficial.',
-    pros: ['Comunicação dirigida ao público português', 'Oferta descrita com slots, casino ao vivo e crash', 'Perfil de opiniões com respostas da empresa'],
-    cons: ['Marca não encontrada no registo SRIJ consultado', 'Pacotes e domínios diferentes nas fontes consultadas', 'Amostra pequena e reclamações sobre levantamentos'],
-    praised: ['Um comentário elogia a rapidez e clareza do apoio (Trustpilot).'],
-    complaints: ['Relatos de dificuldades para levantar fundos (Trustpilot).', 'Queixas sobre taxas e diferenças entre promoções esperadas e recebidas (Trustpilot).'],
-    verdict: 'A apresentação local não resolve as dúvidas sobre condições e autorização em Portugal. As primeiras opiniões devem ser tratadas como sinais a acompanhar, sem transformar uma amostra de 16 comentários numa conclusão sobre todos os clientes.'
-  },
+  ginjaReview,
   {
     slug: 'fairpari', name: 'Fairpari', bonus: 'Bónus de casino: condições por confirmar', minDeposit: '1 € anunciado; bónus pode exigir mais', type: 'Casino e apostas desportivas',
     description: 'Plataforma com casino, jogos ao vivo e desporto. A informação promocional varia por produto e a amostra de opiniões é reduzida.',
@@ -112,6 +98,6 @@ export const casinos = records.map(record => ({
   ...record, casinoLink: '', reviewLink: `/casinos/${record.slug}`, logo: `/logos/${record.slug}.svg`,
   rating: platformMean(record.sources),
   ratingLabel: record.sources.filter(source => source.included).length > 1 ? 'Média de plataformas' : record.sources.find(source => source.included)?.name || 'Sem média',
-  details: [{ label: 'Depósito mínimo', value: record.minDeposit }, { label: 'Requisitos de aposta', value: 'Condições por confirmar' }, { label: 'Formato', value: record.type }, { label: 'Registo SRIJ', value: 'Marca não encontrada' }],
-  hook: 'Os dados promocionais são atribuídos às fontes consultadas; não confirmam disponibilidade em Portugal. Consulte as limitações e as opiniões na análise.'
+  details: record.details || [{ label: 'Depósito mínimo', value: record.minDeposit }, { label: 'Requisitos de aposta', value: 'Condições por confirmar' }, { label: 'Formato', value: record.type }, { label: 'Registo SRIJ', value: 'Marca não encontrada' }],
+  hook: record.hook || 'Os dados promocionais são atribuídos às fontes consultadas; não confirmam disponibilidade em Portugal. Consulte as limitações e as opiniões na análise.'
 }));

@@ -1,3 +1,4 @@
+import { ginjaReviewEn } from '../data/ginjaReview.js';
 // Full English copy. Numeric ratings, sources and evidence remain shared with Portuguese.
 export const casinoCopy = {
   slota: {
@@ -26,19 +27,7 @@ export const casinoCopy = {
     complaints: ['Users report delays in withdrawals and bet settlement (Trustpilot).', 'There are complaints about the interpretation of betting rules (Trustpilot).'],
     verdict: 'Leon has a longer public review history than several brands in this selection, but that is not a quality guarantee. The main score is the normalized TrustScore; the second source remains visible so readers can understand why it was excluded.'
   },
-  ginja: {
-    description: 'A brand with communications aimed at Portuguese readers. We examine its advertised bonuses and early public reviews.',
-    intro: 'Ginja’s identity and communications refer to Portugal. This does not demonstrate national authorization: the brand was not found in the SRIJ list consulted. The review profile examined identifies the domain ginja-casino.com.',
-    games: 'Znaki describes slots, live games, crash games and sports betting. The company profile on Trustpilot also presents casino and sports betting and advertises local payment methods. We have not made deposits to validate those methods.',
-    bonusNotes: 'Znaki’s main table and dedicated Ginja page display different packages. The latter presents 125% up to €500 and 125 free spins for casino play. The crash offer has its own terms. We keep this discrepancy explicit until official confirmation for Portugal is available.',
-    strengths: 'Portuguese-language communication and a combination of game categories are the most visible features of the described offering. One comment consulted praises fast support, but the sample is too small to generalize that experience.',
-    limitations: 'Some accounts question withdrawals, fees and promotional terms. The different domains advertised by the sources also make it necessary to confirm the contracting entity before treating a promotion as official.',
-    pros: ['Communications aimed at Portuguese readers', 'Described offering includes slots, live casino and crash games', 'Review profile with company replies'],
-    cons: ['Brand not found in the SRIJ register consulted', 'Different packages and domains in the sources consulted', 'Small sample and withdrawal complaints'],
-    praised: ['One comment praises the speed and clarity of support (Trustpilot).'],
-    complaints: ['Reports of difficulties withdrawing funds (Trustpilot).', 'Complaints about fees and differences between expected and received promotions (Trustpilot).'],
-    verdict: 'A local presentation does not resolve questions about terms and authorization in Portugal. Early opinions should be treated as signals to monitor, without turning a sample of 16 comments into a conclusion about every customer.'
-  },
+  ginja: ginjaReviewEn,
   fairpari: {
     description: 'A platform with casino, live games and sports betting. Promotional information varies by product, and the review sample is small.',
     intro: 'Fairpari combines several gaming categories. The most important distinction in this review is between the sports bonus presented on the operator’s website and the casino packages published by third parties: they are different offers.',

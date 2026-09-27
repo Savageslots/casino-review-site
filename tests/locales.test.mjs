@@ -25,7 +25,7 @@ test('English reviews translate every content block and preserve shared evidence
     for (const label of ['Key facts','Pros','Cons','Games and platform','Bonuses and terms','Street Voice','Our verdict']) assert.ok(html.includes(label));
     for (const [pt,enText] of Object.entries(ui)) if (pt !== enText && pt.length > 30) assert.ok(!html.includes(pt), `${c.slug}: Portuguese UI leaked`);
     assert.ok(!html.includes(c.intro));
-    assert.ok(html.includes(en.intro.replaceAll('&', '&amp;').replaceAll("'", '&#x27;')) || html.includes(en.intro));
+    for (const intro of en.intro.split('\n\n')) assert.ok(html.includes(intro.replaceAll('&', '&amp;').replaceAll("'", '&#x27;')) || html.includes(intro));
   }
 });
 test('English 404 is translated, noncanonical and excluded from alternates', async () => {

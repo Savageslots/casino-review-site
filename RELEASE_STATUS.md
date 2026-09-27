@@ -1,3 +1,15 @@
+# Ginja editorial revision — 27 September 2026 (local, not deployed)
+
+- Replaced only Ginja PT/EN review content with original editorial analysis; retained all review blocks and empty affiliate links. Removed competitor references from this review.
+- Expanded the supplied draft and preserved its original in `Огляди-Португалія/Ginja_Casino_Review_Draft.original.md`; comparison and evidence limitations are in `Огляди-Португалія/Ginja_Editorial_Comparison.md`.
+- Unsupported draft scores removed. Trustpilot cached snapshot is explicitly dated and labelled: 2.5/5 from 15 reviews, normalized to 5.0/10; this is not an editorial score.
+- At the owner’s explicit request, retained draft terms: 125% up to €500 + 125 free spins, €10 minimum deposit, 30x bonus. A visible footnote identifies them as draft terms, not operator-confirmed current facts.
+- Preview build and all 33 tests passed; 72 route/viewport checks passed with no reported failures. Other casino records and English content match the previous release.
+- Owner enabled VPN, but Portuguese egress and operator terms have not yet been verified: browser permission review timed out twice, and a normal HTTP request could not resolve DNS. Owner subsequently requested keeping draft bonus terms instead of continuing this check. Do not mark operator verification complete.
+- This revision has not been deployed. Last live release remains localization commit `9c46d63`; password protection and noindex remain required.
+
+---
+
 # PT / EN localization — 27 September 2026
 
 - Header PT/EN switch links to the equivalent page; navigation and reloads retain the language through URLs.
@@ -5,7 +17,7 @@
 - Complete English UI and review text, including source notes, facts, accessibility labels, dates, scores, footer and 404. Evidence, scores and empty affiliate fields remain shared.
 - 18 prerendered pages; self-canonicals and reciprocal pt-PT/en/x-default alternates; localized HTML language, JSON-LD, metadata and social images. When publicly enabled later, sitemap includes both languages.
 - 31 tests passed in both noindex and indexable local builds. Local build restored to noindex. 72 route/viewport checks plus per-page language-switch, reload and internal-link checks passed.
-- Cloudflare production and preview settings reconfirmed private/noindex with existing credentials. Localization deployment pending live verification.
+- Cloudflare production and preview settings reconfirmed private/noindex with existing credentials. Localization deployment `84ad4fd2-7b27-470c-bf3d-9e466a5a8f78` (commit `9c46d63`) succeeded on 27 September 2026 at 08:03 UTC. Live checks passed for all 18 authenticated routes, language/alternate tags, canonicals, Portuguese and English 404s, assets and noindex. Anonymous Portuguese and English requests returned 401.
 
 ---
 

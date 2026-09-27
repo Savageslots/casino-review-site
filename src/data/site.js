@@ -1,3 +1,4 @@
+import { localizeCasino } from '../i18n/translate.js';
 import { casinos } from './casinosData.js';
 import { locales, localePath, languageTags } from '../i18n/routing.js';
 export const siteName = 'CasinoProsCons';
@@ -17,8 +18,8 @@ const main = {
 };
 export const pages = Object.fromEntries(locales.flatMap(locale => {
   const entries = { ...main[locale], ...Object.fromEntries(casinos.map(casino => [casino.reviewLink, {
-    title: locale === 'en' ? `${casino.name}: review, player feedback and bonuses` : `${casino.name}: análise, opiniões e bónus`,
-    description: locale === 'en' ? `${casino.name} reviewed: games, advertised bonuses, pros, cons, sourced public ratings and status in Portugal’s SRIJ register.` : `${casino.name} em análise: jogos, bónus anunciados, prós, contras, avaliações públicas com fontes e estatuto no registo português SRIJ.`,
+    title: localizeCasino(casino, locale).seoTitle || (locale === 'en' ? `${casino.name}: review, player feedback and bonuses` : `${casino.name}: análise, opiniões e bónus`),
+    description: localizeCasino(casino, locale).seoDescription || (locale === 'en' ? `${casino.name} reviewed: games, advertised bonuses, pros, cons, sourced public ratings and status in Portugal’s SRIJ register.` : `${casino.name} em análise: jogos, bónus anunciados, prós, contras, avaliações públicas com fontes e estatuto no registo português SRIJ.`),
     casino
   }])) };
   return Object.entries(entries).map(([base, page]) => [localePath(base, locale), { ...page, base, locale, language: languageTags[locale] }]);
