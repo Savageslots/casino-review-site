@@ -12,7 +12,7 @@ export default function Bonuses() {
       <main style={page}>
       <h1>{t("Bónus de casino: comparação e condições")}</h1>
 
-      <p style={{ color: "#555", marginBottom: 32, maxWidth: 900 }}>{t("Compare as ofertas anunciadas para os seis casinos. A ordem segue a seleção de referência, não o valor dos bónus. Os montantes atribuídos a terceiros não garantem disponibilidade em Portugal; as análises assinalam termos por confirmar, diferenças entre fontes e limitações de licenciamento.")}</p>
+      <p style={{ color: "#555", marginBottom: 32, maxWidth: 900 }}>{t("Leon, FairPari, Ginja, DBbet, Spinzen e Slota: esta é a ordem editorial da comparação de bónus, independente das notas dos jogadores e dos montantes máximos. Compare requisitos de aposta, depósitos e limitações. Os valores dos rascunhos ainda precisam de confirmação no operador.")}</p>
 
       {casinos.map((casino, i) => (
         <CasinoCard key={casino.name} rank={i + 1} casino={casino} />

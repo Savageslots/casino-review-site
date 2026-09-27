@@ -9,7 +9,7 @@ export default function Casinos() {
   return (
     <main style={page}>
       <h1>{t("Casinos online: análises para Portugal")}</h1>
-      <p style={{ color: "#555", marginBottom: 32, maxWidth: 900 }}>{t("Slota, Leon, Ginja, Fairpari, DBbet e Spinzen, na ordem da seleção de referência. As posições não são uma classificação por qualidade ou autorização legal. Expanda cada cartão para ver os dados ou consulte a análise completa, incluindo o estatuto no SRIJ.")}</p>
+      <p style={{ color: "#555", marginBottom: 32, maxWidth: 900 }}>{t("Ginja ocupa o primeiro lugar por escolha editorial. Os restantes casinos estão ordenados pela nota publicada, por ordem decrescente; a DBbet, sem média confirmada, fica no fim. A posição não comprova autorização em Portugal. Expanda os cartões para consultar as condições e as fontes.")}</p>
 
       {casinos.map((casino, i) => (
         <CasinoCard key={casino.name} rank={i + 1} casino={casino} />

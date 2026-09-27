@@ -27,7 +27,7 @@ for (const width of [1440, 768, 390, 320]) {
     if (info.language !== languageTags[localeFromPath(route)]) throw new Error(`Wrong language on ${route}`);
     if (info.canonical !== `https://casinoproscons.com${route}`) throw new Error(`Wrong canonical for ${route}`);
     if (route === '/casinos' || route === '/en/casinos') {
-      const toggle = page.getByRole('button', { name: localeFromPath(route) === 'en' ? '#1 Show details for Slota' : '#1 Ver detalhes de Slota' });
+      const toggle = page.getByRole('button', { name: localeFromPath(route) === 'en' ? '#1 Show details for Ginja' : '#1 Ver detalhes de Ginja' });
       await toggle.focus(); await page.keyboard.press('Enter');
       if (await toggle.getAttribute('aria-expanded') !== 'true') throw new Error('Keyboard accordion failed');
       const panel = page.locator(`[id="${await toggle.getAttribute('aria-controls')}"]`);

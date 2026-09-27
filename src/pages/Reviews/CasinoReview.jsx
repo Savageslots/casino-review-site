@@ -23,7 +23,7 @@ export default function CasinoReview({ casino }) {
     <section style={section}>
       <h2 style={heading}>{t("Informações essenciais")}</h2>
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, minmax(0, 1fr))', gap: 16 }}>{c.details.map(f => <div key={f.label}><strong>{f.label}</strong><div style={{ marginTop: 8, lineHeight: 1.5 }}>{f.value}</div></div>)}</div>
-      <p style={{ ...paragraph, fontSize: 14 }}>{t("Licenciamento: não encontrámos a marca no")}{" "}<Source href={regulatorSource}>{t("registo de entidades licenciadas do SRIJ")}</Source>{" "}{t("consultado nesta data. Esta seleção não é uma lista de operadores autorizados em Portugal.")}</p>
+      <p style={{ ...paragraph, fontSize: 14 }}>{t("Licenciamento: não encontrámos a marca no")}{" "}<Source href={regulatorSource}>{t("registo de entidades licenciadas do SRIJ")}</Source>{" "}{t("consultado em 26/09/2026. Esta seleção não é uma lista de operadores autorizados em Portugal.")}</p>
     </section>
     <ProsCons pros={c.pros} cons={c.cons} />
     <TextSection title={`${t("Pontos fortes do")} ${c.name}`} text={c.strengths} />

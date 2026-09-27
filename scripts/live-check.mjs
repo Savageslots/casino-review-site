@@ -1,3 +1,6 @@
+import { casinos } from '../src/data/casinosData.js';
+import { localizeCasino } from '../src/i18n/translate.js';
+import { homeRanking, casinoRanking, bonusRanking } from '../src/data/rankings.js';
 import { locales, localePath, localeFromPath, languageTags } from '../src/i18n/routing.js';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
@@ -48,6 +51,25 @@ for (const route of routes) {
   assert.ok(html.includes(`lang="${languageTags[localeFromPath(route)]}"`), `Language: ${route}`);
   assert.ok(html.includes('hrefLang="en"'), `Alternates: ${route}`);
   assert.ok(html.includes('<h1'), `Content: ${route}`);
+  assert.ok(!/znaki/i.test(html), `Retired competitor reference: ${route}`);
+  const base = route.replace(/^\/en(?=\/|$)/, '') || '/';
+  const expectedOrder = { '/': homeRanking, '/casinos': casinoRanking, '/bonuses': bonusRanking }[base];
+  if (expectedOrder) {
+    const graph = JSON.parse(html.match(/<script[^>]*type="application\/ld\+json"[^>]*>(.*?)<\/script>/s)[1]);
+    const list = graph['@graph'].find(item => item['@type'] === 'ItemList');
+    assert.deepEqual(list.itemListElement.map(item => item.url.split('/').pop()), expectedOrder, `Live ranking: ${route}`);
+    const headings = [...html.matchAll(/<h2[^>]*>(Slota|Leon|Ginja|FairPari|DBbet|Spinzen)<\/h2>/g)].map(match => match[1]);
+    assert.deepEqual(headings, expectedOrder.map(slug => casinos.find(c => c.slug === slug).name), `Live cards: ${route}`);
+  } else {
+    const record = casinos.find(c => c.reviewLink === base);
+    if (record) {
+      const copy = localizeCasino(record, localeFromPath(route));
+      const escape = value => value.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#x27;');
+      assert.ok(html.includes(escape(copy.intro.split('\n\n')[0])), `Live revised intro: ${route}`);
+      assert.ok(html.includes(escape(copy.bonus)), `Live draft bonus: ${route}`);
+    }
+  }
+
   if (preview) assert.equal(response.headers.get('X-Robots-Tag'), 'noindex, nofollow');
 }
 const missing = await fetch(origin + '/this-page-does-not-exist', { headers });

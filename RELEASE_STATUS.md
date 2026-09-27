@@ -1,4 +1,14 @@
-# Ginja editorial revision — 27 September 2026 (local, not deployed)
+# Five review drafts and separate rankings — 27 September 2026
+
+- Replaced Slota, Leon, FairPari, DBbet and Spinzen copy in PT/EN using the five supplied drafts, edited for distinct analysis, readable paragraphs and supported claims. Retained draft bonus figures with visible unverified-terms notes; retained dated player-review evidence and excluded unsupported draft scores.
+- Preserved the approved Ginja data and text. General/Home order: Ginja, Slota, FairPari, Leon, Spinzen, DBbet. Ginja is labelled an editorial placement; the rest use descending published score, with unrated DBbet last. Bonus order: Leon, FairPari, Ginja, DBbet, Spinzen, Slota.
+- Updated PT/EN metadata and ItemList ordering; removed all Znaki references from rendered site content. Original supplied documents preserved; edited English exports and editorial decisions are in `Огляди-Португалія/Edited/`.
+- Production build and 36 tests passed. 72 browser route/viewport checks passed, including language switches, reloads, metadata and keyboard accordion behavior. Mobile homepage screenshot inspected. Live checker now asserts current intros, bonus figures, visible card order and JSON-LD order.
+- Password protection, noindex and empty affiliate fields remain required. Current release deployment pending.
+
+---
+
+# Ginja editorial revision — 27 September 2026
 
 - Replaced only Ginja PT/EN review content with original editorial analysis; retained all review blocks and empty affiliate links. Removed competitor references from this review.
 - Expanded the supplied draft and preserved its original in `Огляди-Португалія/Ginja_Casino_Review_Draft.original.md`; comparison and evidence limitations are in `Огляди-Португалія/Ginja_Editorial_Comparison.md`.
@@ -6,7 +16,7 @@
 - At the owner’s explicit request, retained draft terms: 125% up to €500 + 125 free spins, €10 minimum deposit, 30x bonus. A visible footnote identifies them as draft terms, not operator-confirmed current facts.
 - Preview build and all 33 tests passed; 72 route/viewport checks passed with no reported failures. Other casino records and English content match the previous release.
 - Owner enabled VPN, but Portuguese egress and operator terms have not yet been verified: browser permission review timed out twice, and a normal HTTP request could not resolve DNS. Owner subsequently requested keeping draft bonus terms instead of continuing this check. Do not mark operator verification complete.
-- This revision has not been deployed. Last live release remains localization commit `9c46d63`; password protection and noindex remain required.
+- Deployed commit `c462631afcd1d28d395a10f67dbbcd443b7d336e`; Cloudflare deployment `10447ac7-f570-4d54-8c50-c578ea24b533` succeeded at 15:55 UTC. Production and preview both retain SITE_PUBLIC=false, VITE_SITE_INDEXABLE=false and configured credentials.
 
 ---
 

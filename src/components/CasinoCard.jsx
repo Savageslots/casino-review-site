@@ -62,6 +62,7 @@ function CasinoCard({ casino: record, rank }) {
             </div>
             <p style={{ fontSize: "15px", color: "#e6e9ff" }} className="casino-bonus">
               🎁 {casino.bonus}
+              <small style={{ display: "block", marginTop: 4 }}>{t("*Condições do rascunho; confirmar no operador.")}</small>
             </p>
             <p className="casino-source-note" style={{ fontSize: 13, lineHeight: 1.5, color: '#fff' }}>{casino.ratingLabel}{" "}{t("· Marca não encontrada no registo SRIJ.")}</p>
           </div>

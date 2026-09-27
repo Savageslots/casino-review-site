@@ -25,14 +25,10 @@ test('Ginja content uses its own analysis without competitor references and labe
     assert.ok(html.includes('1 500') || html.includes('1,500'));
   }
 });
-test('all other casino records and English editorial copy remain unchanged', async () => {
-  const previousData = execFileSync('git', ['show', '9c46d63:src/data/casinosData.js'], {encoding:'utf8'});
-  const previousEn = execFileSync('git', ['show', '9c46d63:src/i18n/en.js'], {encoding:'utf8'});
-  const {casinos: before} = await import(`data:text/javascript;base64,${Buffer.from(previousData).toString('base64')}`);
-  const {casinoCopy} = await import(`data:text/javascript;base64,${Buffer.from(previousEn).toString('base64')}`);
-  for(const c of casinos.filter(c=>c.slug !== 'ginja')) {
-    assert.deepEqual(c, before.find(b=>b.slug===c.slug));
-    const translated=localizeCasino(c,'en');
-    for(const [key,value] of Object.entries(casinoCopy[c.slug])) assert.deepEqual(translated[key],value);
-  }
+test('previously approved Ginja editorial content remains unchanged', async () => {
+  const prior = execFileSync('git', ['show', 'c462631:src/data/ginjaReview.js'], { encoding: 'utf8' });
+  const before = await import(`data:text/javascript;base64,${Buffer.from(prior).toString('base64')}`);
+  const now = await import('../src/data/ginjaReview.js');
+  assert.deepEqual(now.ginjaReview, before.ginjaReview);
+  assert.deepEqual(now.ginjaReviewEn, before.ginjaReviewEn);
 });
