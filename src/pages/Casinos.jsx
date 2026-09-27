@@ -1,3 +1,4 @@
+import ComparisonGuide from '../components/ComparisonGuide';
 import { useLocale } from '../i18n/useLocale';
 import { rankedCasinos, casinoRanking } from "../data/rankings";
 import CasinoCard from "../components/CasinoCard";
@@ -8,12 +9,13 @@ export default function Casinos() {
 
   return (
     <main style={page}>
-      <h1>{t("Casinos online: análises para Portugal")}</h1>
-      <p style={{ color: "#555", marginBottom: 32, maxWidth: 900 }}>{t("Ginja ocupa o primeiro lugar por escolha editorial. Os restantes casinos seguem pela avaliação global CasinoProsCons, por ordem decrescente. A posição não comprova autorização em Portugal. Expanda os cartões para consultar condições e fontes.")}</p>
+      <h1>{t("Comparar casinos online: jogos, pagamentos e opiniões")}</h1>
+      <p style={{ color: "#555", marginBottom: 32, maxWidth: 900 }}>{t("Compare casinos online pelos jogos, métodos de pagamento, limites e opiniões dos jogadores. Expanda cada cartão para consultar os dados principais ou abra a análise para ler os detalhes. Ginja mantém o primeiro lugar editorial e os restantes seguem pela avaliação global. A posição não comprova autorização para operar em Portugal.")}</p>
 
       {casinos.map((casino, i) => (
         <CasinoCard key={casino.name} rank={i + 1} casino={casino} />
       ))}
+      <ComparisonGuide page="casinos" />
     </main>
   );
 }

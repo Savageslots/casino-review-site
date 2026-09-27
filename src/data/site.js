@@ -6,14 +6,14 @@ export const siteUrl = (import.meta.env.VITE_SITE_URL || 'https://casinoproscons
 export const indexable = import.meta.env.VITE_SITE_INDEXABLE === 'true';
 const main = {
   pt: {
-    '/': { title: 'Casinos online em Portugal: análises e opiniões', description: 'Compare Slota, Leon, Ginja, FairPari, DBbet e Spinzen: bónus anunciados, prós, contras, opiniões com fontes e estatuto no SRIJ.' },
-    '/casinos': { title: 'Casinos online: análises para Portugal', description: 'Consulte seis análises de casinos com jogos, condições promocionais, opiniões públicas, fontes e limitações para Portugal.' },
-    '/bonuses': { title: 'Bónus de casino: comparação e condições', description: 'Compare bónus anunciados, requisitos de aposta e limitações. Consulte depósitos mínimos, jogos elegíveis e limites de cada oferta.' }
+    '/': { title: 'Melhores casinos online para jogadores portugueses', description: 'Compare casinos online com análises, prós e contras e opiniões dos jogadores. Veja critérios de escolha, condições dos bónus e informação sobre licenciamento.' },
+    '/casinos': { title: 'Comparar casinos online: jogos, pagamentos e opiniões', description: 'Compare jogos, métodos de pagamento, limites de levantamento e apoio ao cliente. Consulte análises de casinos com opiniões, fontes e condições explicadas.' },
+    '/bonuses': { title: 'Bónus de casino: comparar ofertas e requisitos de aposta', description: 'Compare bónus de casino, depósitos e rodadas grátis. Saiba calcular requisitos de aposta e confira prazos, jogos elegíveis e limites de levantamento.' }
   },
   en: {
-    '/': { title: 'Portugal Casino Reviews & Bonuses', description: 'Compare Slota, Leon, Ginja, FairPari, DBbet and Spinzen: advertised bonuses, pros, cons, sourced player feedback and SRIJ status.' },
-    '/casinos': { title: 'Online casinos: reviews for Portugal', description: 'Explore six casino reviews covering games, promotional terms, public feedback, sources and limitations for Portugal.' },
-    '/bonuses': { title: 'Casino bonuses: comparison and terms', description: 'Compare advertised bonuses, wagering requirements and limitations. Review minimum deposits, eligible games and the limits of each offer.' }
+    '/': { title: 'Best Online Casinos for Portuguese Players', description: 'Compare online casinos through reviews, pros and cons and player feedback. Explore selection criteria, bonus terms and licensing information.' },
+    '/casinos': { title: 'Compare Online Casinos: Games, Payments and Reviews', description: 'Compare games, payment methods, withdrawal limits and customer support. Read casino reviews with player feedback, sources and explained conditions.' },
+    '/bonuses': { title: 'Casino Bonuses: Compare Offers and Wagering Requirements', description: 'Compare casino bonuses, deposits and free spins. Understand wagering calculations, deadlines, eligible games and cashout limits.' }
   }
 };
 export const pages = Object.fromEntries(locales.flatMap(locale => {

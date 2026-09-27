@@ -40,7 +40,7 @@ for (const width of [1440, 768, 390, 320]) {
   }
   await page.goto('http://127.0.0.1:4173/');
   await page.getByRole('link', { name: 'Bónus', exact: true }).click();
-  await page.waitForFunction(() => document.title.includes('Bónus de casino: comparação e condições'));
+  await page.waitForFunction(() => document.title.includes('Bónus de casino: comparar ofertas e requisitos de aposta'));
   if (await page.locator('link[rel=canonical]').count() !== 1) throw new Error('Duplicate canonical after navigation');
   for (const base of baseRoutes) {
     await page.goto(`http://127.0.0.1:4173${base}`);
@@ -60,7 +60,7 @@ for (const width of [1440, 768, 390, 320]) {
   await page.goto('http://127.0.0.1:4173/en');
   await page.getByRole('link', { name: 'Bonuses', exact: true }).click();
   await page.waitForURL('**/en/bonuses');
-  await page.waitForFunction(() => document.title.includes('Casino bonuses: comparison and terms'));
+  await page.waitForFunction(() => document.title.includes('Casino Bonuses: Compare Offers and Wagering Requirements'));
   await page.screenshot({ path: `artifacts/${width}-en-header.png` });
   if (errors.length) throw new Error(`Browser errors: ${errors.join('\n')}`);
   await page.close();

@@ -1,3 +1,12 @@
+# Portuguese keyword research and content adaptation — 28 September 2026
+
+- Qualitative PT/Portugal search-intent research documented in docs/SEO_Keyword_Research_PT.md. The machine-readable map contains 24 generic and 6 branded target queries (80/20 by query count). No measured search volume or difficulty is claimed.
+- Updated titles, descriptions and intros for Home/Casinos/Bonuses. Added 11 original guide sections covering choice, public feedback, payments, support, mobile use and bonus calculations/conditions, with equivalent English copy and internal links.
+- Six brand reviews, approved scores, bonus terms and affiliate links retained. No extra thin pages; page count stays 18 across PT/EN.
+- Build and 36 tests pass; 72 browser checks pass. All keyword-map section targets and PT/EN guide text verified in prerendered HTML. Production stays password-protected/noindex pending a separate launch step.
+
+---
+
 # All brand logos — 27 September 2026
 
 - Added owner-supplied Ginja, Leon, DBbet and Spinzen artwork and web-sourced Slota logo, with provenance in docs/brand-assets.md. FairPari retained.

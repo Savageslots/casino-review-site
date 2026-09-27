@@ -1,3 +1,4 @@
+import ComparisonGuide from '../components/ComparisonGuide';
 import { useLocale } from '../i18n/useLocale';
 import { Link } from "react-router-dom";
 import CasinoCard from "../components/CasinoCard";
@@ -126,7 +127,7 @@ function Home() {
             lineHeight: "1.7",
             fontSize: "17px",
           }}
-        >{" "}{t("Ginja em destaque editorial; os restantes casinos seguem pela avaliação global CasinoProsCons, por ordem decrescente. Compare jogos, condições dos bónus, prós, contras e opiniões com fontes.")}{" "}</p>
+        >{" "}{t("Escolher entre casinos online exige mais do que comparar uma nota ou um bónus. Reunimos análises com prós e contras, condições de pagamento e opiniões dos jogadores para ajudar a perceber as diferenças. Ginja ocupa o primeiro lugar por escolha editorial; os restantes seguem pela avaliação global. Esta seleção não é uma lista de casinos licenciados em Portugal.")}{" "}</p>
 
         {rankedCasinos(homeRanking).map((casino, i) => (
           <CasinoCard key={casino.name} rank={i + 1} casino={casino} />
@@ -144,6 +145,8 @@ function Home() {
             <Link to={path("/bonuses")} className="cta-link" style={buttonStyle}>{" "}{t("Comparar bónus")}{" "}</Link>
           </div>
         </div>
+
+        <ComparisonGuide page="home" />
 
         <div
           style={{

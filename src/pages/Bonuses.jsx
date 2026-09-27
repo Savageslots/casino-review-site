@@ -1,3 +1,4 @@
+import ComparisonGuide from '../components/ComparisonGuide';
 import { useLocale } from '../i18n/useLocale';
 import { rankedCasinos, bonusRanking } from "../data/rankings";
 import CasinoCard from "../components/CasinoCard";
@@ -10,13 +11,14 @@ export default function Bonuses() {
     <>
 
       <main style={page}>
-      <h1>{t("Bónus de casino: comparação e condições")}</h1>
+      <h1>{t("Bónus de casino: comparar ofertas e requisitos de aposta")}</h1>
 
-      <p style={{ color: "#555", marginBottom: 32, maxWidth: 900 }}>{t("Leon, FairPari, Ginja, DBbet, Spinzen e Slota: esta é a ordem editorial da comparação de bónus, independente das notas e dos montantes máximos. Compare requisitos de aposta, depósitos, jogos elegíveis e limites de cada oferta.")}</p>
+      <p style={{ color: "#555", marginBottom: 32, maxWidth: 900 }}>{t("Compare bónus de casino pelo depósito necessário, requisitos de aposta, prazo e limites de levantamento. O maior montante anunciado nem sempre corresponde às condições mais simples. A ordem desta página é editorial e independente da avaliação global; consulte a análise de cada oferta antes de decidir.")}</p>
 
       {casinos.map((casino, i) => (
         <CasinoCard key={casino.name} rank={i + 1} casino={casino} />
       ))}
+      <ComparisonGuide page="bonuses" />
     </main>
     </>
   );
