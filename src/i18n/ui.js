@@ -1,7 +1,7 @@
 export const ui = {
   "Avaliação global CasinoProsCons": "CasinoProsCons overall rating",
   "Nota fornecida pelo editor do CasinoProsCons, com base nas fontes que selecionou e analisou. As pontuações das plataformas abaixo são um registo separado da nossa pesquisa documental.": "Score supplied by the CasinoProsCons editor, based on the sources they selected and reviewed. The platform scores below are a separate record of our desk research.",
-  "Casinos online: Portugal": "Online casinos: Portugal",
+  "Melhores casinos online para jogadores portugueses": "Best Online Casinos for Portuguese Players",
   "Ver todos os casinos": "View all casinos",
   "Bónus de casino: o que comparar": "Casino bonuses: what to compare",
   "Comparar bónus": "Compare bonuses",

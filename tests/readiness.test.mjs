@@ -12,8 +12,9 @@ test('review pages carry one freshness notice, dated authorship and qualified af
   const graph=JSON.parse(html.match(/<script[^>]*type="application\/ld\+json"[^>]*>(.*?)<\/script>/s)[1])['@graph'];
   const article=graph.find(n=>n['@type']==='Article'); assert.equal(article.dateModified,'2026-09-27'); assert.equal(article.author.name,'CasinoProsCons');
   const affiliate=[...html.matchAll(/<a[^>]+href="(https:\/\/affgo.org[^\"]+)"[^>]*>/g)];
-  assert.equal(affiliate.length,c.slug==='ginja'?1:0);
+  assert.equal(affiliate.length,c.slug==='ginja'?2:1);
   for(const [tag]of affiliate)assert.match(tag,/rel="sponsored nofollow noopener noreferrer"/);
+  assert.match(html, /<a[^>]+href="https:\/\/affgo.org[^"]+"[^>]+class="brand-logo-link"><img/);
   if(c.slug==='ginja') {assert.ok(html.includes('30 €')||html.includes('€30'));assert.ok(html.includes('5 minutos')||html.includes('5 minutes'));}
  }
 });

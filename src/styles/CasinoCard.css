@@ -195,3 +195,7 @@
 .review-affiliate-link:focus-visible { outline: 3px solid #1d4ed8; outline-offset: 3px; }
 
 .official-brand-logo { background: #202938; padding: 12px; border-radius: 12px; box-sizing: border-box; }
+
+.brand-logo-link { display: inline-block; width: fit-content; max-width: 100%; border-radius: 12px; }
+.brand-logo-link img { display: block; }
+.brand-logo-link:focus-visible { outline: 3px solid #ffb800; outline-offset: 4px; }

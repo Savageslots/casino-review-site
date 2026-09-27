@@ -115,7 +115,7 @@ function Home() {
               color: "#111111",
               margin: 0,
             }}
-          >{" "}{t("Casinos online: Portugal")}{" "}</h1>
+          >{" "}{t("Melhores casinos online para jogadores portugueses")}{" "}</h1>
         </div>
 
         <p

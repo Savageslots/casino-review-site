@@ -41,6 +41,7 @@ function CasinoCard({ casino: record, rank }) {
             </span>
           </div>
 
+          <a href={casino.logoLink} target="_blank" rel="sponsored nofollow noopener noreferrer" className="brand-logo-link">
           <img
             width="144"
             height="112"
@@ -51,6 +52,7 @@ function CasinoCard({ casino: record, rank }) {
             style={{ ...casinoLogoStyle, background: casino.logoBackground }}
             className="casino-logo official-brand-logo"
           />
+          </a>
 
           <div style={{ paddingLeft: "38px", color: "#ffffff" }} className="casino-content">
             <h2 style={{ margin: 0, fontSize: "24px" }}>{casino.name}</h2>
