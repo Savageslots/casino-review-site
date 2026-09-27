@@ -1,3 +1,13 @@
+# Public launch — 28 September 2026
+
+The owner explicitly authorized removal of the production password and activation of indexing. Cloudflare Pages production settings are now SITE_PUBLIC=true and VITE_SITE_INDEXABLE=true; the production origin remains https://casinoproscons.com. Preview settings remain false/false, with authentication retained. These Cloudflare settings are deliberately separate from local build defaults.
+
+The public build passed all 36 tests and generates 18 canonical PT/EN URLs in sitemap.xml plus robots.txt allowing crawling. Deploy this revision to apply the production settings, then run `node scripts/live-check.mjs https://casinoproscons.com` without --preview to verify anonymous access and indexability.
+
+Search Console: submit https://casinoproscons.com/sitemap.xml to the verified domain property, then inspect the homepage and key review URLs. Submission does not guarantee indexing or ranking.
+
+---
+
 # Portuguese keyword research and content adaptation — 28 September 2026
 
 - Qualitative PT/Portugal search-intent research documented in docs/SEO_Keyword_Research_PT.md. The machine-readable map contains 24 generic and 6 branded target queries (80/20 by query count). No measured search volume or difficulty is claimed.
