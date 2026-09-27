@@ -193,3 +193,5 @@
 }
 .review-affiliate-link:hover { background: #991b1b; }
 .review-affiliate-link:focus-visible { outline: 3px solid #1d4ed8; outline-offset: 3px; }
+
+.official-brand-logo { background: #202938; padding: 12px; border-radius: 12px; box-sizing: border-box; }

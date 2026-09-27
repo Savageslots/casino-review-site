@@ -56,3 +56,7 @@ DevTools MCP недоступний, тому workflow трасування на
 - [Корисний контент та авторство](https://developers.google.com/search/docs/fundamentals/creating-helpful-content): хто створив матеріал, як його підготовано, ознаки експертності.
 - [Позначення партнерських посилань](https://developers.google.com/search/docs/crawling-indexing/qualify-outbound-links): sponsored для комерційних посилань.
 - [Page experience](https://developers.google.com/search/docs/appearance/page-experience): хороші технічні показники не гарантують високих позицій.
+
+## Фінальна перевірка публікації
+
+Деплой `30d18609-e58d-4ce0-b06c-e801762fe899`, коміт `9b93481`, завершився успішно 27/09/2026 о 19:43 UTC. Перевірка 18 опублікованих сторінок пройшла: тексти, оцінки, порядок карток, canonical/hreflang, одне повідомлення про актуальність, партнерське посилання Ginja та його rel, 404, ресурси, пароль і noindex. Фінальні браузерні перевірки: 72 комбінації сторінок/ширин екрана без помилок.

@@ -1,3 +1,12 @@
+# Team paragraph, editorial polish and FairPari artwork — 27 September 2026
+
+- Added the owner-supplied team experience in one paragraph in both languages: 10 years in iGaming, including 5 years in product management and analysis in Tier 1 markets.
+- Proofread PT/EN reviews, removed formulaic editorial phrasing, corrected the DBbet calculations/accounts mistranslation and an English Spinzen sentence fragment. Bonus terms, ratings and affiliate links unchanged.
+- Added official FairPari artwork to cards and review, with source recorded in docs/brand-assets.md. Other five brands retain text fallbacks pending original assets.
+- Private build and 36 tests pass; 72 browser route/viewport checks pass. FairPari mobile hero visually inspected. No AI-detector or search-ranking guarantee is implied by this editorial review.
+
+---
+
 # Publisher-approved content, Ginja affiliate and SEO audit — 27 September 2026
 
 - DBbet overall score set to 6.8. General order now Ginja, Slota, FairPari, Leon, DBbet, Spinzen; bonus order unchanged.
@@ -6,7 +15,7 @@
 - Added visible editorial byline/date and Article schema; shortened several titles and fixed the language-switch accessible name.
 - Indexable and private builds each passed 36 tests. Final browser checks passed 72 route/viewport combinations. Local mobile Lighthouse: 99/100/100 performance for Home/Ginja/EN DBbet; SEO, accessibility and best practices 100 each. These are lab metrics, not field Core Web Vitals.
 - Audit and remaining launch/content priorities: `docs/SEO_Readiness_2026-09-27.md`. Production remains password-protected and noindex; www DNS is not configured. Public launch not authorized by this audit.
-- Deployment of this revision pending.
+- Deployed commit `9b934814967bad737d9e6adf8d3dc055506ce388`; Cloudflare deployment `30d18609-e58d-4ce0-b06c-e801762fe899` succeeded at 19:43 UTC. All 18 live route checks passed, including updated scores/content, affiliate tagging, single freshness notice, private access, canonicals and noindex.
 
 ---
 

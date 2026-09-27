@@ -49,7 +49,7 @@ function CasinoCard({ casino: record, rank }) {
             src={casino.logo}
             alt={casino.name}
             style={casinoLogoStyle}
-            className="casino-logo"
+            className={`casino-logo${casino.slug === "fairpari" ? " official-brand-logo" : ""}`}
           />
 
           <div style={{ paddingLeft: "38px", color: "#ffffff" }} className="casino-content">
