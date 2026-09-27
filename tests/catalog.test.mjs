@@ -17,7 +17,7 @@ test('Portugal catalog keeps approved selection, empty affiliate fields and attr
 test('normalization gives equal platform weight and excludes unconfirmed or editorial scores', () => {
   assert.equal(platformMean([{ score: 2, scale: 5, count: 1000, included: true }, { score: 8, scale: 10, count: 2, included: true }, { score: 10, scale: 10, included: false }]), 6);
   assert.equal(platformMean([]), null);
-  assert.equal(casinos.find(c => c.slug === 'slota').rating, 6.6);
+  assert.equal(casinos.find(c => c.slug === 'slota').platformRating, 6.6);
   assert.equal(casinos.find(c => c.slug === 'dbbet').rating, null);
 });
 test('all review blocks, language and source links survive prerendering', async () => {

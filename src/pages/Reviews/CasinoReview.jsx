@@ -34,9 +34,9 @@ export default function CasinoReview({ casino }) {
       <h2 style={heading}>{t("Street Voice — opiniões dos jogadores")}</h2>
       <div style={{ display: 'grid', gridTemplateColumns: '1.1fr 1fr 1fr', gap: 14, marginTop: 16 }}>
         <div style={box}>
-          <h3 style={{ fontSize: 16, margin: '0 0 10px' }}>{included.length > 1 ? t('Média entre plataformas') : t('Avaliação publicada')}</h3>
+          <h3 style={{ fontSize: 16, margin: '0 0 10px' }}>{c.publisherRating != null ? t('Avaliação global CasinoProsCons') : included.length > 1 ? t('Média entre plataformas') : t('Avaliação publicada')}</h3>
           <div style={{ fontSize: 28, fontWeight: 900, marginBottom: 6 }}>{formatScore(c.rating, locale)}{c.rating != null && ' / 10'}</div>
-          <p style={{ fontSize: 14, lineHeight: 1.6, color: '#666' }}>{included.length > 1 ? t('Média simples das notas normalizadas, com o mesmo peso por plataforma. Não é a média de todos os comentários.') : included.length === 1 ? `${included[0].name}: ${t("uma única fonte numérica incluída, convertida para a escala de 10.")}` : t('Não agregamos perfis de domínios diferentes sem confirmar a sua correspondência.')}</p>
+          <p style={{ fontSize: 14, lineHeight: 1.6, color: '#666' }}>{c.publisherRating != null ? t('Nota fornecida pelo editor do CasinoProsCons, com base nas fontes que selecionou e analisou. As pontuações das plataformas abaixo são um registo separado da nossa pesquisa documental.') : included.length > 1 ? t('Média simples das notas normalizadas, com o mesmo peso por plataforma. Não é a média de todos os comentários.') : included.length === 1 ? `${included[0].name}: ${t("uma única fonte numérica incluída, convertida para a escala de 10.")}` : t('Não agregamos perfis de domínios diferentes sem confirmar a sua correspondência.')}</p>
           {c.sources.map(s => <div key={s.url} style={{ borderTop: '1px solid #e6e8f0', paddingTop: 12, marginTop: 12, fontSize: 14, lineHeight: 1.6 }}>
             <Source href={s.url}>{s.name}{s.domain ? ` · ${s.domain}` : ''}</Source><br />
             <strong>{s.score == null ? t('Sem nota de utilizadores') : `${formatScore(s.score, locale)} / ${s.scale}`}</strong> · {s.count.toLocaleString(languageTag)}{" "}{t("opiniões")}<br />

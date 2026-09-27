@@ -180,10 +180,15 @@ ginjaReview,
   ]
 }, ...editorialReviews.spinzen }
 ];
+// Overall scores supplied by the publisher from their selected sources (27 September 2026).
+// Keep the independently recorded platform snapshots unchanged.
+const publisherRatings = { ginja: 8, slota: 7.6, fairpari: 7.4, leon: 7, spinzen: 5.5 };
 export const casinos = records.map(record => ({
   ...record, casinoLink: '', reviewLink: `/casinos/${record.slug}`, logo: `/logos/${record.slug}.svg`,
-  rating: platformMean(record.sources),
-  ratingLabel: record.sources.filter(source => source.included).length > 1 ? 'Média de plataformas' : record.sources.find(source => source.included)?.name || 'Sem média',
+  platformRating: platformMean(record.sources),
+  publisherRating: publisherRatings[record.slug] ?? null,
+  rating: publisherRatings[record.slug] ?? platformMean(record.sources),
+  ratingLabel: publisherRatings[record.slug] != null ? 'Avaliação global CasinoProsCons' : record.sources.filter(source => source.included).length > 1 ? 'Média de plataformas' : record.sources.find(source => source.included)?.name || 'Sem média',
   details: record.details || [{ label: 'Depósito mínimo', value: record.minDeposit }, { label: 'Requisitos de aposta', value: 'Condições por confirmar' }, { label: 'Formato', value: record.type }, { label: 'Registo SRIJ', value: 'Marca não encontrada' }],
   hook: record.hook || 'Os dados promocionais são atribuídos às fontes consultadas; não confirmam disponibilidade em Portugal. Consulte as limitações e as opiniões na análise.'
 }));

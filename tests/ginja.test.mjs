@@ -11,7 +11,8 @@ test('Ginja content uses its own analysis without competitor references and labe
   for (const locale of ['pt', 'en']) {
     const review = localizeCasino(ginja, locale);
     assert.ok(!/znaki/i.test(JSON.stringify(review)));
-    assert.equal(review.rating, 5);
+    assert.equal(review.rating, 8);
+    assert.equal(review.platformRating, 5);
     assert.equal(review.sources[0].score, 2.5);
     assert.equal(review.sources[0].count, 15);
     assert.ok(review.bonus.includes('125%'));

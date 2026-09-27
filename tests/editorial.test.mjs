@@ -8,7 +8,8 @@ const overall=['ginja','slota','fairpari','leon','spinzen','dbbet'];
 const bonuses=['leon','fairpari','ginja','dbbet','spinzen','slota'];
 test('general and bonus rankings have separate approved orders without changing source scores',()=>{
  assert.deepEqual(casinoRanking,overall); assert.deepEqual(homeRanking,overall); assert.deepEqual(bonusRanking,bonuses);
- assert.deepEqual(rankedCasinos(overall).map(c=>c.rating),[5,6.6,6.4,6,4.5,null]);
+ assert.deepEqual(rankedCasinos(overall).map(c=>c.rating),[8,7.6,7.4,7,5.5,null]);
+ assert.deepEqual(rankedCasinos(overall).map(c=>c.platformRating),[5,6.6,6.4,6,4.5,null]);
  for(const ranking of [overall,bonuses])assert.equal(new Set(ranking).size,casinos.length);
 });
 test('rendered rankings and JSON-LD agree in both languages',async()=>{
