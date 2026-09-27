@@ -126,7 +126,7 @@ function Home() {
             lineHeight: "1.7",
             fontSize: "17px",
           }}
-        >{" "}{t("Ginja em destaque editorial; os restantes casinos seguem por nota publicada, da mais alta para a mais baixa. A DBbet aparece no fim por não ter média confirmada. Compare jogos, condições dos bónus, prós, contras e opiniões com fontes.")}{" "}</p>
+        >{" "}{t("Ginja em destaque editorial; os restantes casinos seguem pela avaliação global CasinoProsCons, por ordem decrescente. Compare jogos, condições dos bónus, prós, contras e opiniões com fontes.")}{" "}</p>
 
         {rankedCasinos(homeRanking).map((casino, i) => (
           <CasinoCard key={casino.name} rank={i + 1} casino={casino} />
@@ -138,7 +138,7 @@ function Home() {
 
         <div style={{ marginTop: "80px", marginBottom: "80px" }}>
           <h2 style={{ fontSize: "32px", marginBottom: "16px" }}>{" "}{t("Bónus de casino: o que comparar")}{" "}</h2>
-          <p style={{ color: "#555", maxWidth: "760px", lineHeight: "1.7" }}>{" "}{t("Compare os valores anunciados e as limitações conhecidas de cada promoção. O montante máximo não revela, por si só, o valor de um bónus: também contam os requisitos de aposta, o prazo, os jogos elegíveis e os limites de levantamento. Indicamos quando faltam termos oficiais ou existem diferenças entre fontes.")}{" "}</p>
+          <p style={{ color: "#555", maxWidth: "760px", lineHeight: "1.7" }}>{" "}{t("O montante máximo não revela, por si só, o valor de um bónus. Compare também os requisitos de aposta, o prazo, os jogos elegíveis e os limites de levantamento. Uma oferta deve ajustar-se ao orçamento e à forma como pretende utilizar a plataforma.")}{" "}</p>
 
           <div style={{ marginTop: "24px" }}>
             <Link to={path("/bonuses")} className="cta-link" style={buttonStyle}>{" "}{t("Comparar bónus")}{" "}</Link>
@@ -162,13 +162,13 @@ function Home() {
             }}
           >{" "}{t("Como fazemos as nossas análises")}{" "}</h2>
 
-          <p style={{ color: "#444444", lineHeight: "1.75", marginBottom: "14px" }}>{" "}{t("Revimos os textos em 27 de setembro de 2026. As condições promocionais vêm dos rascunhos editoriais e ainda precisam de confirmação no operador; as opiniões mantêm as datas e fontes indicadas em cada análise. Não realizámos depósitos, levantamentos ou testes de jogo.")}{" "}</p>
+          <p style={{ color: "#444444", lineHeight: "1.75", marginBottom: "14px" }}>{" "}{t("A equipa editorial analisa jogos, pagamentos e promoções, com atenção às condições que fazem diferença na utilização. Cada avaliação global reflete as fontes selecionadas pelo editor. As notas das plataformas de opiniões aparecem separadamente, com a data e a origem dos dados.")}{" "}</p>
 
           <p style={{ color: "#444444", lineHeight: "1.75", marginBottom: "14px" }}>{" "}{t("Cada análise mantém os mesmos blocos: informações essenciais, prós e contras, jogos e plataforma, bónus, limitações, opiniões e veredicto. As ofertas atribuídas a terceiros podem variar por país, método de pagamento e conta.")}{" "}</p>
 
-          <p style={{ color: "#444444", lineHeight: "1.75", marginBottom: "14px" }}>{" "}{t("Nas opiniões, mostramos fonte, escala original e número de comentários. Quando combinamos plataformas, calculamos a média simples das notas normalizadas para 10, sem ponderar pelo número de opiniões. O TrustScore tem metodologia própria; não somamos as amostras nem incluímos notas editoriais.")}{" "}</p>
+          <p style={{ color: "#444444", lineHeight: "1.75", marginBottom: "14px" }}>{" "}{t("No Street Voice, mostramos as fontes, escalas originais e número de opiniões. Estes dados complementam a avaliação global CasinoProsCons, baseada nas fontes selecionadas pelo editor. O TrustScore tem metodologia própria e não deve ser confundido com a nossa avaliação.")}{" "}</p>
 
-          <p style={{ color: "#444444", lineHeight: "1.75" }}>{" "}{t("As seis marcas não foram encontradas no registo de entidades licenciadas do SRIJ consultado em 26 de setembro de 2026. Esta seleção não comprova autorização para operar em Portugal. Não existem ligações de adesão ativas: os botões abrem as nossas análises.")}{" "}</p>
+          <p style={{ color: "#444444", lineHeight: "1.75" }}>{" "}{t("As seis marcas não foram encontradas no registo de entidades licenciadas do SRIJ consultado em 26 de setembro de 2026. Esta seleção não comprova autorização para operar em Portugal. Consulte o registo oficial ao avaliar o licenciamento de um operador.")}{" "}</p>
           <p style={{ lineHeight: 1.7 }}><a href="https://www.srij.turismodeportugal.pt/pt/jogos-e-apostas-online/entidades-licenciadas" target="_blank" rel="noopener noreferrer">{t("Registo oficial SRIJ")}</a></p>
         </div>
       </div>

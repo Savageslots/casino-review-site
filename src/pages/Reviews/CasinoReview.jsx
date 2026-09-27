@@ -17,7 +17,7 @@ export default function CasinoReview({ casino }) {
       <h1 style={{ fontSize: 36, fontWeight: 800, marginBottom: 8 }}>{c.name}{t(": análise e opiniões")}</h1>
       <p style={{ fontSize: 18, color: '#666', marginBottom: 32 }}>{c.subtitle || t("Bónus, jogos, prós, contras e opiniões dos jogadores — Portugal.")}</p>
       {c.intro.split('\n\n').map((part, i) => <p key={i} style={{ ...paragraph, fontSize: 17 }}>{part}</p>)}
-      {c.methodology ? <p style={{ ...paragraph, fontSize: 14, color: '#666' }}>{c.methodology} <Source href={c.source}>{c.sourceLabel}</Source>.</p> : (<p style={paragraph}>{t("Pesquisa documental consultada em")}{" "}<time dateTime="2026-09-26">{locale === 'en' ? '26 September 2026' : checkedOn}</time>{t(". Não realizámos testes com depósitos ou levantamentos.")}{" "}<Source href={c.source}>{t("Fonte da oferta descrita")}</Source>.</p>)}
+      <p style={{ ...paragraph, fontSize: 14, color: "#666" }}>{t("Equipa editorial CasinoProsCons")} · {t("Revisto em")} <time dateTime="2026-09-27">{locale === "en" ? "27 September 2026" : "27/09/2026"}</time></p>
 
     </section>
     <section style={section}>
@@ -28,7 +28,7 @@ export default function CasinoReview({ casino }) {
     <ProsCons pros={c.pros} cons={c.cons} />
     <TextSection title={`${t("Pontos fortes do")} ${c.name}`} text={c.strengths} />
     <TextSection title={t("Jogos e plataforma")} text={c.games}>{c.officialSource && <p><Source href={c.officialSource}>{t("Página oficial consultada")}</Source></p>}</TextSection>
-    <TextSection title={t("Bónus e condições")} text={c.bonusNotes}><p style={paragraph}><strong>{c.bonus}</strong></p><p style={{ ...paragraph, color: '#666', fontSize: 14 }}>{c.bonusFootnote || t("Valores anunciados por terceiros, sujeitos a condições e confirmação. Não há uma oferta própria ou ligação de adesão ativa no CasinoProsCons.")}</p></TextSection>
+    <TextSection title={t("Bónus e condições")} text={c.bonusNotes}><p style={paragraph}><strong>{c.bonus}</strong></p>{c.casinoLink && <p><a href={c.casinoLink} target="_blank" rel="sponsored nofollow noopener noreferrer" className="review-affiliate-link">{t("Visitar Ginja — ligação de afiliado")}</a></p>}</TextSection>
     <TextSection title={`${t("Limitações do")} ${c.name}`} text={c.limitations} />
     <section style={section}>
       <h2 style={heading}>{t("Street Voice — opiniões dos jogadores")}</h2>
@@ -46,7 +46,7 @@ export default function CasinoReview({ casino }) {
         <div style={box}><h3 style={{ fontSize: 16, margin: '0 0 10px' }}>{t("Elogios nas fontes")}</h3><ul style={{ margin: 0, paddingLeft: 18, lineHeight: 1.7 }}>{c.praised.map(t => <li key={t}>{t}</li>)}</ul></div>
         <div style={box}><h3 style={{ fontSize: 16, margin: '0 0 10px' }}>{t("Queixas nas fontes")}</h3><ul style={{ margin: 0, paddingLeft: 18, lineHeight: 1.7 }}>{c.complaints.map(t => <li key={t}>{t}</li>)}</ul></div>
       </div>
-      {c.feedbackMethodology ? <p style={{ marginTop: 12, fontSize: 13, color: '#666', lineHeight: 1.6 }}>{c.feedbackMethodology}</p> : (<p style={{ marginTop: 12, fontSize: 13, color: '#666', lineHeight: 1.6 }}>{t("Consulta:")}{" "}{locale === 'en' ? '26 September 2026' : checkedOn}{t(". Os valores são um retrato das páginas consultadas e podem mudar; algumas versões consultadas estavam em cache. TrustScore usa uma fórmula própria e não é a média aritmética das estrelas. Excluímos notas editoriais. Os relatos pertencem aos seus autores, não foram verificados por nós e não representam necessariamente todos os clientes ou apenas Portugal.")}</p>)}
+      <p style={{ marginTop: 12, fontSize: 13, color: "#666", lineHeight: 1.6 }}>{c.feedbackMethodology || t("Perfis consultados em 26/09/2026. As notas e os comentários de cada plataforma são apresentados separadamente da avaliação global CasinoProsCons.")}</p>
 
     </section>
     <TextSection title={t("O nosso veredicto")} text={c.verdict}><p style={{ marginTop: 16, fontWeight: 600 }}>{t("18+. Antes de considerar qualquer operador, confirme a autorização portuguesa no")}{" "}<Source href={regulatorSource}>{t("SRIJ")}</Source>.</p></TextSection>

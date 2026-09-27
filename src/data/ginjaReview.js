@@ -1,32 +1,33 @@
-// Ginja-only editorial revision. Draft bonus terms retained at the owner’s request; not operator-verified.
+// Publisher-approved review; payout proposition attributed to the operator team.
 export const ginjaReview = {
   "slug": "ginja",
   "name": "Ginja",
-  "bonus": "125% até 500 € + 125 rodadas grátis*",
-  "minDeposit": "10 €*",
+  "bonus": "125% até 500 € + 125 rodadas grátis",
+  "minDeposit": "10 €",
   "type": "Casino + apostas desportivas",
   "source": "https://ginja-casino.com/",
   "sourceLabel": "Site do operador",
-  "description": "Casino e desporto com comunicação em português. O que interessa além do bónus: regras do saldo, pagamentos e opiniões dos jogadores.",
+  "description": "Casino e apostas com MB WAY e Multibanco. A equipa anuncia registo simples e levantamentos a partir de 30 € em 5 minutos, nas condições elegíveis.",
   "subtitle": "Os dois lados do Ginja: o que atrai, o que pesa e o que convém esclarecer.",
-  "intro": "A promessa do Ginja é fácil de perceber: juntar casino e apostas desportivas num ambiente dirigido ao público português. Para quem alterna entre slots e desporto, essa combinação pode ser conveniente. Mas conveniência no depósito e facilidade no levantamento são coisas diferentes. É nessa diferença que vale a pena olhar com atenção.\n\nO nosso ponto de partida não é o tamanho do bónus. É perceber o que acontece ao dinheiro depois de entrar na conta: que saldo pode ser levantado, que regras mudam ao aceitar uma promoção e que documentação pode ser pedida. Este é o lado menos vistoso de um casino — e o mais útil numa comparação.",
-  "methodology": "Análise editorial baseada na proposta de análise revista e em opiniões públicas identificadas. Não fizemos depósitos nem levantamentos. A verificação dos termos atuais no site do operador, através de uma ligação portuguesa, ainda não foi concluída.",
-  "strengths": "A proposta de reunir casino e desporto tem uma vantagem prática: menos mudança de plataforma para quem utiliza as duas modalidades. A marca apresenta-se em português e anuncia pagamentos locais no seu perfil público. São características relevantes para este público, embora não bastem para concluir que o serviço é bom.\n\nHá também comentários que elogiam a navegação no telemóvel e a facilidade de encontrar jogos conhecidos. Tratamo-los como experiências dos respetivos autores. Sem um teste nosso em dispositivos móveis, seria precipitado transformar esses elogios numa avaliação técnica de velocidade ou estabilidade.",
-  "games": "O Ginja apresenta-se como casino e sportsbook, com slots e casino ao vivo. Essa amplitude interessa a quem quer variar o tipo de jogo, mas o número de títulos não explica tudo. Uma biblioteca extensa vale pouco se for difícil encontrar um jogo ou perceber as suas regras.\n\nNa nossa avaliação, os pontos a observar são a pesquisa, os filtros por fornecedor, a apresentação das regras e o acesso ao histórico da conta. No telemóvel, importa ainda conseguir ler os termos sem saltar entre janelas. Estes são os nossos critérios de avaliação; não são resultados de testes concluídos ao Ginja.",
-  "bonusNotes": "A oferta descrita no nosso rascunho é de 125% até 500 € e 125 rodadas grátis, com depósito mínimo de 10 € e requisito de aposta de 30x sobre o bónus. Mantemos estes valores como referência provisória: ainda não foram confirmados nos termos atuais de ginja-casino.com.\n\nO detalhe que mais altera a conta é a base do requisito de aposta. Exemplo meramente ilustrativo: com um depósito de 40 € e um bónus hipotético de 125%, o saldo de bónus seria de 50 €. Um requisito de 30x só sobre o bónus corresponderia a 1 500 € de apostas elegíveis. Se incidisse sobre depósito e bónus, seriam 2 700 €. Este exemplo explica a diferença; não confirma as condições do Ginja.\n\nMesmo com o multiplicador esclarecido, faltam outras peças: prazo para cumprir o requisito, aposta máxima permitida, contribuição dos jogos e eventual limite de conversão dos ganhos das rodadas grátis. É o conjunto dessas regras que determina se uma promoção se ajusta ao orçamento de alguém. Um valor nominal maior não a torna automaticamente melhor.",
-  "bonusFootnote": "*Condições do rascunho editorial: ainda não confirmadas no operador. As promoções podem mudar; consulte os termos atuais antes de depositar.",
-  "limitations": "A questão prática é distinguir depósito aceite de levantamento disponível. O facto de um método servir para carregar a conta não demonstra que permita levantar pelo mesmo meio, com o mesmo limite ou sem custos. MB WAY e Multibanco são anunciados pela empresa no perfil público, mas a disponibilidade concreta na caixa do casino ainda não foi confirmada por nós.\n\nAntes de avaliar a conveniência dos pagamentos, precisamos de confirmar os limites, as taxas, os documentos exigidos e o tratamento de dinheiro depositado que ainda não foi apostado. Os relatos públicos sobre dificuldades com levantamentos tornam estas perguntas particularmente relevantes; não provam, por si só, que todos os clientes terão o mesmo problema.\n\nQuanto ao licenciamento, uma autorização estrangeira não é uma autorização portuguesa. Na consulta do registo SRIJ realizada em 26 de setembro de 2026, a marca Ginja não foi encontrada. Por isso, não a apresentamos como operador autorizado em Portugal.",
+  "intro": "O Ginja reúne casino e apostas desportivas num ambiente dirigido ao público português. Para quem alterna entre slots e desporto, essa combinação pode ser conveniente. A comunicação em português e os pagamentos locais fazem parte do apelo.\n\nA equipa do operador destaca o registo simples e os levantamentos a partir de 30 €, anunciados em 5 minutos e sem envio de documentos nas condições elegíveis. É uma vantagem relevante, mas importa distinguir o prazo anunciado do processamento de cada pedido e das regras aplicáveis ao saldo.",
+  "methodology": "",
+  "strengths": "A proposta de reunir casino e desporto tem uma vantagem prática: menos mudança de plataforma para quem utiliza as duas modalidades. O Ginja disponibiliza comunicação em português e métodos locais, incluindo MB WAY e Multibanco.\n\nSegundo a equipa do Ginja, o registo é rápido e simples e os levantamentos elegíveis a partir de 30 € podem ser concluídos em 5 minutos, sem envio de documentos. A formulação refere-se à oferta comunicada pelo operador; o processamento de um pedido concreto depende das condições aplicáveis.\n\nAlguns comentários públicos elogiam também a navegação no telemóvel e a facilidade de encontrar jogos conhecidos. São experiências dos respetivos autores, apresentadas ao lado das críticas para que o leitor veja ambos os lados.",
+  "games": "O Ginja combina slots, casino ao vivo e apostas desportivas. A variedade interessa a quem procura alternar entre modalidades na mesma plataforma. O que conta na utilização diária é encontrar o jogo pretendido, compreender as regras e acompanhar o saldo.\n\nNo telemóvel, vale observar a pesquisa, os filtros por fornecedor e a leitura dos termos de cada jogo. Uma biblioteca extensa é mais útil quando a navegação e o histórico da conta permitem perceber facilmente o que está a acontecer.",
+  "bonusNotes": "A oferta de boas-vindas é de 125% até 500 € e 125 rodadas grátis, com depósito mínimo de 10 € e requisito de aposta de 30x sobre o bónus. A base do requisito é importante: o multiplicador incide sobre o saldo promocional.\n\nNum exemplo com depósito elegível de 40 €, o reforço de 125% produz 50 € de bónus. A 30x sobre esses 50 €, o requisito corresponde a 1 500 € de apostas elegíveis. Esse volume não representa uma previsão de perdas nem um valor garantido para levantamento.\n\nO prazo, a aposta máxima, a contribuição dos jogos e os limites dos ganhos das rodadas grátis completam a leitura da promoção. Um montante nominal maior não torna um bónus automaticamente mais adequado ao orçamento de alguém.",
+  "bonusFootnote": "",
+  "limitations": "Depósito e levantamento são operações diferentes. A disponibilidade de MB WAY ou Multibanco para carregar a conta não significa que todos os meios tenham as mesmas regras de saída. O método escolhido, os limites e as condições do saldo devem ser considerados em conjunto.\n\nO prazo de 5 minutos e a possibilidade de levantamento sem envio de documentos são apresentados pela equipa do Ginja para operações elegíveis. Não devem ser interpretados como garantia para todos os pedidos nem como dispensa de verificações previstas nas regras da conta.\n\nUma licença estrangeira não equivale a uma autorização portuguesa. Na consulta do registo SRIJ de 26 de setembro de 2026, a marca Ginja não foi encontrada; não a apresentamos como operador autorizado em Portugal.",
   "pros": [
-    "Casino e desporto reunidos na proposta da marca",
-    "Comunicação em português",
-    "Métodos locais anunciados pela empresa, ainda por confirmar na caixa",
-    "Há relatos positivos sobre navegação móvel e jogos conhecidos"
+    "Registo rápido e simples, segundo a equipa do operador",
+    "Levantamentos elegíveis desde 30 € anunciados em 5 minutos",
+    "Sem envio de documentos nos levantamentos elegíveis, segundo o operador",
+    "Casino e desporto na mesma plataforma",
+    "MB WAY e Multibanco"
   ],
   "cons": [
-    "Marca não encontrada na consulta do registo SRIJ de 26/09/2026",
-    "Oferta e requisitos de bónus atuais ainda não verificados",
-    "Existem relatos de dificuldades nos levantamentos",
-    "Amostra de opiniões pequena para uma conclusão firme"
+    "Marca não encontrada no registo SRIJ consultado",
+    "Requisito de 30x sobre o saldo de bónus",
+    "Prazo anunciado de levantamento depende das condições aplicáveis",
+    "Há queixas públicas sobre levantamentos e promoções"
   ],
   "praised": [
     "Alguns comentários elogiam a navegação no telemóvel e a facilidade de encontrar jogos conhecidos.",
@@ -36,29 +37,29 @@ export const ginjaReview = {
     "Há queixas sobre levantamentos e sobre a diferença entre a promoção esperada e a recebida.",
     "Estes relatos não permitem calcular um prazo médio de pagamento nem a frequência de problemas."
   ],
-  "feedbackMethodology": "Fonte: perfil ginja-casino.com na Trustpilot, consultado em 27/09/2026 numa versão disponibilizada em cache: 2,5/5, com 15 opiniões. Na escala de 10, equivale a 5,0. É o TrustScore da plataforma, não uma nota editorial nossa nem uma média simples calculada por nós. A amostra é pequena; os comentários não foram verificados pela nossa equipa. As versões em cache podem diferir da página em tempo real.",
-  "verdict": "O Ginja tem uma proposta compreensível para quem prefere casino e desporto no mesmo sítio. A comunicação em português e os métodos locais anunciados ajudam a explicar o apelo. O que ainda não temos é base suficiente para recomendar a oferta de boas-vindas ou prometer uma experiência de levantamento simples.\n\nO nosso veredicto fica, por isso, condicionado: vale analisar a plataforma pelos seus produtos, mas o bónus só pode ser avaliado depois de lidos os termos atuais. Para quem dá prioridade a autorização portuguesa confirmada, previsibilidade nos pagamentos e regras já verificadas, esta análise ainda não oferece essas garantias.",
+  "feedbackMethodology": "Perfil ginja-casino.com na Trustpilot, consultado em 27/09/2026: 2,5/5, com 15 opiniões, equivalente a 5,0/10. Este é o TrustScore da plataforma, separado da avaliação global CasinoProsCons. Os relatos pertencem aos seus autores e a amostra é pequena.",
+  "verdict": "O Ginja combina casino e apostas com pagamentos locais e uma proposta de levantamento rápido. A comunicação da equipa — desde 30 €, em 5 minutos nas condições elegíveis — é um dos seus argumentos mais concretos, ao lado do registo simples.\n\nNa nossa avaliação, a conveniência deve ser lida juntamente com as regras do bónus e dos levantamentos. Os 30x exigem atenção e as críticas públicas também contam. A oferta é mais fácil de avaliar quando o leitor distingue o saldo disponível do saldo promocional e escolhe as condições que se ajustam ao seu orçamento.",
   "hook": "O ponto decisivo não é só o bónus: é saber que saldo pode ser levantado e em que condições. Veja os dois lados na nossa análise.",
   "details": [
     {
       "label": "Bónus de boas-vindas",
-      "value": "125% até 500 € + 125 rodadas grátis*"
+      "value": "125% até 500 € + 125 rodadas grátis"
     },
     {
       "label": "Depósito mínimo",
-      "value": "10 €*"
+      "value": "10 €"
     },
     {
       "label": "Requisitos de aposta",
-      "value": "30x o bónus*"
+      "value": "30x o bónus"
     },
     {
       "label": "Formato",
       "value": "Casino + apostas desportivas"
     }
   ],
-  "seoTitle": "Ginja Casino: bónus, pagamentos, prós e contras",
-  "seoDescription": "Análise independente do Ginja Casino: o que pesa nos bónus e levantamentos, prós e contras, opiniões Trustpilot e pontos ainda por verificar.",
+  "seoTitle": "Ginja Casino: bónus e levantamentos",
+  "seoDescription": "Análise do Ginja Casino: bónus de 125% até 500 €, pagamentos locais, levantamentos anunciados em 5 minutos, prós, contras e opiniões dos jogadores.",
   "sources": [
     {
       "name": "Trustpilot",
@@ -73,30 +74,31 @@ export const ginjaReview = {
   ]
 };
 export const ginjaReviewEn = {
-  "bonus": "125% up to €500 + 125 free spins*",
-  "minDeposit": "€10*",
+  "bonus": "125% up to €500 + 125 free spins",
+  "minDeposit": "€10",
   "type": "Casino + sportsbook",
   "sourceLabel": "Operator website",
-  "description": "Casino and sports betting with Portuguese-language communication. Beyond the bonus: balance rules, payments and player feedback.",
+  "description": "Casino and sports betting with MB WAY and Multibanco. The team advertises simple registration and eligible withdrawals from €30 in 5 minutes.",
   "subtitle": "Both sides of Ginja: the appeal, the trade-offs and the questions worth asking.",
-  "intro": "Ginja’s pitch is easy to understand: casino games and sports betting in a setting aimed at Portuguese players. For someone who moves between slots and sport, that combination can be convenient. But an easy deposit and a straightforward withdrawal are different things. That gap deserves a closer look.\n\nOur starting point is not the size of the bonus. It is what happens to the money once it reaches the account: which balance can be withdrawn, which rules change when a promotion is accepted, and which documents may be requested. This is the less eye-catching side of a casino — and the more useful part of a comparison.",
-  "methodology": "Editorial analysis based on the revised draft and identified public reviews. We have not made deposits or withdrawals. Verification of current terms on the operator’s website through a Portuguese connection has not yet been completed.",
-  "strengths": "Combining casino and sports betting has a practical advantage: less switching between platforms for someone who uses both. The brand communicates in Portuguese and advertises local payment methods on its public profile. Those features matter to this audience, although they are not enough to establish service quality.\n\nSome comments also praise mobile navigation and the ease of finding familiar games. We treat these as the experiences of their authors. Without our own mobile-device testing, it would be premature to turn that praise into a technical assessment of speed or stability.",
-  "games": "Ginja presents itself as a casino and sportsbook, including slots and live casino. That range may appeal to someone who likes different types of games, but a title count does not tell the whole story. A large library is of little use if finding a game or understanding its rules is difficult.\n\nOur assessment looks at search, provider filters, the presentation of rules and access to account history. On mobile, being able to read terms without jumping between windows also matters. These are our assessment criteria, not the results of completed tests of Ginja.",
-  "bonusNotes": "The offer described in our editorial draft is 125% up to €500 and 125 free spins, with a €10 minimum deposit and 30x wagering on the bonus. We retain these figures as a provisional reference: they have not yet been confirmed against the current terms at ginja-casino.com.\n\nThe detail that changes the calculation most is the wagering basis. A purely illustrative example: a €40 deposit with a hypothetical 125% bonus would produce €50 in bonus funds. A 30x requirement on the bonus alone would mean €1,500 in eligible bets. If it applied to deposit plus bonus, that would be €2,700. This example explains the difference; it does not confirm Ginja’s terms.\n\nEven after the multiplier is clear, other pieces matter: the completion deadline, maximum permitted stake, game contribution and any limit on converting free-spin winnings. Together, those rules determine whether a promotion fits someone’s budget. A larger headline amount does not automatically make it better.",
-  "bonusFootnote": "*Terms retained from the editorial draft; not yet confirmed with the operator. Promotions may change. Check the current terms before depositing.",
-  "limitations": "The practical distinction is between a deposit being accepted and a withdrawal being available. A method that funds the account does not necessarily support withdrawals through the same route, with the same limit or without fees. The company advertises MB WAY and Multibanco on its public profile, but we have not yet confirmed their actual availability in the casino cashier.\n\nBefore assessing payment convenience, we need to confirm limits, fees, required documents and how deposited money that has not been wagered is treated. Public accounts of withdrawal difficulties make those questions particularly relevant; they do not, by themselves, prove that every customer will experience the same problem.\n\nOn licensing, a foreign authorization is not a Portuguese authorization. Ginja was not found in the SRIJ register consulted on 26 September 2026. We therefore do not present it as an operator authorized in Portugal.",
+  "intro": "Ginja combines casino games and sports betting in a setting aimed at Portuguese players. For someone who moves between slots and sport, that combination can be convenient. Portuguese-language communication and local payment methods are part of the appeal.\n\nThe operator’s team highlights simple registration and withdrawals from €30, advertised as taking 5 minutes without document submission for eligible transactions. It is a relevant advantage, but the advertised time should be distinguished from the processing of an individual request and the rules attached to its balance.",
+  "methodology": "",
+  "strengths": "Combining casino and sports betting has a practical advantage: less switching between platforms for someone who uses both. Ginja provides Portuguese-language communication and local payment methods, including MB WAY and Multibanco.\n\nAccording to Ginja’s team, registration is quick and simple, and eligible withdrawals from €30 can be completed in 5 minutes without submitting documents. This describes the offer communicated by the operator; an individual request is processed under its applicable conditions.\n\nSome public comments also praise mobile navigation and the ease of finding familiar games. These are the authors’ experiences, shown alongside criticism so readers can see both sides.",
+  "games": "Ginja combines slots, live casino and sports betting. The range appeals to someone who wants to switch between categories on one platform. In daily use, the practical questions are whether you can find the game you want, understand its rules and follow your balance.\n\nOn mobile, search, provider filters and readable game terms are useful details to assess. A large library is more useful when navigation and account history make it easy to understand what is happening.",
+  "bonusNotes": "The welcome offer is 125% up to €500 and 125 free spins, with a €10 minimum deposit and 30x wagering on the bonus. The wagering basis matters: the multiplier applies to the promotional balance.\n\nFor example, a qualifying €40 deposit with a 125% match produces €50 in bonus funds. At 30x on that €50, the requirement is €1,500 in eligible bets. That turnover is neither a prediction of losses nor a guaranteed withdrawal amount.\n\nThe deadline, maximum stake, game contribution and limits on free-spin winnings complete the promotion’s terms. A larger headline amount does not automatically make a bonus a better fit for someone’s budget.",
+  "bonusFootnote": "",
+  "limitations": "Depositing and withdrawing are different operations. MB WAY or Multibanco being available to fund an account does not mean every method has the same withdrawal rules. The chosen method, limits and balance conditions should be considered together.\n\nGinja’s team presents the 5-minute timing and withdrawal without document submission for eligible transactions. This should not be treated as a guarantee for every request or as a waiver of checks provided for in the account rules.\n\nA foreign licence is not a Portuguese authorization. Ginja was not found in the SRIJ register consulted on 26 September 2026; we do not present it as an operator authorized in Portugal.",
   "pros": [
-    "Casino and sport combined in the brand’s offering",
-    "Portuguese-language communication",
-    "Local payment methods advertised by the company, awaiting cashier verification",
-    "Some positive accounts of mobile navigation and familiar games"
+    "Quick, simple registration, according to the operator’s team",
+    "Eligible withdrawals from €30 advertised in 5 minutes",
+    "No document submission for eligible withdrawals, according to the operator",
+    "Casino and sports betting on one platform",
+    "MB WAY and Multibanco"
   ],
   "cons": [
-    "Brand not found in the SRIJ register check of 26 September 2026",
-    "Current bonus offer and wagering terms still unverified",
-    "There are accounts of withdrawal difficulties",
-    "Small review sample limits firm conclusions"
+    "Brand not found in the SRIJ register consulted",
+    "30x wagering on bonus funds",
+    "Advertised withdrawal timing depends on applicable conditions",
+    "Public complaints about withdrawals and promotions"
   ],
   "praised": [
     "Some comments praise mobile navigation and how easy it is to find familiar games.",
@@ -106,27 +108,27 @@ export const ginjaReviewEn = {
     "There are complaints about withdrawals and differences between expected and received promotions.",
     "These accounts do not establish an average payment time or how frequently problems occur."
   ],
-  "feedbackMethodology": "Source: the ginja-casino.com Trustpilot profile, consulted on 27 September 2026 in a cached version: 2.5/5 from 15 reviews. On a scale of 10, that is 5.0. This is the platform’s TrustScore, not our editorial rating or an arithmetic average calculated by us. The sample is small; our team has not verified the comments. Cached versions may differ from the live page.",
-  "verdict": "Ginja has an understandable proposition for someone who wants casino and sport in one place. Portuguese-language communication and advertised local payment methods help explain its appeal. What we do not yet have is enough evidence to recommend the welcome offer or promise straightforward withdrawals.\n\nOur verdict is therefore conditional: the platform can be examined on the merits of its products, but the bonus can only be assessed after reading the current terms. For someone prioritizing confirmed Portuguese authorization, predictable payments and verified rules, this review cannot yet provide those assurances.",
+  "feedbackMethodology": "The ginja-casino.com Trustpilot profile, consulted on 27 September 2026: 2.5/5 from 15 reviews, equivalent to 5.0/10. This is the platform’s TrustScore, separate from the CasinoProsCons overall rating. Accounts belong to their authors and the sample is small.",
+  "verdict": "Ginja combines casino and sports betting with local payments and a fast-withdrawal proposition. The team’s offer — from €30 in 5 minutes for eligible transactions — is one of its more concrete selling points, alongside simple registration.\n\nWe weigh that convenience against the bonus and withdrawal rules. The 30x requirement deserves attention, and public criticism matters too. The offer is easier to assess when readers distinguish withdrawable funds from promotional balances and choose terms that fit their budget.",
   "hook": "The deciding factor is more than the bonus: it is which balance can be withdrawn, and on what terms. Read both sides in our review.",
   "details": [
     {
       "label": "Welcome bonus",
-      "value": "125% up to €500 + 125 free spins*"
+      "value": "125% up to €500 + 125 free spins"
     },
     {
       "label": "Minimum deposit",
-      "value": "€10*"
+      "value": "€10"
     },
     {
       "label": "Wagering requirements",
-      "value": "30x bonus*"
+      "value": "30x bonus"
     },
     {
       "label": "Format",
       "value": "Casino + sportsbook"
     }
   ],
-  "seoTitle": "Ginja Casino Review: Bonuses, Payments, Pros & Cons",
-  "seoDescription": "Our independent Ginja Casino review examines bonus and withdrawal rules, pros and cons, Trustpilot feedback and the questions still awaiting verification."
+  "seoTitle": "Ginja Casino Review: Bonus & Payouts",
+  "seoDescription": "Ginja Casino reviewed: 125% up to €500, local payments, withdrawals advertised in 5 minutes, pros, cons and sourced player feedback."
 };

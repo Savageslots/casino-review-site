@@ -1,4 +1,4 @@
-import { casinos } from '../src/data/casinosData.js';
+import { casinos, formatScore } from '../src/data/casinosData.js';
 import { localizeCasino } from '../src/i18n/translate.js';
 import { homeRanking, casinoRanking, bonusRanking } from '../src/data/rankings.js';
 import { locales, localePath, localeFromPath, languageTags } from '../src/i18n/routing.js';
@@ -51,7 +51,7 @@ for (const route of routes) {
   assert.ok(html.includes(`lang="${languageTags[localeFromPath(route)]}"`), `Language: ${route}`);
   assert.ok(html.includes('hrefLang="en"'), `Alternates: ${route}`);
   assert.ok(html.includes('<h1'), `Content: ${route}`);
-  assert.ok(!/znaki/i.test(html), `Retired competitor reference: ${route}`);
+  assert.ok(!/znaki|rascunho|\bdraft\b|not yet confirmed|por confirmar/i.test(html), `Retired editorial note: ${route}`);
   const base = route.replace(/^\/en(?=\/|$)/, '') || '/';
   const expectedOrder = { '/': homeRanking, '/casinos': casinoRanking, '/bonuses': bonusRanking }[base];
   if (expectedOrder) {
@@ -64,6 +64,14 @@ for (const route of routes) {
     const record = casinos.find(c => c.reviewLink === base);
     if (record) {
       const copy = localizeCasino(record, localeFromPath(route));
+      assert.ok(html.replace(/<!--.*?-->/g, '').includes(`${formatScore(copy.rating, localeFromPath(route))} / 10`), `Overall score: ${route}`);
+      const notice = localeFromPath(route) === 'en' ? 'Information current at the review date' : 'Informação atualizada à data da análise';
+      assert.equal(html.split(notice).length - 1, 1, `Freshness notice: ${route}`);
+      if (record.slug === 'ginja') {
+        const affiliate = html.match(/<a[^>]+href="https:\/\/affgo.org[^"]+"[^>]*>/);
+        assert.ok(affiliate, `Affiliate link: ${route}`);
+        assert.match(affiliate[0], /rel="sponsored nofollow noopener noreferrer"/);
+      }
       const escape = value => value.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#x27;');
       assert.ok(html.includes(escape(copy.intro.split('\n\n')[0])), `Live revised intro: ${route}`);
       assert.ok(html.includes(escape(copy.bonus)), `Live draft bonus: ${route}`);

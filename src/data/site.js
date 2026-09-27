@@ -8,12 +8,12 @@ const main = {
   pt: {
     '/': { title: 'Casinos online em Portugal: análises e opiniões', description: 'Compare Slota, Leon, Ginja, FairPari, DBbet e Spinzen: bónus anunciados, prós, contras, opiniões com fontes e estatuto no SRIJ.' },
     '/casinos': { title: 'Casinos online: análises para Portugal', description: 'Consulte seis análises de casinos com jogos, condições promocionais, opiniões públicas, fontes e limitações para Portugal.' },
-    '/bonuses': { title: 'Bónus de casino: comparação e condições', description: 'Compare bónus anunciados, requisitos de aposta e limitações. Identificamos ofertas divergentes e termos ainda por confirmar para Portugal.' }
+    '/bonuses': { title: 'Bónus de casino: comparação e condições', description: 'Compare bónus anunciados, requisitos de aposta e limitações. Consulte depósitos mínimos, jogos elegíveis e limites de cada oferta.' }
   },
   en: {
-    '/': { title: 'Online casinos in Portugal: reviews and player feedback', description: 'Compare Slota, Leon, Ginja, FairPari, DBbet and Spinzen: advertised bonuses, pros, cons, sourced player feedback and SRIJ status.' },
+    '/': { title: 'Portugal Casino Reviews & Bonuses', description: 'Compare Slota, Leon, Ginja, FairPari, DBbet and Spinzen: advertised bonuses, pros, cons, sourced player feedback and SRIJ status.' },
     '/casinos': { title: 'Online casinos: reviews for Portugal', description: 'Explore six casino reviews covering games, promotional terms, public feedback, sources and limitations for Portugal.' },
-    '/bonuses': { title: 'Casino bonuses: comparison and terms', description: 'Compare advertised bonuses, wagering requirements and limitations. We identify conflicting offers and terms still unconfirmed for Portugal.' }
+    '/bonuses': { title: 'Casino bonuses: comparison and terms', description: 'Compare advertised bonuses, wagering requirements and limitations. Review minimum deposits, eligible games and the limits of each offer.' }
   }
 };
 export const pages = Object.fromEntries(locales.flatMap(locale => {

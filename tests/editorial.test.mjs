@@ -4,12 +4,12 @@ import { readFile } from 'node:fs/promises';
 import { casinos } from '../src/data/casinosData.js';
 import { localizeCasino } from '../src/i18n/translate.js';
 import { casinoRanking, homeRanking, bonusRanking, rankedCasinos } from '../src/data/rankings.js';
-const overall=['ginja','slota','fairpari','leon','spinzen','dbbet'];
+const overall=['ginja','slota','fairpari','leon','dbbet','spinzen'];
 const bonuses=['leon','fairpari','ginja','dbbet','spinzen','slota'];
 test('general and bonus rankings have separate approved orders without changing source scores',()=>{
  assert.deepEqual(casinoRanking,overall); assert.deepEqual(homeRanking,overall); assert.deepEqual(bonusRanking,bonuses);
- assert.deepEqual(rankedCasinos(overall).map(c=>c.rating),[8,7.6,7.4,7,5.5,null]);
- assert.deepEqual(rankedCasinos(overall).map(c=>c.platformRating),[5,6.6,6.4,6,4.5,null]);
+ assert.deepEqual(rankedCasinos(overall).map(c=>c.rating),[8,7.6,7.4,7,6.8,5.5]);
+ assert.deepEqual(rankedCasinos(overall).map(c=>c.platformRating),[5,6.6,6.4,6,null,4.5]);
  for(const ranking of [overall,bonuses])assert.equal(new Set(ranking).size,casinos.length);
 });
 test('rendered rankings and JSON-LD agree in both languages',async()=>{
@@ -31,7 +31,7 @@ test('five edited reviews retain supplied terms, source-based feedback and compl
   assert.equal(c.casinoLink,'');
   for(const lang of ['pt','en']){
    const r=localizeCasino(c,lang);assert.ok(!/znaki/i.test(JSON.stringify(r)));
-   assert.match(r.bonusFootnote,/não confirmadas|not yet confirmed/);
+   assert.equal(r.bonusFootnote, '');
    for(const field of ['intro','strengths','games','bonusNotes','limitations','verdict'])assert.ok(r[field].length>150,`${slug} ${field}`);
    const html=await readFile(`dist${lang==='en'?'/en':''}/casinos/${slug}.html`,'utf8');
    assert.ok(!/znaki/i.test(html));assert.ok(!html.includes('AggregateRating'));

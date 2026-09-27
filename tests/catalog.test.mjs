@@ -2,10 +2,10 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { casinos, platformMean } from '../src/data/casinosData.js';
 import { readFile, access } from 'node:fs/promises';
-test('Portugal catalog keeps approved selection, empty affiliate fields and attributable scores', () => {
+test('Portugal catalog keeps approved selection, approved affiliate fields and attributable scores', () => {
   assert.deepEqual(casinos.map(c => c.slug), ['slota', 'leon', 'ginja', 'fairpari', 'dbbet', 'spinzen']);
   for (const c of casinos) {
-    assert.equal(c.casinoLink, '');
+    assert.equal(Boolean(c.casinoLink), c.slug === 'ginja');
     assert.ok(c.sources.length);
     for (const s of c.sources) {
       assert.equal(new URL(s.url).protocol, 'https:');
@@ -18,7 +18,7 @@ test('normalization gives equal platform weight and excludes unconfirmed or edit
   assert.equal(platformMean([{ score: 2, scale: 5, count: 1000, included: true }, { score: 8, scale: 10, count: 2, included: true }, { score: 10, scale: 10, included: false }]), 6);
   assert.equal(platformMean([]), null);
   assert.equal(casinos.find(c => c.slug === 'slota').platformRating, 6.6);
-  assert.equal(casinos.find(c => c.slug === 'dbbet').rating, null);
+  assert.equal(casinos.find(c => c.slug === 'dbbet').rating, 6.8);
 });
 test('all review blocks, language and source links survive prerendering', async () => {
   for (const c of casinos) {

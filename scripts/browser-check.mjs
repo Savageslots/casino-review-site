@@ -44,7 +44,7 @@ for (const width of [1440, 768, 390, 320]) {
   if (await page.locator('link[rel=canonical]').count() !== 1) throw new Error('Duplicate canonical after navigation');
   for (const base of baseRoutes) {
     await page.goto(`http://127.0.0.1:4173${base}`);
-    await page.getByRole('link', { name: 'English', exact: true }).click();
+    await page.getByRole('link', { name: 'EN — English', exact: true }).click();
     await page.waitForURL(`**${localePath(base, 'en')}`);
     await page.waitForFunction(() => document.documentElement.lang === 'en');
     if (await page.locator('link[rel=canonical]').getAttribute('href') !== `https://casinoproscons.com${localePath(base, 'en')}`) throw new Error('Switch canonical');
@@ -53,7 +53,7 @@ for (const width of [1440, 768, 390, 320]) {
     await page.waitForFunction(() => document.documentElement.lang === 'en');
     const internalLinks = await page.locator('a[href^="/"]').evaluateAll(links => links.filter(a => !a.closest('.language-switch')).map(a => a.getAttribute('href')));
     if (internalLinks.some(href => !href.startsWith('/en'))) throw new Error(`English links lose locale: ${base}`);
-    await page.getByRole('link', { name: 'Português', exact: true }).click();
+    await page.getByRole('link', { name: 'PT — Português', exact: true }).click();
     await page.waitForFunction(() => document.documentElement.lang === 'pt-PT');
     if (new URL(page.url()).pathname !== base) throw new Error('Return to Portuguese failed');
   }

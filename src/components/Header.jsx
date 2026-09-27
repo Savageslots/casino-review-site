@@ -50,7 +50,7 @@ function Header() {
             lang={language === 'pt' ? 'pt-PT' : 'en'}
             hrefLang={language === 'pt' ? 'pt-PT' : 'en'}
             aria-current={locale === language ? 'true' : undefined}
-            aria-label={language === 'pt' ? 'Português' : 'English'}
+            aria-label={language === 'pt' ? 'PT — Português' : 'EN — English'}
             className={locale === language ? 'selected' : ''}
           >{language.toUpperCase()}</Link>)}
         </nav>

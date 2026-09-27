@@ -19,7 +19,7 @@ test('English reviews translate every content block and preserve shared evidence
       if (Array.isArray(c[key])) assert.equal(en[key].length, c[key].length);
     }
     assert.equal(en.rating, c.rating);
-    assert.equal(en.casinoLink, '');
+    assert.equal(en.casinoLink, c.casinoLink);
     assert.deepEqual(en.sources.map(({url,score,count,included}) => ({url,score,count,included})), c.sources.map(({url,score,count,included}) => ({url,score,count,included})));
     const html = await readFile(`dist/en${c.reviewLink}.html`, 'utf8');
     for (const label of ['Key facts','Pros','Cons','Games and platform','Bonuses and terms','Street Voice','Our verdict']) assert.ok(html.includes(label));

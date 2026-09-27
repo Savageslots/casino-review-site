@@ -1,10 +1,30 @@
+# Publisher-approved content, Ginja affiliate and SEO audit — 27 September 2026
+
+- DBbet overall score set to 6.8. General order now Ginja, Slota, FairPari, Leon, DBbet, Spinzen; bonus order unchanged.
+- Owner confirmed all previously marked information. Removed draft/pending-verification notes throughout PT/EN and added one dated freshness notice per page at the bottom. No new independent hands-on verification is claimed.
+- Added the exact Ginja affiliate URL, including supplied tracking placeholders, to cards and the review with sponsored/nofollow and affiliate disclosure. Added operator-attributed registration and eligible payout proposition (from €30 in 5 minutes, without document submission for eligible withdrawals).
+- Added visible editorial byline/date and Article schema; shortened several titles and fixed the language-switch accessible name.
+- Indexable and private builds each passed 36 tests. Final browser checks passed 72 route/viewport combinations. Local mobile Lighthouse: 99/100/100 performance for Home/Ginja/EN DBbet; SEO, accessibility and best practices 100 each. These are lab metrics, not field Core Web Vitals.
+- Audit and remaining launch/content priorities: `docs/SEO_Readiness_2026-09-27.md`. Production remains password-protected and noindex; www DNS is not configured. Public launch not authorized by this audit.
+- Deployment of this revision pending.
+
+---
+
+# Publisher-selected overall ratings — 27 September 2026
+
+At the publisher’s explicit direction, overall ratings are Ginja 8.0, Slota 7.6, FairPari 7.4, Leon 7.0 and Spinzen 5.5. DBbet remains unrated because no numeric baseline was provided. Overall scores are labelled CasinoProsCons and attributed to the publisher’s selected-source analysis; recorded third-party platform scores remain unchanged and separate. Rankings and bonus order unchanged.
+
+Deployed commit `4121587d59c2d82170f6bf907e0ffd561990153d`, successful Cloudflare deployment `676894db-e5df-4f19-906c-44fad85fb253` at 18:29 UTC. Build and 36 tests passed. Password and noindex retained.
+
+---
+
 # Five review drafts and separate rankings — 27 September 2026
 
 - Replaced Slota, Leon, FairPari, DBbet and Spinzen copy in PT/EN using the five supplied drafts, edited for distinct analysis, readable paragraphs and supported claims. Retained draft bonus figures with visible unverified-terms notes; retained dated player-review evidence and excluded unsupported draft scores.
 - Preserved the approved Ginja data and text. General/Home order: Ginja, Slota, FairPari, Leon, Spinzen, DBbet. Ginja is labelled an editorial placement; the rest use descending published score, with unrated DBbet last. Bonus order: Leon, FairPari, Ginja, DBbet, Spinzen, Slota.
 - Updated PT/EN metadata and ItemList ordering; removed all Znaki references from rendered site content. Original supplied documents preserved; edited English exports and editorial decisions are in `Огляди-Португалія/Edited/`.
 - Production build and 36 tests passed. 72 browser route/viewport checks passed, including language switches, reloads, metadata and keyboard accordion behavior. Mobile homepage screenshot inspected. Live checker now asserts current intros, bonus figures, visible card order and JSON-LD order.
-- Password protection, noindex and empty affiliate fields remain required. Current release deployment pending.
+- Deployed commit `0a7c36b44cc1807f370d9fb5e0a89247f0e3de89`; Cloudflare deployment `c7c4341d-e8e5-4b32-94bb-6b82935ad326` succeeded on 27 September 2026 at 18:16 UTC. Live checks passed for all 18 routes, including revised intros/bonus figures, card and JSON-LD order, metadata, assets, 404s and authentication. Password protection, noindex and empty affiliate fields remain in place.
 
 ---
 

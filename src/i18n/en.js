@@ -51,10 +51,11 @@ spinzen: { ...editorialReviewsEn.spinzen, ...{
 } }
 };
 export const common = {
+  "Perfil apresentado separadamente pelo respetivo domínio.": "Profile displayed separately under its domain.",
+  "Perfil apresentado separadamente para distinguir as amostras.": "Profile displayed separately to distinguish the samples.",
   "Pacote anunciado: até 5 750 € + 500 rodadas grátis": "Advertised package: up to €5,750 + 500 free spins",
   "Oferta anunciada: 100% até 500 € + 250 rodadas grátis": "Advertised offer: 100% up to €500 + 250 free spins",
   "Oferta anunciada: até 1 200 € + 555 rodadas grátis": "Advertised offer: up to €1,200 + 555 free spins",
-  "Bónus de casino: condições por confirmar": "Casino bonus: terms not yet confirmed",
   "Oferta anunciada: 100% até 300 € + 30 rodadas grátis": "Advertised offer: 100% up to €300 + 30 free spins",
   "Pacote anunciado: até 4 250 € + 550 rodadas grátis": "Advertised package: up to €4,250 + 550 free spins",
   "5 € anunciados": "€5 advertised",
@@ -66,7 +67,6 @@ export const common = {
   "Casino, crash e desporto": "Casino, crash and sports betting",
   "Depósito mínimo": "Minimum deposit",
   "Requisitos de aposta": "Wagering requirements",
-  "Condições por confirmar": "Terms not yet confirmed",
   "Formato": "Format",
   "Registo SRIJ": "SRIJ register",
   "Marca não encontrada": "Brand not found",
@@ -76,8 +76,5 @@ export const common = {
   "Média publicada": "Published average",
   "Excluída do indicador: amostra pequena com conteúdo alheio ao operador e textos repetidos.": "Excluded from the indicator: small sample containing unrelated content and repeated wording.",
   "Sem nota de utilizadores por falta de dados. O Safety Index é editorial e não entra na média.": "No user score due to insufficient data. The editorial Safety Index is excluded from the average.",
-  "Perfil deste domínio; associação ao endereço da oferta portuguesa não confirmada.": "Profile for this domain; its connection to the Portuguese offer’s address is unconfirmed.",
-  "Outro domínio. Não agregado ao anterior para evitar misturar entidades ou amostras.": "A different domain. Not combined with the previous profile to avoid mixing entities or samples.",
-  "Sem nota de utilizadores por falta de dados. Safety Index excluído do cálculo.": "No user score due to insufficient data. Safety Index excluded from the calculation.",
-  "Os dados promocionais são atribuídos às fontes consultadas; não confirmam disponibilidade em Portugal. Consulte as limitações e as opiniões na análise.": "Promotional figures are attributed to the sources consulted; they do not confirm availability in Portugal. Read the limitations and player feedback in the review."
+  "Sem nota de utilizadores por falta de dados. Safety Index excluído do cálculo.": "No user score due to insufficient data. Safety Index excluded from the calculation."
 };

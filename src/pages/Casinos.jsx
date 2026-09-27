@@ -9,7 +9,7 @@ export default function Casinos() {
   return (
     <main style={page}>
       <h1>{t("Casinos online: análises para Portugal")}</h1>
-      <p style={{ color: "#555", marginBottom: 32, maxWidth: 900 }}>{t("Ginja ocupa o primeiro lugar por escolha editorial. Os restantes casinos estão ordenados pela nota publicada, por ordem decrescente; a DBbet, sem média confirmada, fica no fim. A posição não comprova autorização em Portugal. Expanda os cartões para consultar as condições e as fontes.")}</p>
+      <p style={{ color: "#555", marginBottom: 32, maxWidth: 900 }}>{t("Ginja ocupa o primeiro lugar por escolha editorial. Os restantes casinos seguem pela avaliação global CasinoProsCons, por ordem decrescente. A posição não comprova autorização em Portugal. Expanda os cartões para consultar condições e fontes.")}</p>
 
       {casinos.map((casino, i) => (
         <CasinoCard key={casino.name} rank={i + 1} casino={casino} />
