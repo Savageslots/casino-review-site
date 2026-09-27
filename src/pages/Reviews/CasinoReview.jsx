@@ -14,7 +14,7 @@ export default function CasinoReview({ casino }) {
   const included = c.sources.filter(s => s.included);
   return <main className="review-page" style={{ maxWidth: 1100, margin: '0 auto', padding: '48px 20px' }}>
     <section style={{ marginBottom: 48 }}>
-      {c.slug === 'fairpari' && <img src={c.logo} alt={c.name} width="240" height="72" className="official-brand-logo" style={{ objectFit: 'contain', maxWidth: '100%' }} />}
+      <img src={c.logo} alt={c.name} width="240" height="128" className="official-brand-logo" style={{ objectFit: 'contain', maxWidth: '100%', background: c.logoBackground }} />
       <h1 style={{ fontSize: 36, fontWeight: 800, marginBottom: 8 }}>{c.name}{t(": análise e opiniões")}</h1>
       <p style={{ fontSize: 18, color: '#666', marginBottom: 32 }}>{c.subtitle || t("Bónus, jogos, prós, contras e opiniões dos jogadores — Portugal.")}</p>
       {c.intro.split('\n\n').map((part, i) => <p key={i} style={{ ...paragraph, fontSize: 17 }}>{part}</p>)}

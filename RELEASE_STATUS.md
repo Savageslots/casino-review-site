@@ -1,3 +1,11 @@
+# All brand logos — 27 September 2026
+
+- Added owner-supplied Ginja, Leon, DBbet and Spinzen artwork and web-sourced Slota logo, with provenance in docs/brand-assets.md. FairPari retained.
+- Trimmed excess margins, exported efficient WebP assets, and added logos to all review headers and ranking cards. Brand-specific backgrounds, preserved proportions and larger mobile containers improve readability.
+- Private build, 36 tests and 72 browser checks pass. All six mobile logos visually inspected together.
+
+---
+
 # Team paragraph, editorial polish and FairPari artwork — 27 September 2026
 
 - Added the owner-supplied team experience in one paragraph in both languages: 10 years in iGaming, including 5 years in product management and analysis in Tier 1 markets.

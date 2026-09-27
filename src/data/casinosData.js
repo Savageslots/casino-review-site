@@ -184,7 +184,7 @@ ginjaReview,
 // Keep the independently recorded platform snapshots unchanged.
 const publisherRatings = { ginja: 8, slota: 7.6, fairpari: 7.4, leon: 7, spinzen: 5.5, dbbet: 6.8 };
 export const casinos = records.map(record => ({
-  ...record, casinoLink: record.slug === 'ginja' ? 'https://affgo.org/?serial=61369829&creative_id=7260&anid={subid}_{replace_webID}' : '', reviewLink: `/casinos/${record.slug}`, logo: `/logos/${record.slug}.svg`,
+  ...record, casinoLink: record.slug === 'ginja' ? 'https://affgo.org/?serial=61369829&creative_id=7260&anid={subid}_{replace_webID}' : '', reviewLink: `/casinos/${record.slug}`, logo: `/logos/${record.slug}.${record.slug === 'fairpari' ? 'svg' : 'webp'}`, logoBackground: ({ ginja: '#ffffff', leon: '#25262b', dbbet: '#1e1e1e' })[record.slug] || '#202938',
   platformRating: platformMean(record.sources),
   publisherRating: publisherRatings[record.slug] ?? null,
   rating: publisherRatings[record.slug] ?? platformMean(record.sources),

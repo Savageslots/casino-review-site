@@ -42,14 +42,14 @@ function CasinoCard({ casino: record, rank }) {
           </div>
 
           <img
-            width="112"
+            width="144"
             height="112"
             loading={rank > 2 ? "lazy" : "eager"}
             decoding="async"
             src={casino.logo}
             alt={casino.name}
-            style={casinoLogoStyle}
-            className={`casino-logo${casino.slug === "fairpari" ? " official-brand-logo" : ""}`}
+            style={{ ...casinoLogoStyle, background: casino.logoBackground }}
+            className="casino-logo official-brand-logo"
           />
 
           <div style={{ paddingLeft: "38px", color: "#ffffff" }} className="casino-content">
@@ -124,7 +124,7 @@ const cardStyle = {
   padding: "32px",
   boxShadow: "0 20px 50px rgba(0,0,0,0.25)",
   display: "grid",
-  gridTemplateColumns: "56px 96px 1fr auto",
+  gridTemplateColumns: "56px 144px 1fr auto",
   gap: "16px",
   alignItems: "center",
 };
@@ -136,7 +136,7 @@ const rankStyle = {
 };
 
 const casinoLogoStyle = {
-  width: "112px",
+  width: "144px",
   height: "112px",
   objectFit: "contain",
   flexShrink: 0,
