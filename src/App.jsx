@@ -10,16 +10,18 @@ import Bonuses from "./pages/Bonuses";
 import CasinoReview from "./pages/Reviews/CasinoReview";
 import { casinos } from "./data/casinosData";
 
+import { locales, localePath } from "./i18n/routing";
+
 function App() {
   return (
     <Routes>
       <Route element={<Layout />}>
-        {/* MAIN */}
-        <Route index element={<Home />} />
-        <Route path="casinos" element={<Casinos />} />
-        <Route path="bonuses" element={<Bonuses />} />
-
-        {casinos.map(casino => <Route key={casino.slug} path={casino.reviewLink} element={<CasinoReview casino={casino} />} />)}
+        {locales.flatMap(locale => [
+          <Route key={`${locale}-home`} path={localePath('/', locale)} element={<Home />} />,
+          <Route key={`${locale}-casinos`} path={localePath('/casinos', locale)} element={<Casinos />} />,
+          <Route key={`${locale}-bonuses`} path={localePath('/bonuses', locale)} element={<Bonuses />} />,
+          ...casinos.map(casino => <Route key={`${locale}-${casino.slug}`} path={localePath(casino.reviewLink, locale)} element={<CasinoReview casino={casino} />} />)
+        ])}
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>

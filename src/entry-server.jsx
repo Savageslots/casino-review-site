@@ -10,5 +10,5 @@ export function render(url) {
   const html = renderToString(<HelmetProvider context={context}><StaticRouter location={url}><App /></StaticRouter></HelmetProvider>);
   const { helmet } = context;
   const head = [helmet.title, helmet.meta, helmet.link, helmet.script].map(value => value.toString()).join('\n');
-  return { html, head };
+  return { html, head, htmlAttributes: helmet.htmlAttributes.toString() };
 }

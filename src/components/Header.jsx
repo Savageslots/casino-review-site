@@ -1,6 +1,12 @@
-import { NavLink } from "react-router-dom";
+import { pages } from '../data/site';
+import { localePath } from '../i18n/routing';
+import { useLocale } from '../i18n/useLocale';
+import { useLocation, Link, NavLink } from "react-router-dom";
 
 function Header() {
+  const { t, path, locale, languageTag } = useLocale();
+  const { pathname, search, hash } = useLocation();
+  const switchPath = pages[pathname.replace(/\/+$/, '') || '/'] ? pathname : '/';
   return (
     <header
       style={{
@@ -23,7 +29,7 @@ function Header() {
       >
         {/* LOGO */}
         <NavLink
-          to="/"
+          to={path("/")}
           style={{
             fontSize: 22,
             fontWeight: 700,
@@ -31,18 +37,22 @@ function Header() {
             color: "#000000",
             cursor: "pointer",
           }}
-        >
-          CasinoProsCons
-        </NavLink>
+        >{" "}{t("CasinoProsCons")}{" "}</NavLink>
 
         {/* NAV */}
-        <nav aria-label="Navegação principal" style={{ display: "flex", gap: "24px" }}>
-          <NavLink to="/casinos" style={navStyle}>
-            Casinos
-          </NavLink>
-          <NavLink to="/bonuses" style={navStyle}>
-            Bónus
-          </NavLink>
+        <nav aria-label={t("Navegação principal")} style={{ display: "flex", gap: "24px" }}>
+          <NavLink to={path("/casinos")} style={navStyle}>{" "}{t("Casinos")}{" "}</NavLink>
+          <NavLink to={path("/bonuses")} style={navStyle}>{" "}{t("Bónus")}{" "}</NavLink>
+        </nav>
+        <nav className="language-switch" aria-label={t("Idioma")}>
+          {['pt', 'en'].map(language => <Link key={language}
+            to={`${localePath(switchPath, language)}${search}${hash}`}
+            lang={language === 'pt' ? 'pt-PT' : 'en'}
+            hrefLang={language === 'pt' ? 'pt-PT' : 'en'}
+            aria-current={locale === language ? 'true' : undefined}
+            aria-label={language === 'pt' ? 'Português' : 'English'}
+            className={locale === language ? 'selected' : ''}
+          >{language.toUpperCase()}</Link>)}
         </nav>
       </div>
     </header>

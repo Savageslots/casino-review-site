@@ -1,4 +1,6 @@
+import { useLocale } from '../i18n/useLocale';
 function Footer() {
+  const { t, path, locale, languageTag } = useLocale();
   return (
     <footer
       style={{
@@ -15,8 +17,7 @@ function Footer() {
           color: "#666",
         }}
       >
-        © {new Date().getFullYear()} CasinoProsCons. Todos os direitos reservados.
-        <p>18+. O jogo envolve risco. <a href="https://www.srij.turismodeportugal.pt/pt/jogo-seguro" target="_blank" rel="noopener noreferrer">Informação sobre jogo responsável — SRIJ</a>.</p>
+        © {new Date().getFullYear()}{" "}{t("CasinoProsCons. Todos os direitos reservados.")}{" "}<p>{t("18+. O jogo envolve risco.")}{" "}<a href="https://www.srij.turismodeportugal.pt/pt/jogo-seguro" target="_blank" rel="noopener noreferrer">{t("Informação sobre jogo responsável — SRIJ")}</a>.</p>
       </div>
     </footer>
   );

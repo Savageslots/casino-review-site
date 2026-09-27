@@ -14,7 +14,7 @@ npm test
 npm run preview -- --host 127.0.0.1 --port 4173
 ```
 
-The build produces complete HTML for all nine routes, plus `404.html`, `robots.txt` and `sitemap.xml`. Each route has one title, description, canonical, OpenGraph/Twitter metadata and JSON-LD. Structured data deliberately excludes unverified aggregate ratings and claims of firsthand testing.
+The build produces complete HTML for all eighteen language routes, plus `404.html`, `robots.txt` and `sitemap.xml`. Each route has one title, description, canonical, OpenGraph/Twitter metadata and JSON-LD. Structured data deliberately excludes unverified aggregate ratings and claims of firsthand testing.
 
 Default builds are **noindex** and generate an empty sitemap with `Disallow: /`. This is intentional until the editorial and deployment blockers in `RELEASE_STATUS.md` are resolved.
 
@@ -45,7 +45,7 @@ After deployment verify anonymous HTTP responses for all routes, a nonexistent r
 - When no affiliate URL exists, CTA says “Ler análise” and links internally. Outbound affiliate links use `sponsored nofollow noopener noreferrer`.
 - Slota, Leon, Ginja, Fairpari, DBbet and Spinzen use neutral text wordmarks pending approved official logos.
 
-Content is pt-PT. Research, source snapshots, score methodology and limitations: [Portugal research](docs/portugal-research.md). Editing `sources` updates the score in cards and reviews together.
+Content is available in pt-PT at existing URLs and English under `/en`. The header switch preserves the current page; navigation stays in that language. Each version is prerendered with a self-canonical, reciprocal `pt-PT`/`en`/`x-default` alternates, localized metadata and social image. Both languages continue to cover Portugal, not a new gambling market. No automatic IP/browser-language redirects or language cookies are used. Localized 404 documents are served by Cloudflare’s closest-404 behavior. Research, source snapshots, score methodology and limitations: [Portugal research](docs/portugal-research.md). Editing `sources` updates the score in cards and reviews together.
 
 ## Verification
 
@@ -61,7 +61,7 @@ node scripts/audit.mjs
 npm run build
 ```
 
-Browser checks cover nine routes at 320, 390, 768 and 1440 px, missing images, horizontal overflow, console errors and keyboard accordion interaction. Lighthouse HTML/JSON reports and screenshots are written to ignored `artifacts/`. `desktop-check.mjs` compares key desktop style properties against an original checkout served on port 5175; it is not a pixel-identical content comparison. Updated labels, shared data and fallback images are intentional content changes.
+Browser checks cover eighteen routes at 320, 390, 768 and 1440 px, missing images, horizontal overflow, console errors and keyboard accordion interaction. Lighthouse HTML/JSON reports and screenshots are written to ignored `artifacts/`. `desktop-check.mjs` compares key desktop style properties against an original checkout served on port 5175; it is not a pixel-identical content comparison. Updated labels, shared data and fallback images are intentional content changes.
 
 Image derivatives are committed in `public/`. To regenerate from originals run `node scripts/prepare-images.mjs`.
 

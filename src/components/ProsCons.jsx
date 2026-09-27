@@ -1,4 +1,6 @@
+import { useLocale } from '../i18n/useLocale';
 export default function ProsCons({ pros = [], cons = [] }) {
+  const { t, path, locale, languageTag } = useLocale();
   return (
     <div
       className="pros-cons-root"
@@ -11,7 +13,7 @@ export default function ProsCons({ pros = [], cons = [] }) {
     >
       {/* PROS */}
       <div>
-        <h3 style={{ marginBottom: "12px", color: "#1f8f5f" }}>Prós</h3>
+        <h3 style={{ marginBottom: "12px", color: "#1f8f5f" }}>{t("Prós")}</h3>
         <div style={{ display: "grid", gap: "10px" }}>
           {pros.map((item, i) => (
             <div
@@ -31,7 +33,7 @@ export default function ProsCons({ pros = [], cons = [] }) {
 
       {/* CONS */}
       <div>
-        <h3 style={{ marginBottom: "12px", color: "#c0392b" }}>Contras</h3>
+        <h3 style={{ marginBottom: "12px", color: "#c0392b" }}>{t("Contras")}</h3>
         <div style={{ display: "grid", gap: "10px" }}>
           {cons.map((item, i) => (
             <div

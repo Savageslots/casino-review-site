@@ -1,3 +1,4 @@
+import { locales, localePath, localeFromPath, languageTags } from '../src/i18n/routing.js';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { request } from 'node:https';
@@ -36,22 +37,29 @@ if (preview) {
   assert.equal(unauthorized.status, 401);
   headers.Authorization = `Basic ${Buffer.from(`${secrets.STAGING_USER}:${secrets.STAGING_PASSWORD}`).toString('base64')}`;
 }
-const routes = ['/', '/casinos', '/bonuses', ...['slota','leon','ginja','fairpari','dbbet','spinzen'].map(s=>`/casinos/${s}`)];
+const baseRoutes = ['/', '/casinos', '/bonuses', ...['slota','leon','ginja','fairpari','dbbet','spinzen'].map(s=>`/casinos/${s}`)];
+const routes = locales.flatMap(locale => baseRoutes.map(route => localePath(route, locale)));
 for (const route of routes) {
   const response = await fetch(origin + route, { headers });
   assert.equal(response.status, 200, route);
   const html = await response.text();
   assert.ok(html.includes(`href="https://casinoproscons.com${route}"`), `Canonical: ${route}`);
   assert.ok(html.includes('content="noindex, nofollow"'), `Preview indexing: ${route}`);
+  assert.ok(html.includes(`lang="${languageTags[localeFromPath(route)]}"`), `Language: ${route}`);
+  assert.ok(html.includes('hrefLang="en"'), `Alternates: ${route}`);
   assert.ok(html.includes('<h1'), `Content: ${route}`);
   if (preview) assert.equal(response.headers.get('X-Robots-Tag'), 'noindex, nofollow');
 }
 const missing = await fetch(origin + '/this-page-does-not-exist', { headers });
 assert.equal(missing.status, 404);
 assert.ok((await missing.text()).includes('Página não encontrada'));
+const missingEn = await fetch(origin + '/en/this-page-does-not-exist', { headers });
+assert.equal(missingEn.status, 404);
+assert.ok((await missingEn.text()).includes('Page not found'));
+if (preview) assert.equal((await fetch(origin + '/en')).status, 401);
 const robots = await fetch(origin + '/robots.txt', { headers });
 assert.equal(robots.status, 200); assert.ok((await robots.text()).includes('Disallow: /'));
 const sitemap = await fetch(origin + '/sitemap.xml', { headers });
 assert.equal(sitemap.status, 200); assert.ok((await sitemap.text()).includes('<urlset'));
-for (const asset of ['/favicon.png','/social-card.png','/logo-icon.webp']) assert.equal((await fetch(origin+asset,{headers})).status,200,asset);
+for (const asset of ['/favicon.png','/social-card.png','/social-card-en.png','/logo-icon.webp']) assert.equal((await fetch(origin+asset,{headers})).status,200,asset);
 console.log(JSON.stringify({origin,preview,routes:routes.length,status:'passed',checks:['rendered content','canonical','noindex','404','robots','sitemap','images',...(preview?['preview authentication']:[])]},null,2));

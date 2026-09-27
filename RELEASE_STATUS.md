@@ -1,3 +1,14 @@
+# PT / EN localization — 27 September 2026
+
+- Header PT/EN switch links to the equivalent page; navigation and reloads retain the language through URLs.
+- Original Portuguese URLs preserved; English at `/en`, `/en/casinos`, `/en/bonuses`, and six `/en/casinos/{slug}` reviews.
+- Complete English UI and review text, including source notes, facts, accessibility labels, dates, scores, footer and 404. Evidence, scores and empty affiliate fields remain shared.
+- 18 prerendered pages; self-canonicals and reciprocal pt-PT/en/x-default alternates; localized HTML language, JSON-LD, metadata and social images. When publicly enabled later, sitemap includes both languages.
+- 31 tests passed in both noindex and indexable local builds. Local build restored to noindex. 72 route/viewport checks plus per-page language-switch, reload and internal-link checks passed.
+- Cloudflare production and preview settings reconfirmed private/noindex with existing credentials. Localization deployment pending live verification.
+
+---
+
 # CasinoProsCons — Portugal update, 26 September 2026
 
 ## Access requirement
@@ -24,7 +35,9 @@ The owner requires the site to remain private. Cloudflare project `casino-review
 
 ## Deployment
 
-Prepared for the existing Git-connected Cloudflare Pages production branch `main`, with password protection retained. Live deployment verification is recorded below after the deployment completes.
+Deployed to the existing Git-connected Cloudflare Pages production branch `main`, retaining password protection. Code commit: `a43aa6075e4f3b7d7d06418253b708edb791f262`. Deployment: `f83bfd7a-ed08-4fdc-b22f-890a1c5aa7dc`, successful at 18:58 UTC on 26 September 2026.
+
+Live check on https://casinoproscons.com passed: anonymous 401; all nine authenticated routes 200 with rendered content and canonical metadata; noindex response headers; real 404; robots Disallow; empty sitemap; image responses. Existing credentials unchanged.
 
 ## Remaining before a public commercial launch
 

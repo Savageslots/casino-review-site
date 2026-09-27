@@ -11,11 +11,11 @@ try {
   if (origin.origin !== siteUrl || origin.username || origin.password) throw new Error('VITE_SITE_URL must be an origin, without a path or credentials.');
   if (indexable && (origin.protocol !== 'https:' || origin.hostname === 'localhost' || origin.hostname.endsWith('.pages.dev'))) throw new Error('Indexable builds require your production HTTPS domain.');
   const template = await readFile('dist/index.html', 'utf8');
-  for (const path of [...Object.keys(pages), '/404']) {
-    const { html, head } = render(path);
+  for (const path of [...Object.keys(pages), '/404', '/en/404']) {
+    const { html, head, htmlAttributes } = render(path);
     const destination = path === '/' ? 'dist/index.html' : path === '/404' ? 'dist/404.html' : `dist${path}.html`;
     await mkdir(resolve(destination, '..'), { recursive: true });
-    await writeFile(destination, template.replace('<!--app-head-->', () => head).replace('<!--app-html-->', () => html));
+    await writeFile(destination, template.replace(/<html[^>]*>/, () => `<html ${htmlAttributes}>`).replace('<!--app-head-->', () => head).replace('<!--app-html-->', () => html));
   }
   const escapeXml = value => value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
   const urls = indexable ? Object.keys(pages).map(path => `<url><loc>${escapeXml(siteUrl + path)}</loc></url>`).join('\n') : '';

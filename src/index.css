@@ -124,3 +124,13 @@ body {
     text-decoration: underline !important;
   }
 }
+
+.site-header-inner { gap: 20px; }
+.language-switch { display: flex; gap: 4px; padding: 4px; border: 1px solid #d9ddf2; border-radius: 12px; flex-shrink: 0; }
+.language-switch a { padding: 8px 10px; border-radius: 8px; color: #2c3a7a; font-size: 14px; font-weight: 700; text-decoration: none; }
+.language-switch a.selected { background: #2c3a7a; color: #fff; }
+.language-switch a:focus-visible { outline: 2px solid #e53935; outline-offset: 2px; }
+@media (max-width: 480px) {
+  .site-header-inner > a { flex-basis: 100%; }
+  .site-header-inner { gap: 12px; }
+}

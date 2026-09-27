@@ -1,3 +1,4 @@
+import { useLocale } from '../i18n/useLocale';
 import { Link } from "react-router-dom";
 import CasinoCard from "../components/CasinoCard";
 import { rankedCasinos, homeRanking } from "../data/rankings";
@@ -93,6 +94,7 @@ const ratingStyle = {
 };
 
 function Home() {
+  const { t, path, locale, languageTag } = useLocale();
   return (
     <div role="main" style={pageStyle}>
       <div style={containerStyle}>
@@ -102,7 +104,7 @@ function Home() {
             width="180"
             height="120"
             fetchpriority="high"
-            alt="Ícone CasinoProsCons"
+            alt={t("Ícone CasinoProsCons")}
             style={heroIconStyle}
             className="hero-icon"
           />
@@ -113,9 +115,7 @@ function Home() {
               color: "#111111",
               margin: 0,
             }}
-          >
-            Casinos online: Portugal
-          </h1>
+          >{" "}{t("Casinos online: Portugal")}{" "}</h1>
         </div>
 
         <p
@@ -126,37 +126,22 @@ function Home() {
             lineHeight: "1.7",
             fontSize: "17px",
           }}
-        >
-          Compare Slota, Leon, Ginja, Fairpari, DBbet e Spinzen: jogos, bónus anunciados,
-          prós, contras e opiniões com fontes. A seleção segue a tabela de referência da Znaki;
-          a ordem não corresponde às notas. Estas marcas não foram encontradas no registo SRIJ consultado.
-        </p>
+        >{" "}{t("Compare Slota, Leon, Ginja, Fairpari, DBbet e Spinzen: jogos, bónus anunciados, prós, contras e opiniões com fontes. A seleção segue a tabela de referência da Znaki; a ordem não corresponde às notas. Estas marcas não foram encontradas no registo SRIJ consultado.")}{" "}</p>
 
         {rankedCasinos(homeRanking).map((casino, i) => (
           <CasinoCard key={casino.name} rank={i + 1} casino={casino} />
         ))}
 
         <div style={{ textAlign: "center", margin: "48px 0" }}>
-          <Link to="/casinos" className="cta-link" style={buttonStyle}>
-            Ver todos os casinos
-          </Link>
+          <Link to={path("/casinos")} className="cta-link" style={buttonStyle}>{" "}{t("Ver todos os casinos")}{" "}</Link>
         </div>
 
         <div style={{ marginTop: "80px", marginBottom: "80px" }}>
-          <h2 style={{ fontSize: "32px", marginBottom: "16px" }}>
-            Bónus de casino: o que comparar
-          </h2>
-          <p style={{ color: "#555", maxWidth: "760px", lineHeight: "1.7" }}>
-            Compare os valores anunciados e as limitações conhecidas de cada promoção.
-            O montante máximo não revela, por si só, o valor de um bónus: também contam os
-            requisitos de aposta, o prazo, os jogos elegíveis e os limites de levantamento.
-            Indicamos quando faltam termos oficiais ou existem diferenças entre fontes.
-          </p>
+          <h2 style={{ fontSize: "32px", marginBottom: "16px" }}>{" "}{t("Bónus de casino: o que comparar")}{" "}</h2>
+          <p style={{ color: "#555", maxWidth: "760px", lineHeight: "1.7" }}>{" "}{t("Compare os valores anunciados e as limitações conhecidas de cada promoção. O montante máximo não revela, por si só, o valor de um bónus: também contam os requisitos de aposta, o prazo, os jogos elegíveis e os limites de levantamento. Indicamos quando faltam termos oficiais ou existem diferenças entre fontes.")}{" "}</p>
 
           <div style={{ marginTop: "24px" }}>
-            <Link to="/bonuses" className="cta-link" style={buttonStyle}>
-              Comparar bónus
-            </Link>
+            <Link to={path("/bonuses")} className="cta-link" style={buttonStyle}>{" "}{t("Comparar bónus")}{" "}</Link>
           </div>
         </div>
 
@@ -175,36 +160,16 @@ function Home() {
               marginBottom: "18px",
               color: "#111111",
             }}
-          >
-            Como fazemos as nossas análises
-          </h2>
+          >{" "}{t("Como fazemos as nossas análises")}{" "}</h2>
 
-          <p style={{ color: "#444444", lineHeight: "1.75", marginBottom: "14px" }}>
-            Esta edição resulta de pesquisa documental, consultada em 26 de setembro de 2026.
-            A seleção de seis marcas segue o topo da tabela da Znaki. Não realizámos
-            depósitos, levantamentos ou testes de jogo; distinguimos a informação
-            anunciada das condições confirmadas.
-          </p>
+          <p style={{ color: "#444444", lineHeight: "1.75", marginBottom: "14px" }}>{" "}{t("Esta edição resulta de pesquisa documental, consultada em 26 de setembro de 2026. A seleção de seis marcas segue o topo da tabela da Znaki. Não realizámos depósitos, levantamentos ou testes de jogo; distinguimos a informação anunciada das condições confirmadas.")}{" "}</p>
 
-          <p style={{ color: "#444444", lineHeight: "1.75", marginBottom: "14px" }}>
-            Cada análise mantém os mesmos blocos: informações essenciais, prós e contras,
-            jogos e plataforma, bónus, limitações, opiniões e veredicto. As ofertas
-            atribuídas a terceiros podem variar por país, método de pagamento e conta.
-          </p>
+          <p style={{ color: "#444444", lineHeight: "1.75", marginBottom: "14px" }}>{" "}{t("Cada análise mantém os mesmos blocos: informações essenciais, prós e contras, jogos e plataforma, bónus, limitações, opiniões e veredicto. As ofertas atribuídas a terceiros podem variar por país, método de pagamento e conta.")}{" "}</p>
 
-          <p style={{ color: "#444444", lineHeight: "1.75", marginBottom: "14px" }}>
-            Nas opiniões, mostramos fonte, escala original e número de comentários. Quando
-            combinamos plataformas, calculamos a média simples das notas normalizadas para
-            10, sem ponderar pelo número de opiniões. O TrustScore tem metodologia própria;
-            não somamos as amostras nem incluímos notas editoriais.
-          </p>
+          <p style={{ color: "#444444", lineHeight: "1.75", marginBottom: "14px" }}>{" "}{t("Nas opiniões, mostramos fonte, escala original e número de comentários. Quando combinamos plataformas, calculamos a média simples das notas normalizadas para 10, sem ponderar pelo número de opiniões. O TrustScore tem metodologia própria; não somamos as amostras nem incluímos notas editoriais.")}{" "}</p>
 
-          <p style={{ color: "#444444", lineHeight: "1.75" }}>
-            As seis marcas não foram encontradas no registo de entidades licenciadas do SRIJ
-            consultado nesta data. Esta seleção não comprova autorização para operar em Portugal.
-            Não existem ligações de adesão ativas: os botões abrem as nossas análises.
-          </p>
-          <p style={{ lineHeight: 1.7 }}><a href="https://znaki.fm/pt/jogos-de-azar/casinos/" target="_blank" rel="noopener noreferrer">Seleção de referência</a> · <a href="https://www.srij.turismodeportugal.pt/pt/jogos-e-apostas-online/entidades-licenciadas" target="_blank" rel="noopener noreferrer">Registo oficial SRIJ</a></p>
+          <p style={{ color: "#444444", lineHeight: "1.75" }}>{" "}{t("As seis marcas não foram encontradas no registo de entidades licenciadas do SRIJ consultado nesta data. Esta seleção não comprova autorização para operar em Portugal. Não existem ligações de adesão ativas: os botões abrem as nossas análises.")}{" "}</p>
+          <p style={{ lineHeight: 1.7 }}><a href="https://znaki.fm/pt/jogos-de-azar/casinos/" target="_blank" rel="noopener noreferrer">{t("Seleção de referência")}</a> · <a href="https://www.srij.turismodeportugal.pt/pt/jogos-e-apostas-online/entidades-licenciadas" target="_blank" rel="noopener noreferrer">{t("Registo oficial SRIJ")}</a></p>
         </div>
       </div>
       <style dangerouslySetInnerHTML={{ __html: `

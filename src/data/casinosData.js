@@ -9,7 +9,7 @@ export function platformMean(sources) {
   const included = sources.filter(source => source.included && Number.isFinite(source.score));
   return included.length ? Math.round(included.reduce((sum, source) => sum + source.score / source.scale * 10, 0) / included.length * 10) / 10 : null;
 }
-export const formatScore = value => value == null ? 'Sem média' : value.toFixed(1).replace('.', ',');
+export const formatScore = (value, locale = 'pt') => value == null ? (locale === 'en' ? 'No average' : 'Sem média') : value.toLocaleString(locale === 'en' ? 'en' : 'pt-PT', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
 const records = [
   {
     slug: 'slota', name: 'Slota', bonus: 'Pacote anunciado: até 5 750 € + 500 rodadas grátis', minDeposit: '5 € anunciados', type: 'Slots e casino ao vivo',

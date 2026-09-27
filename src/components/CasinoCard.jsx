@@ -1,9 +1,13 @@
+import { localizeCasino } from '../i18n/translate';
+import { useLocale } from '../i18n/useLocale';
 import { formatScore } from "../data/casinosData";
 import "../styles/CasinoCard.css";
 import { useId, useState } from "react";
 import { Link } from "react-router-dom";
 
-function CasinoCard({ casino, rank }) {
+function CasinoCard({ casino: record, rank }) {
+  const { t, path, locale, languageTag } = useLocale();
+  const casino = localizeCasino(record, locale);
   const panelId = useId();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -13,7 +17,7 @@ function CasinoCard({ casino, rank }) {
         {/* CARD */}
         <div style={cardStyle} className="casino-card">
           <div className="mobile-rating" title={casino.ratingLabel}>
-            {casino.rating == null ? "Sem média" : `★ ${formatScore(casino.rating)}/10`}
+            {casino.rating == null ? t("Sem média") : `★ ${formatScore(casino.rating, locale)}/10`}
           </div>
           <div
             style={{
@@ -26,7 +30,7 @@ function CasinoCard({ casino, rank }) {
             tabIndex={0}
             aria-expanded={isOpen}
             aria-controls={panelId}
-            aria-label={`#${rank} Ver detalhes de ${casino.name}`}
+            aria-label={`#${rank} ${t("Ver detalhes de")} ${casino.name}`}
             onKeyDown={event => { if (event.key === "Enter" || event.key === " ") { event.preventDefault(); setIsOpen(value => !value); } }}
             onClick={() => setIsOpen(value => !value)}
             className="casino-rank"
@@ -54,14 +58,12 @@ function CasinoCard({ casino, rank }) {
               {casino.description}
             </p>
             <div style={{ marginBottom: "8px" }} className="casino-review">
-              <Link to={casino.reviewLink} style={{ color: "#ff4d4f", fontWeight: 600, textDecoration: "none" }}>
-                Ler análise completa →
-              </Link>
+              <Link to={casino.reviewLink} style={{ color: "#ff4d4f", fontWeight: 600, textDecoration: "none" }}>{" "}{t("Ler análise completa →")}{" "}</Link>
             </div>
             <p style={{ fontSize: "15px", color: "#e6e9ff" }} className="casino-bonus">
               🎁 {casino.bonus}
             </p>
-            <p className="casino-source-note" style={{ fontSize: 13, lineHeight: 1.5, color: '#fff' }}>{casino.ratingLabel} · Marca não encontrada no registo SRIJ.</p>
+            <p className="casino-source-note" style={{ fontSize: 13, lineHeight: 1.5, color: '#fff' }}>{casino.ratingLabel}{" "}{t("· Marca não encontrada no registo SRIJ.")}</p>
           </div>
 
           <div
@@ -72,7 +74,7 @@ function CasinoCard({ casino, rank }) {
             }}
             className="casino-actions"
           >
-            <div style={ratingStyle} className="desktop-rating" title={casino.ratingLabel}>{casino.rating == null ? "Sem média" : `★ ${formatScore(casino.rating)}/10`}</div>
+            <div style={ratingStyle} className="desktop-rating" title={casino.ratingLabel}>{casino.rating == null ? t("Sem média") : `★ ${formatScore(casino.rating, locale)}/10`}</div>
             <a
               href={casino.casinoLink || casino.reviewLink}
               target={casino.casinoLink ? "_blank" : undefined}
@@ -80,7 +82,7 @@ function CasinoCard({ casino, rank }) {
               className="cta-link"
               style={buttonStyle}
             >
-              {casino.casinoLink ? "Visitar casino" : "Ler análise"}
+              {casino.casinoLink ? t("Visitar casino") : t("Ler análise")}
             </a>
           </div>
         </div>
@@ -100,9 +102,7 @@ function CasinoCard({ casino, rank }) {
             {casino.hook && (
               <p style={hookStyle}>
                 {casino.hook}{" "}
-                <Link to={casino.reviewLink} style={hookLink}>
-                  ler análise completa
-                </Link>
+                <Link to={casino.reviewLink} style={hookLink}>{" "}{t("ler análise completa")}{" "}</Link>
               </p>
             )}
           </div>
