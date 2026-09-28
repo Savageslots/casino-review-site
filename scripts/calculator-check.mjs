@@ -8,6 +8,14 @@ try {
  assert.equal(await amount('turnover'),3500);
  assert.equal(await amount('loss'),140);
  assert.equal(await amount('balance'),60);
+ await page.locator('input[value=lucky]').check();
+ assert.equal(await amount('turnover'),3500);
+ assert.equal(await amount('balance'),270);
+ assert.equal(await amount('loss'),70);
+ await page.locator('input[value=unlucky]').check();
+ assert.equal(await amount('balance'),-150);
+ await page.locator('input[value=average]').check();
+ assert.equal(await amount('balance'),60);
  await page.locator('#deposit').fill('12,50');
  assert.equal(await amount('turnover'),437.5);
  await page.locator('#basis').selectOption('both');
