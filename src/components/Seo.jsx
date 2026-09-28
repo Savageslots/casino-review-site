@@ -25,11 +25,11 @@ export default function Seo() {
     items.push({ name: page.casino?.name || page.title, item: url });
     graph.push({ '@type': 'BreadcrumbList', itemListElement: items.map((item, i) => ({ '@type': 'ListItem', position: i + 1, ...item })) });
   }
-  if (page?.casino) graph.push({
+  if (page?.casino || page?.article) graph.push({
     '@type': 'Article', '@id': `${url}#article`, headline: page.title,
     description, mainEntityOfPage: { '@id': `${url}#webpage` },
     author: { '@type': 'Organization', name: 'CasinoProsCons', '@id': `${siteUrl}/#organization` },
-    publisher: { '@id': `${siteUrl}/#organization` }, dateModified: '2026-09-27',
+    publisher: { '@id': `${siteUrl}/#organization` }, dateModified: page.article ? '2026-09-28' : '2026-09-27',
     inLanguage: languageTag, image
   });
   const ranking = { '/': homeRanking, '/casinos': casinoRanking, '/bonuses': bonusRanking }[base];

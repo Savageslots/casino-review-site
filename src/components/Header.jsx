@@ -43,6 +43,7 @@ function Header() {
         <nav aria-label={t("Navegação principal")} style={{ display: "flex", gap: "24px" }}>
           <NavLink to={path("/casinos")} style={navStyle}>{" "}{t("Casinos")}{" "}</NavLink>
           <NavLink to={path("/bonuses")} style={navStyle}>{" "}{t("Bónus")}{" "}</NavLink>
+        <NavLink to={path("/calculadora-rollover")} style={navStyle}>{locale === "en" ? "Calculator" : "Calculadora"}</NavLink>
         </nav>
         <nav className="language-switch" aria-label={t("Idioma")}>
           {['pt', 'en'].map(language => <Link key={language}

@@ -6,6 +6,7 @@ import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import Casinos from "./pages/Casinos";
 import Bonuses from "./pages/Bonuses";
+import WageringCalculator from "./pages/WageringCalculator";
 
 import CasinoReview from "./pages/Reviews/CasinoReview";
 import { casinos } from "./data/casinosData";
@@ -20,6 +21,7 @@ function App() {
           <Route key={`${locale}-home`} path={localePath('/', locale)} element={<Home />} />,
           <Route key={`${locale}-casinos`} path={localePath('/casinos', locale)} element={<Casinos />} />,
           <Route key={`${locale}-bonuses`} path={localePath('/bonuses', locale)} element={<Bonuses />} />,
+          <Route key={`${locale}-calculator`} path={localePath('/calculadora-rollover', locale)} element={<WageringCalculator />} />,
           ...casinos.map(casino => <Route key={`${locale}-${casino.slug}`} path={localePath(casino.reviewLink, locale)} element={<CasinoReview casino={casino} />} />)
         ])}
         <Route path="*" element={<NotFound />} />

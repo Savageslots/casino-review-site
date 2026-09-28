@@ -2,7 +2,7 @@ import { locales, localePath, localeFromPath, languageTags } from '../src/i18n/r
 import { chromium } from '@playwright/test';
 import { mkdir, writeFile } from 'node:fs/promises';
 const browser = await chromium.launch({ channel: 'chrome', headless: true });
-const baseRoutes = ['/', '/casinos', '/bonuses', ...['slota','leon','ginja','fairpari','dbbet','spinzen'].map(s => `/casinos/${s}`)];
+const baseRoutes = ['/', '/casinos', '/bonuses', '/calculadora-rollover', ...['slota','leon','ginja','fairpari','dbbet','spinzen'].map(s => `/casinos/${s}`)];
 const routes = locales.flatMap(locale => baseRoutes.map(route => localePath(route, locale)));
 await mkdir('artifacts', { recursive: true });
 const results = [];

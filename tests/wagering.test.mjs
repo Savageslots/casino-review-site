@@ -1,0 +1,12 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { calculateWagering } from '../src/utils/wagering.js';
+const input = { deposit: 100, bonusPercent: 100, bonusCap: null, multiplier: 35, basis: 'bonus', contribution: 100, rtp: 96 };
+const near = (a,b) => assert.ok(Math.abs(a-b)<1e-7, `${a} != ${b}`);
+test('bonus only: turnover, cumulative payouts and net result are distinct', () => { const r=calculateWagering(input); near(r.turnover,3500);near(r.payouts,3360);near(r.loss,140);near(r.balance,60);near(r.net,-40); });
+test('deposit plus bonus and partial contribution increase actual turnover',()=>{const r=calculateWagering({...input,basis:'both',contribution:20});near(r.turnover,35000);near(r.loss,1400);near(r.balance,-1200);});
+test('bonus cap applies before wagering base',()=>{const r=calculateWagering({...input,deposit:300,bonusCap:200});near(r.bonus,200);near(r.turnover,7000);});
+test('excluded games cannot clear positive requirements',()=>assert.equal(calculateWagering({...input,contribution:0}).excluded,true));
+test('zero wagering needs no eligible bets, even at zero contribution',()=>{const r=calculateWagering({...input,multiplier:0,contribution:0});near(r.turnover,0);near(r.balance,200);});
+test('invalid inputs return no result',()=>{for(const patch of [{deposit:NaN},{rtp:101},{contribution:-1},{bonusCap:-1},{basis:'invalid'},{multiplier:Infinity}]) assert.equal(calculateWagering({...input,...patch}),null);});
+test('boundary RTP and decimal deposits',()=>{near(calculateWagering({...input,rtp:100}).loss,0);near(calculateWagering({...input,rtp:0}).loss,3500);near(calculateWagering({...input,deposit:12.5}).turnover,437.5);});
