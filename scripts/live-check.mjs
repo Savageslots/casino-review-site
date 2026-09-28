@@ -47,7 +47,12 @@ for (const route of routes) {
   assert.equal(response.status, 200, route);
   const html = await response.text();
   assert.ok(html.includes(`href="https://casinoproscons.com${route}"`), `Canonical: ${route}`);
-  assert.ok(html.includes('content="noindex, nofollow"'), `Preview indexing: ${route}`);
+  if (preview) assert.ok(html.includes('content="noindex, nofollow"'), `Preview indexing: ${route}`);
+  else {
+    assert.ok(html.includes('content="index, follow"'), `Public indexing: ${route}`);
+    assert.ok(!/noindex|nofollow/i.test(response.headers.get('X-Robots-Tag') || ''), `Public robots header: ${route}`);
+    assert.equal(response.headers.get('WWW-Authenticate'), null, `Public authentication: ${route}`);
+  }
   assert.ok(html.includes(`lang="${languageTags[localeFromPath(route)]}"`), `Language: ${route}`);
   assert.ok(html.includes('hrefLang="en"'), `Alternates: ${route}`);
   assert.ok(html.includes('<h1'), `Content: ${route}`);
@@ -88,8 +93,15 @@ assert.equal(missingEn.status, 404);
 assert.ok((await missingEn.text()).includes('Page not found'));
 if (preview) assert.equal((await fetch(origin + '/en')).status, 401);
 const robots = await fetch(origin + '/robots.txt', { headers });
-assert.equal(robots.status, 200); assert.ok((await robots.text()).includes('Disallow: /'));
+assert.equal(robots.status, 200);
+const robotsText = await robots.text();
+if (preview) assert.ok(robotsText.includes('Disallow: /'));
+else { assert.ok(robotsText.includes('Allow: /')); assert.ok(!/^Disallow:\s*\/\s*$/m.test(robotsText)); assert.ok(robotsText.includes(`Sitemap: ${origin}/sitemap.xml`)); }
 const sitemap = await fetch(origin + '/sitemap.xml', { headers });
-assert.equal(sitemap.status, 200); assert.ok((await sitemap.text()).includes('<urlset'));
+assert.equal(sitemap.status, 200);
+const sitemapText = await sitemap.text();
+assert.ok(sitemapText.includes('<urlset'));
+const locations = [...sitemapText.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => match[1]);
+assert.deepEqual(locations.sort(), preview ? [] : routes.map(route => origin + route).sort());
 for (const asset of ['/favicon.png','/social-card.png','/social-card-en.png','/logo-icon.webp']) assert.equal((await fetch(origin+asset,{headers})).status,200,asset);
-console.log(JSON.stringify({origin,preview,routes:routes.length,status:'passed',checks:['rendered content','canonical','noindex','404','robots','sitemap','images',...(preview?['preview authentication']:[])]},null,2));
+console.log(JSON.stringify({origin,preview,routes:routes.length,status:'passed',checks:['rendered content','canonical',preview?'noindex':'public indexing','404','robots','sitemap','images',...(preview?['preview authentication']:[])]},null,2));

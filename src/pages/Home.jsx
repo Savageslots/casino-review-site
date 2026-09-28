@@ -165,7 +165,7 @@ function Home() {
             }}
           >{" "}{t("Como fazemos as nossas análises")}{" "}</h2>
 
-          <p style={{ color: "#444444", lineHeight: "1.75", marginBottom: "14px" }}>{t("A nossa equipa de especialistas conta com 10 anos de experiência no setor do iGaming, incluindo 5 anos em gestão e análise de produtos nos mercados Tier 1. Este percurso ajuda-nos a avaliar casinos e plataformas de apostas para além das promoções, com atenção à experiência de utilização, aos pagamentos e às condições de cada produto.")}</p>
+          <p style={{ color: "#444444", lineHeight: "1.75", marginBottom: "14px" }}>{t("A nossa equipa de especialistas conta com 10 anos de experiência no setor do iGaming, incluindo 5 anos em equipas internas de produto nos mercados Tier 1, com conhecimento direto de como as plataformas são criadas, geridas e desenvolvidas. Este percurso ajuda-nos a avaliar casinos e plataformas de apostas para além das promoções, com atenção à experiência de utilização, aos pagamentos e às condições de cada produto.")}</p>
 
           <p style={{ color: "#444444", lineHeight: "1.75", marginBottom: "14px" }}>{" "}{t("A equipa editorial analisa jogos, pagamentos e promoções, com atenção às condições que fazem diferença na utilização. Cada avaliação global reflete as fontes selecionadas pelo editor. As notas das plataformas de opiniões aparecem separadamente, com a data e a origem dos dados.")}{" "}</p>
 
