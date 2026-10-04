@@ -1,3 +1,4 @@
+import GuideLinks from '../components/GuideLinks';
 import { Link } from "react-router-dom";
 import ComparisonGuide from '../components/ComparisonGuide';
 import { useLocale } from '../i18n/useLocale';
@@ -20,6 +21,7 @@ export default function Bonuses() {
       {casinos.map((casino, i) => (
         <CasinoCard key={casino.name} rank={i + 1} casino={casino} />
       ))}
+      <GuideLinks />
       <ComparisonGuide page="bonuses" />
     </main>
     </>

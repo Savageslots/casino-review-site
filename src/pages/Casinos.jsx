@@ -1,3 +1,4 @@
+import GuideLinks from '../components/GuideLinks';
 import ComparisonGuide from '../components/ComparisonGuide';
 import { useLocale } from '../i18n/useLocale';
 import { rankedCasinos, casinoRanking } from "../data/rankings";
@@ -15,6 +16,7 @@ export default function Casinos() {
       {casinos.map((casino, i) => (
         <CasinoCard key={casino.name} rank={i + 1} casino={casino} />
       ))}
+      <GuideLinks />
       <ComparisonGuide page="casinos" />
     </main>
   );

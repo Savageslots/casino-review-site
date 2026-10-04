@@ -13,3 +13,8 @@ export function calculateWagering({ deposit, bonusPercent, bonusCap, multiplier,
   const loss = turnover * (1 - returnRate / 100);
   return { returnRate, bonus, initial, requirement, turnover, payouts, loss, balance: initial - loss, net: bonus - loss, excluded: false };
 }
+
+// Spin winnings are an existing balance, not an additional deposit or match bonus.
+export function calculateSpinWinnings({ winnings, multiplier, contribution, rtp, scenario = 'average' }) {
+  return calculateWagering({ deposit: winnings, bonusPercent: 0, bonusCap: null, multiplier, basis: 'both', contribution, rtp, scenario });
+}

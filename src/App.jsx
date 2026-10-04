@@ -1,3 +1,5 @@
+import TopicGuide from './pages/TopicGuide';
+import { guideRoutes } from './data/topicGuides';
 import NotFound from "./pages/NotFound";
 import { Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
@@ -22,6 +24,7 @@ function App() {
           <Route key={`${locale}-casinos`} path={localePath('/casinos', locale)} element={<Casinos />} />,
           <Route key={`${locale}-bonuses`} path={localePath('/bonuses', locale)} element={<Bonuses />} />,
           <Route key={`${locale}-calculator`} path={localePath('/calculadora-rollover', locale)} element={<WageringCalculator />} />,
+          ...guideRoutes.map(route => <Route key={`${locale}-${route}`} path={localePath(route, locale)} element={<TopicGuide />} />),
           ...casinos.map(casino => <Route key={`${locale}-${casino.slug}`} path={localePath(casino.reviewLink, locale)} element={<CasinoReview casino={casino} />} />)
         ])}
         <Route path="*" element={<NotFound />} />

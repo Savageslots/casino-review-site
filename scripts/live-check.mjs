@@ -40,7 +40,7 @@ if (preview) {
   assert.equal(unauthorized.status, 401);
   headers.Authorization = `Basic ${Buffer.from(`${secrets.STAGING_USER}:${secrets.STAGING_PASSWORD}`).toString('base64')}`;
 }
-const baseRoutes = ['/', '/casinos', '/bonuses', '/calculadora-rollover', ...['slota','leon','ginja','fairpari','dbbet','spinzen'].map(s=>`/casinos/${s}`)];
+const baseRoutes = ['/', '/casinos', '/bonuses', '/calculadora-rollover', '/metodos-de-pagamento', '/levantamentos-rapidos', '/rodadas-gratis', ...['slota','leon','ginja','fairpari','dbbet','spinzen'].map(s=>`/casinos/${s}`)];
 const routes = locales.flatMap(locale => baseRoutes.map(route => localePath(route, locale)));
 for (const route of routes) {
   const response = await fetch(origin + route, { headers });

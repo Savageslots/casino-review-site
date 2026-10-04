@@ -1,3 +1,4 @@
+import GuideLinks from '../../components/GuideLinks';
 import { useLocale } from '../../i18n/useLocale';
 import { localizeCasino } from '../../i18n/translate';
 import ProsCons from '../../components/ProsCons';
@@ -51,5 +52,6 @@ export default function CasinoReview({ casino }) {
 
     </section>
     <TextSection title={t("O nosso veredicto")} text={c.verdict}><p style={{ marginTop: 16, fontWeight: 600 }}>{t("18+. Antes de considerar qualquer operador, confirme a autorização portuguesa no")}{" "}<Source href={regulatorSource}>{t("SRIJ")}</Source>.</p></TextSection>
+    <GuideLinks />
   </main>;
 }

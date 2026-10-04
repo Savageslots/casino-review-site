@@ -2,7 +2,7 @@ import { locales, localePath, localeFromPath, languageTags } from '../src/i18n/r
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile, access } from 'node:fs/promises';
-const baseRoutes = ['/', '/casinos', '/bonuses', '/calculadora-rollover', ...['slota', 'leon', 'ginja', 'fairpari', 'dbbet', 'spinzen'].map(slug => `/casinos/${slug}`)];
+const baseRoutes = ['/', '/casinos', '/bonuses', '/calculadora-rollover', '/metodos-de-pagamento', '/levantamentos-rapidos', '/rodadas-gratis', ...['slota', 'leon', 'ginja', 'fairpari', 'dbbet', 'spinzen'].map(slug => `/casinos/${slug}`)];
 const paths = locales.flatMap(locale => baseRoutes.map(route => localePath(route, locale)));
 const titles = new Set();
 for (const path of paths) test(`prerendered metadata, content and assets: ${path}`, async () => {

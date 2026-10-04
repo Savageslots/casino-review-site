@@ -38,5 +38,17 @@ try {
  await page.getByRole('link',{name:'EN — English',exact:true}).click();
  await page.waitForURL('**/en/calculadora-rollover');
  assert.match(await page.locator('h1').textContent(),/Wagering calculator/);
+ await page.goto('http://127.0.0.1:4173/calculadora-rollover?mode=spins&multiplier=30');
+ assert.equal(await amount('turnover'),600);
+ assert.equal(await amount('balance'),-4);
+ assert.equal(await page.locator('#deposit').count(),0);
+ await page.locator('#spin-winnings').fill('10,50');
+ assert.equal(await amount('turnover'),315);
+ await page.goto('http://127.0.0.1:4173/rodadas-gratis');
+ await page.getByRole('link',{name:'Calcular ganhos a 45×',exact:true}).click();
+ assert.equal(await page.locator('#multiplier').inputValue(),'45');
+ assert.equal(await amount('turnover'),900);
+ await page.locator('#calculation-mode').selectOption('deposit');
+ assert.equal(await amount('turnover'),3500);
  console.log('Calculator interactions passed: decimal comma, bases, contribution, invalid RTP, locale switch.');
 } finally {await browser.close();}

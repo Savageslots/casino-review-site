@@ -29,7 +29,7 @@ export default function Seo() {
     '@type': 'Article', '@id': `${url}#article`, headline: page.title,
     description, mainEntityOfPage: { '@id': `${url}#webpage` },
     author: { '@type': 'Organization', name: 'CasinoProsCons', '@id': `${siteUrl}/#organization` },
-    publisher: { '@id': `${siteUrl}/#organization` }, dateModified: page.article ? '2026-09-28' : '2026-09-27',
+    publisher: { '@id': `${siteUrl}/#organization` }, dateModified: page.modified || (page.article ? '2026-09-28' : '2026-09-27'),
     inLanguage: languageTag, image
   });
   const ranking = { '/': homeRanking, '/casinos': casinoRanking, '/bonuses': bonusRanking }[base];

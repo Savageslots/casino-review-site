@@ -1,3 +1,4 @@
+import GuideLinks from '../components/GuideLinks';
 import ComparisonGuide from '../components/ComparisonGuide';
 import { useLocale } from '../i18n/useLocale';
 import { Link } from "react-router-dom";
@@ -146,7 +147,8 @@ function Home() {
           </div>
         </div>
 
-        <ComparisonGuide page="home" />
+        <GuideLinks />
+      <ComparisonGuide page="home" />
 
         <div
           style={{
