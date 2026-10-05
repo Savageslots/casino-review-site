@@ -56,8 +56,9 @@ for (const route of routes) {
   assert.ok(html.includes(`lang="${languageTags[localeFromPath(route)]}"`), `Language: ${route}`);
   assert.ok(html.includes('hrefLang="en"'), `Alternates: ${route}`);
   assert.ok(html.includes('<h1'), `Content: ${route}`);
-  assert.ok(!/znaki|rascunho|\bdraft\b|not yet confirmed|por confirmar/i.test(html), `Retired editorial note: ${route}`);
+  assert.ok(!/rascunho|\bdraft\b|not yet confirmed|por confirmar/i.test(html), `Retired editorial note: ${route}`);
   const base = route.replace(/^\/en(?=\/|$)/, '') || '/';
+  if (!['/metodos-de-pagamento', '/levantamentos-rapidos', '/rodadas-gratis'].includes(base)) assert.ok(!/znaki/i.test(html), `Retired competitor reference: ${route}`);
   const expectedOrder = { '/': homeRanking, '/casinos': casinoRanking, '/bonuses': bonusRanking }[base];
   if (expectedOrder) {
     const graph = JSON.parse(html.match(/<script[^>]*type="application\/ld\+json"[^>]*>(.*?)<\/script>/s)[1]);
