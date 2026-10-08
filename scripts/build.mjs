@@ -1,4 +1,5 @@
 import { build } from 'vite';
+import { createHash } from 'node:crypto';
 import { readFile, writeFile, mkdir, rm } from 'node:fs/promises';
 import { resolve } from 'node:path';
 
@@ -17,6 +18,12 @@ try {
     await mkdir(resolve(destination, '..'), { recursive: true });
     await writeFile(destination, template.replace(/<html[^>]*>/, () => `<html ${htmlAttributes}>`).replace('<!--app-head-->', () => head).replace('<!--app-html-->', () => html));
   }
+  const pageHashes = {};
+  for (const path of Object.keys(pages)) {
+    const file = path === '/' ? 'dist/index.html' : `dist${path}.html`;
+    pageHashes[path] = createHash('sha256').update(await readFile(file)).digest('hex');
+  }
+  await writeFile('dist/search-manifest.json', JSON.stringify({origin:siteUrl,indexable,pages:pageHashes}));
   const escapeXml = value => value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
   const urls = indexable ? Object.keys(pages).map(path => `<url><loc>${escapeXml(siteUrl + path)}</loc></url>`).join('\n') : '';
   await writeFile('dist/sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`);

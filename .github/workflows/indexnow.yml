@@ -1,0 +1,35 @@
+name: Notify search engines after publishing
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/**'
+      - 'public/**'
+      - 'scripts/build.mjs'
+      - 'scripts/indexnow*'
+      - 'package*.json'
+      - '.github/workflows/indexnow.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: indexnow-production
+  cancel-in-progress: true
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build && npm test
+        env:
+          VITE_SITE_URL: https://casinoproscons.com
+          VITE_SITE_INDEXABLE: 'true'
+      - run: npm run indexnow -- --submit
+        env:
+          INDEXNOW_WAIT_SECONDS: '600'
